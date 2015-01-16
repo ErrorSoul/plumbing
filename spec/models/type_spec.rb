@@ -7,6 +7,7 @@ RSpec.describe Type, :type => :model do
   subject { @type }
 
   it {should respond_to(:name)}
+  it {should be_valid}
 
 
   describe "uniq" do 
