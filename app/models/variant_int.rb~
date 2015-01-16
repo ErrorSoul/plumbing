@@ -1,0 +1,2 @@
+class VariantInt < ActiveRecord::Base
+end
