@@ -1,0 +1,10 @@
+ = x.fields_for :value  do |v|
+  .control-group
+    = v.label(:value, "#{x.object.option_type.name}")
+    - if x.object.option_type.type.name.eql? "INT"
+      
+      = v.number_field(:value)
+      //= v.hidden_field(:value_type, :value => "VariantInt")
+    - else
+      = v.text_field(:value)
+      //= v.hidden_field(:value_type, :value => "VariantStr")

@@ -296,6 +296,7 @@ DEPENDENCIES
   jquery-rails
   libnotify
   pg
+  pry
   puma
   rails (= 4.1.6)
   rails_12factor

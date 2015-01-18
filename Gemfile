@@ -45,6 +45,7 @@ group :development, :test do
   gem 'childprocess', '0.3.6'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'pry'
 end
 
 group :test do 
