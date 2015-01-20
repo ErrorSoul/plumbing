@@ -5,10 +5,10 @@ def new
   @prot = Prototype.includes(:option_types => :type).first
   @product = Product.new
   for c in @prot.option_types
-    @product.variants.build(option_type: c)
-  end
+  
       
-    #@product.variants.build(option_type: c , value: c.type.name.eql?("INT") ? VariantInt.new : VariantStr.new)
+    @product.variants.build(option_type: c , value: c.type.name.eql?("INT") ? VariantInt.new : VariantStr.new)
+  end
    
  
   #pry.binding

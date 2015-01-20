@@ -5,4 +5,6 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :variants
   has_many :values_int, through: :variants, source: :value, source_type: "VariantInt"
   has_many :values_str, through: :variants, source: :value, source_type: "VariantStr"
+
+  validates :subcategory_id, :model_id, presence: true
 end

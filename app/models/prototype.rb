@@ -3,4 +3,5 @@ class Prototype < ActiveRecord::Base
   has_many  :ptypes, class_name: "PrototypeOptionType",  inverse_of: :prototype
   accepts_nested_attributes_for :ptypes
   has_many :option_types, through: :ptypes
+  validates :subcategory_id, presence: true
 end

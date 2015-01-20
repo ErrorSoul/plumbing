@@ -1,1 +1,5 @@
 %p= @product
+- for c in Product.column_names
+  %h3= c 
+  %span
+    %p= @product[c]

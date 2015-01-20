@@ -22,13 +22,13 @@
           = x.label(:option_type_id, "Option Type")
           = x.number_field(:option_type_id, value: x.object.option_type.id)
           - if x.object.option_type.type.name.eql? "INT"
-            = x.fields_for :value, VariantInt.new do |v|
+            = x.fields_for :value  do |v|
               .control-group
                 = v.label(:value, "#{x.object.option_type.name}")
                 = v.number_field(:value)
                 = v.hidden_field(:value_type, value: "VariantInt")
           - else
-            = x.fields_for :value, VariantStr.new do |v|
+            = x.fields_for :value  do |v|
               .control-group
                 = v.label(:value, "#{x.object.option_type.name}")
                 = v.text_field(:value)

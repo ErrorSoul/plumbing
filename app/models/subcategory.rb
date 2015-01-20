@@ -3,4 +3,6 @@ class Subcategory < ActiveRecord::Base
   has_one :prototype
   has_many :products
   has_many :models
+  validates :name, :category_id, presence: true
+  
 end
