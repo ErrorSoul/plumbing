@@ -1,0 +1,12 @@
+ActiveAdmin.register Category do 
+  
+  permit_params :name
+  
+  index do |e|
+  
+    
+    xar(self, :name)
+    
+  end
+
+end

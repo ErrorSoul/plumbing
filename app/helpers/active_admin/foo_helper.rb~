@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+module ActiveAdmin::FooHelper
+  class ActiveAdmin::Views::IndexAsTable
+    def create_my_path(obj)
+      #return "/admin/categories/#{obj.id}"
+      url_for([:admin, obj])
+    end
+      
+      
+    def col(attributes)
+    
+      for attr in attributes
+        dict = ApplicationHelper::DICT
+        ###  column "Haзвание", :name do |x| 
+        ###     link_to x.name, admin_country_path(x)
+        ###  end
+        column dict[attr], attr do |obj|
+          link_to obj[attr], create_my_path(obj)
+        end
+      
+      end
+    
+    end
+  end
+end
