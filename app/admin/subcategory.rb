@@ -24,6 +24,7 @@ ActiveAdmin.register Subcategory do
   end
 
   show do |x|
+     
     create_show(x, [:id, :name, :category], d: 
                 {table_hash: {prototype: [:name], models: [:name]}, 
                   links_hash: {prototype: :subcategory_id, model: :subcategory_id}

@@ -49,7 +49,11 @@ module ActiveAdmin::FooHelper
           else
             row "Cоздать" do
               #link_to 'Новая коллекция', new_admin_subcategory_path(key => { value => x.id})
-              link_to ApplicationHelper::DICT_ROD[key], url_for(controller: "admin/#{key.to_s.pluralize}", action: 'new', key => {value => x.id} )
+              if x.class.name.eql?("Model")
+                link_to "Продукт", new_admin_product_path(product: {model_id: x.id,  subcategory_id: x.subcategory_id} )
+              else
+                link_to ApplicationHelper::DICT_ROD[key], url_for(controller: "admin/#{key.to_s.pluralize}", action: 'new', key => {value => x.id} )
+              end
             end
           end
         end
@@ -95,7 +99,7 @@ module ActiveAdmin::FooHelper
               row ApplicationHelper::DICT[attr] do 
                 puts "FFAAAAAAAAAAAAAAAAAAA", attr
                 puts "AAAAAAAAAAAAAAAAAAAAAAAAAA", obj[:subcategory]
-                link_to "SUBCATEGORY", url_for([:admin, obj.send(attr)])
+                link_to obj.send(attr).name, url_for([:admin, obj.send(attr)])
               end
             end
           when :type

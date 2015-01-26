@@ -10,7 +10,12 @@
       .control-group
         = f.label :description
         = f.text_area :description
-      
+      .control-group
+        = f.label :subcategory_id
+        = f.number_field :subcategory_id
+      .control-group
+        = f.label :model_id
+        = f.number_field :model_id
       .control-group
         = f.label :marking
         = f.text_field :marking

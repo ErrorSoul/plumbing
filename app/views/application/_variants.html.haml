@@ -1,0 +1,18 @@
+
+
+- f.semantic_fields_for :variants do |x|
+         
+       
+  - x.input(:option_type_id, value: x.object.option_type.id)
+  - if x.object.option_type.type.name.eql? "INT"
+    = x.semantic_fields_for :value  do |v|
+
+
+      - v.input(:value, label: "#{x.object.option_type.name}")
+      = v.hidden_field(:value_type, value: "VariantInt")
+  - else
+    = x.semantic_fields_for :value  do |v|
+
+      - v.input(:value, label: "#{x.object.option_type.name}")
+      
+      = v.hidden_field(:value_type, value: "VariantStr")

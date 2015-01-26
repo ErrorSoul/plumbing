@@ -289,6 +289,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   font-awesome-sass (~> 4.2.0)
+  formtastic
   guard-rspec
   guard-spork
   haml

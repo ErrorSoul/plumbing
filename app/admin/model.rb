@@ -17,6 +17,15 @@ ActiveAdmin.register Model do
   #   permitted << :other if resource.something?
   #   permitted
   # end
+  show do |x|
+    
+    create_show(x, [:id, :name, :subcategory], d: 
+                {table_hash: {products: [:name]}, 
+                  links_hash: {products: [:model_id, :subcategory_id]}
+                              
+                })
+    
 
+  end
 
 end

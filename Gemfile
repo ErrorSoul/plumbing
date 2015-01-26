@@ -20,7 +20,7 @@ gem 'haml'
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'faker'
-
+gem 'formtastic'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -10,7 +10,6 @@
       .control-group
         = f.label :description
         = f.text_area :description
-      
       .control-group
         = f.label :marking
         = f.text_field :marking
