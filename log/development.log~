@@ -1,0 +1,1405 @@
+
+
+Started GET "/admin/subcategories" for 127.0.0.1 at 2015-01-25 14:43:31 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::SubcategoriesController#index as HTML
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "subcategories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mSubcategory Load (0.4ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"   ORDER BY "subcategories"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mPrototype Load (0.4ms)[0m  [1mSELECT "prototypes".* FROM "prototypes"[0m
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mModel Load (0.8ms)[0m  [1mSELECT "models".* FROM "models"[0m
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/index.html.arb (1832.5ms)
+Completed 200 OK in 1949ms (Views: 1843.1ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/admin/subcategories" for 127.0.0.1 at 2015-01-25 14:43:33 +0300
+Processing by Admin::SubcategoriesController#index as HTML
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "subcategories"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mSubcategory Load (0.5ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"   ORDER BY "subcategories"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mPrototype Load (0.4ms)[0m  [1mSELECT "prototypes".* FROM "prototypes"[0m
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mModel Load (0.4ms)[0m  [1mSELECT "models".* FROM "models"[0m
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/index.html.arb (669.8ms)
+Completed 200 OK in 687ms (Views: 676.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2015-01-25 14:43:33 +0300
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/lib/popover.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-01-25 14:43:34 +0300
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 14:43:36 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mAdminUser Load (0.6ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36mSubcategory Load (0.4ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1[0m  [["id", 46]]
+Person attributes hash
+  [1m[35mPrototype Load (0.5ms)[0m  SELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1  [["subcategory_id", 46]]
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (501.7ms)
+Completed 500 Internal Server Error in 535ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:27:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:26:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:6:in `each'
+  app/helpers/active_admin/foo_helper.rb:6:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:53:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:52:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:51:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:50:in `each'
+  app/helpers/active_admin/foo_helper.rb:50:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:74:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:62:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.0ms)
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 14:47:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mAdminUser Load (0.6ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36mSubcategory Load (0.5ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1[0m  [["id", 46]]
+  [1m[35mPrototype Load (0.4ms)[0m  SELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1  [["subcategory_id", 46]]
+Person attributes hash
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (1248.3ms)
+Completed 500 Internal Server Error in 1370ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:28:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:27:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:7:in `each'
+  app/helpers/active_admin/foo_helper.rb:7:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:54:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:53:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:52:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:51:in `each'
+  app/helpers/active_admin/foo_helper.rb:51:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:75:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:63:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.4ms)
+
+
+Started GET "/admin/subcategories" for 127.0.0.1 at 2015-01-25 14:47:30 +0300
+Processing by Admin::SubcategoriesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "subcategories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mSubcategory Load (0.5ms)[0m  SELECT  "subcategories".* FROM "subcategories"   ORDER BY "subcategories"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mPrototype Load (0.4ms)[0m  SELECT "prototypes".* FROM "prototypes"
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  [1m[35mModel Load (0.5ms)[0m  SELECT "models".* FROM "models"
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/index.html.arb (998.9ms)
+Completed 200 OK in 1024ms (Views: 1002.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:31 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:32 +0300
+
+
+Started GET "/assets/active_admin/lib/popover.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:32 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:32 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:32 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:32 +0300
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:32 +0300
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-01-25 14:47:32 +0300
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 14:47:33 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1  [["id", 46]]
+  [1m[36mPrototype Load (0.2ms)[0m  [1mSELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1[0m  [["subcategory_id", 46]]
+Person attributes hash
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (469.4ms)
+Completed 500 Internal Server Error in 486ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:28:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:27:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:7:in `each'
+  app/helpers/active_admin/foo_helper.rb:7:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:54:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:53:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:52:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:51:in `each'
+  app/helpers/active_admin/foo_helper.rb:51:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:75:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:63:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.2ms)
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 14:48:22 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36mSubcategory Load (0.4ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1[0m  [["id", 46]]
+  [1m[35mPrototype Load (0.4ms)[0m  SELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1  [["subcategory_id", 46]]
+Person attributes hash
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (609.5ms)
+Completed 500 Internal Server Error in 690ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:28:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:27:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:7:in `each'
+  app/helpers/active_admin/foo_helper.rb:7:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:55:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:54:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:53:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:52:in `each'
+  app/helpers/active_admin/foo_helper.rb:52:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:76:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:64:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.7ms)
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 14:48:27 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1  [["id", 46]]
+  [1m[36mPrototype Load (0.2ms)[0m  [1mSELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1[0m  [["subcategory_id", 46]]
+Person attributes hash
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (636.3ms)
+Completed 500 Internal Server Error in 658ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:28:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:27:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:7:in `each'
+  app/helpers/active_admin/foo_helper.rb:7:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:55:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:54:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:53:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:52:in `each'
+  app/helpers/active_admin/foo_helper.rb:52:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:76:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:64:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (37.7ms)
+
+
+Started GET "/admin/subcategories" for 127.0.0.1 at 2015-01-25 14:48:35 +0300
+Processing by Admin::SubcategoriesController#index as HTML
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "subcategories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mSubcategory Load (0.5ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"   ORDER BY "subcategories"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mPrototype Load (0.4ms)[0m  [1mSELECT "prototypes".* FROM "prototypes"[0m
+  [1m[35mProduct Load (0.5ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mModel Load (0.4ms)[0m  [1mSELECT "models".* FROM "models"[0m
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/index.html.arb (833.2ms)
+Completed 200 OK in 874ms (Views: 844.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2015-01-25 14:48:36 +0300
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2015-01-25 14:48:36 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:36 +0300
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:36 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:36 +0300
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:36 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:36 +0300
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:36 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:36 +0300
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:36 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/lib/popover.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-01-25 14:48:37 +0300
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 14:48:40 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1[0m  [["id", 46]]
+  [1m[35mPrototype Load (0.2ms)[0m  SELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1  [["subcategory_id", 46]]
+Person attributes hash
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (622.8ms)
+Completed 500 Internal Server Error in 640ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:28:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:27:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:7:in `each'
+  app/helpers/active_admin/foo_helper.rb:7:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:55:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:54:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:53:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:52:in `each'
+  app/helpers/active_admin/foo_helper.rb:52:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:76:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:64:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.4ms)
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 14:49:52 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35mSubcategory Load (0.4ms)[0m  SELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1  [["id", 46]]
+  [1m[36mPrototype Load (0.3ms)[0m  [1mSELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1[0m  [["subcategory_id", 46]]
+Person attributes hash
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (616.1ms)
+Completed 500 Internal Server Error in 697ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:29:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:28:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:8:in `each'
+  app/helpers/active_admin/foo_helper.rb:8:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:56:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:55:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:54:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:53:in `each'
+  app/helpers/active_admin/foo_helper.rb:53:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:77:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:65:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.5ms)
+
+
+Started GET "/admin/subcategories" for 127.0.0.1 at 2015-01-25 14:49:56 +0300
+Processing by Admin::SubcategoriesController#index as HTML
+  [1m[35mAdminUser Load (1.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "subcategories"[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mSubcategory Load (0.5ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"   ORDER BY "subcategories"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mCategory Load (0.4ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36mPrototype Load (0.4ms)[0m  [1mSELECT "prototypes".* FROM "prototypes"[0m
+  [1m[35mProduct Load (0.6ms)[0m  SELECT "products".* FROM "products"
+  [1m[36mModel Load (0.5ms)[0m  [1mSELECT "models".* FROM "models"[0m
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/index.html.arb (867.5ms)
+Completed 200 OK in 891ms (Views: 874.7ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:57 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:58 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:58 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:58 +0300
+
+
+Started GET "/assets/active_admin/lib/popover.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:58 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:58 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:58 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:58 +0300
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:58 +0300
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-01-25 14:49:58 +0300
+
+
+Started GET "/admin/subcategories/45" for 127.0.0.1 at 2015-01-25 14:49:59 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1[0m  [["id", 45]]
+  [1m[35mPrototype Load (0.2ms)[0m  SELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1  [["subcategory_id", 45]]
+Person attributes hash
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (619.1ms)
+Completed 500 Internal Server Error in 639ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:29:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:28:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:8:in `each'
+  app/helpers/active_admin/foo_helper.rb:8:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:56:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:55:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:54:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:53:in `each'
+  app/helpers/active_admin/foo_helper.rb:53:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:77:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:65:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.7ms)
+
+
+Started GET "/admin/subcategories/45" for 127.0.0.1 at 2015-01-25 14:52:35 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35mSubcategory Load (0.4ms)[0m  SELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1  [["id", 45]]
+  [1m[36mPrototype Load (0.4ms)[0m  [1mSELECT "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ?[0m  [["subcategory_id", 45]]
+Person attributes hash
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (694.0ms)
+Completed 200 OK in 779ms (Views: 702.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/lib/popover.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-01-25 14:52:37 +0300
+
+
+Started GET "/admin/subcategories/45" for 127.0.0.1 at 2015-01-25 14:54:27 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36mSubcategory Load (0.4ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1[0m  [["id", 45]]
+  [1m[35mPrototype Load (0.4ms)[0m  SELECT "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ?  [["subcategory_id", 45]]
+Person attributes [:name]
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (475.6ms)
+Completed 200 OK in 561ms (Views: 484.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/lib/popover.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-01-25 14:54:29 +0300
+
+
+Started GET "/admin/subcategories/45" for 127.0.0.1 at 2015-01-25 14:55:39 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35mSubcategory Load (0.5ms)[0m  SELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1  [["id", 45]]
+This is key prototype
+  [1m[36mPrototype Load (0.3ms)[0m  [1mSELECT "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ?[0m  [["subcategory_id", 45]]
+Person attributes [:name]
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (620.9ms)
+Completed 200 OK in 705ms (Views: 629.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/lib/popover.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-01-25 14:55:40 +0300
+
+
+Started GET "/admin/subcategories/45" for 127.0.0.1 at 2015-01-25 14:56:37 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36mSubcategory Load (0.3ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1[0m  [["id", 45]]
+This is key prototype
+This is arrivva #<Prototype::ActiveRecord_Associations_CollectionProxy:0xdb12f1c>
+  [1m[35mPrototype Load (0.4ms)[0m  SELECT "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ?  [["subcategory_id", 45]]
+Person attributes [:name]
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (634.6ms)
+Completed 200 OK in 715ms (Views: 642.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/lib/popover.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-01-25 14:56:39 +0300
+
+
+Started GET "/admin/subcategories/45" for 127.0.0.1 at 2015-01-25 14:59:45 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35mSubcategory Load (0.3ms)[0m  SELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1  [["id", 45]]
+This is key prototype
+This is arrivva #<Prototype::ActiveRecord_Associations_CollectionProxy:0xd1d4860>
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (621.7ms)
+Completed 500 Internal Server Error in 707ms
+
+ActionView::Template::Error ([:name] is not a symbol):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:57:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:54:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:53:in `each'
+  app/helpers/active_admin/foo_helper.rb:53:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:81:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:69:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.1ms)
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 15:00:11 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35mSubcategory Load (0.2ms)[0m  SELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1  [["id", 46]]
+This is key prototype
+This is arrivva #<Prototype::ActiveRecord_Associations_CollectionProxy:0xb4a51388>
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (466.1ms)
+Completed 500 Internal Server Error in 497ms
+
+ActionView::Template::Error ([:name] is not a symbol):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:57:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:54:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:53:in `each'
+  app/helpers/active_admin/foo_helper.rb:53:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:81:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:69:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.9ms)
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 15:00:41 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35mSubcategory Load (0.4ms)[0m  SELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1  [["id", 46]]
+This is key prototype
+This is arrivva #<Prototype::ActiveRecord_Associations_CollectionProxy:0xb5248104>
+This is arrivva [:name]
+  [1m[36mPrototype Load (0.4ms)[0m  [1mSELECT "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ?[0m  [["subcategory_id", 46]]
+Person attributes [:name]
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (629.3ms)
+Completed 200 OK in 710ms (Views: 638.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:42 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/lib/popover.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-01-25 15:00:43 +0300
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 15:02:30 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mAdminUser Load (0.6ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36mSubcategory Load (0.4ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1[0m  [["id", 46]]
+This is key prototype
+  [1m[35mPrototype Load (0.3ms)[0m  SELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1  [["subcategory_id", 46]]
+This is arrivva 
+This is arrivva [:name]
+Person attributes [:name]
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (680.2ms)
+Completed 500 Internal Server Error in 836ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:29:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:28:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:8:in `each'
+  app/helpers/active_admin/foo_helper.rb:8:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:60:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:59:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:54:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:53:in `each'
+  app/helpers/active_admin/foo_helper.rb:53:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:81:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:69:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.7ms)
+
+
+Started GET "/admin/subcategories" for 127.0.0.1 at 2015-01-25 15:06:51 +0300
+Processing by Admin::SubcategoriesController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "subcategories"
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "subcategories"  LIMIT 30 OFFSET 0) subquery_for_count[0m
+  [1m[35mSubcategory Load (0.5ms)[0m  SELECT  "subcategories".* FROM "subcategories"   ORDER BY "subcategories"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mCategory Load (0.4ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mPrototype Load (0.4ms)[0m  SELECT "prototypes".* FROM "prototypes"
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products"[0m
+  [1m[35mModel Load (0.4ms)[0m  SELECT "models".* FROM "models"
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/index.html.arb (860.6ms)
+Completed 200 OK in 941ms (Views: 863.7ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/core.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/datepicker.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/draggable.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/mouse.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/widget.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/button.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/resizable.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/position.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/dialog.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/sortable.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/lib/batch_actions.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/jquery-ui/tabs.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/lib/flash.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/lib/has_many.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/lib/popover.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/ext/jquery.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2015-01-25 15:06:53 +0300
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 15:06:54 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1mSELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1[0m
+  [1m[35mSubcategory Load (1.4ms)[0m  SELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1  [["id", 46]]
+This is key prototype
+  [1m[36mPrototype Load (0.4ms)[0m  [1mSELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1[0m  [["subcategory_id", 46]]
+This is arrivva 
+This is arrivva [:name]
+Person attributes [:name]
+This is dict {:name=>"Имя", :id=>"Номер", :asset=>"Картинка", :updated_at=>"Последнее изменение", :price=>"Цена", :marking=>"Артикул", :subcategory=>"Подкатегория", :subcategories=>"Подкатегории", :prototyp=>"Прототип", :models=>"Модели"}
+This is attr name
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (616.5ms)
+Completed 500 Internal Server Error in 646ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:31:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:30:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:8:in `each'
+  app/helpers/active_admin/foo_helper.rb:8:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:62:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:61:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:56:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:55:in `each'
+  app/helpers/active_admin/foo_helper.rb:55:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:83:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:71:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.0ms)
+
+
+Started GET "/admin/subcategories/46" for 127.0.0.1 at 2015-01-25 15:07:12 +0300
+Processing by Admin::SubcategoriesController#show as HTML
+  Parameters: {"id"=>"46"}
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT  "admin_users".* FROM "admin_users"  WHERE "admin_users"."id" = 1  ORDER BY "admin_users"."id" ASC LIMIT 1
+  [1m[36mSubcategory Load (0.2ms)[0m  [1mSELECT  "subcategories".* FROM "subcategories"  WHERE "subcategories"."id" = ? LIMIT 1[0m  [["id", 46]]
+This is key prototype
+  [1m[35mPrototype Load (0.2ms)[0m  SELECT  "prototypes".* FROM "prototypes"  WHERE "prototypes"."subcategory_id" = ? LIMIT 1  [["subcategory_id", 46]]
+This is arrivva 
+This is arrivva [:name]
+Person attributes [:name]
+This is dict {:name=>"Имя", :id=>"Номер", :asset=>"Картинка", :updated_at=>"Последнее изменение", :price=>"Цена", :marking=>"Артикул", :subcategory=>"Подкатегория", :subcategories=>"Подкатегории", :prototyp=>"Прототип", :models=>"Модели"}
+This is attr name
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/bundler/gems/activeadmin-54bede0558a9/app/views/active_admin/resource/show.html.arb (653.8ms)
+Completed 500 Internal Server Error in 670ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: insert_tag renderer_for(:show)
+  app/helpers/active_admin/foo_helper.rb:31:in `block (2 levels) in column_creator'
+  app/helpers/active_admin/foo_helper.rb:30:in `block in column_creator'
+  app/helpers/active_admin/foo_helper.rb:8:in `each'
+  app/helpers/active_admin/foo_helper.rb:8:in `column_creator'
+  app/helpers/active_admin/foo_helper.rb:62:in `block (3 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:61:in `block (2 levels) in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:56:in `block in create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:55:in `each'
+  app/helpers/active_admin/foo_helper.rb:55:in `create_table_for_show'
+  app/helpers/active_admin/foo_helper.rb:83:in `block in create_show'
+  app/helpers/active_admin/foo_helper.rb:71:in `create_show'
+  app/admin/subcategory.rb:18:in `block (2 levels) in <top (required)>'
+
+
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.7ms)

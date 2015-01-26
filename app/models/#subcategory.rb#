@@ -1,4 +1,13 @@
 
+class Subcategory < ActiveRecord::Base
+  belongs_to :category, inverse_of: :subcategories
+  has_one :prototype, inverse_of: :subcategory
+  has_many :products, inverse_of: :subcategory
+  has_many :models, inverse_of: :subcategory
+  accepts_nested_attributes_for :prototype, :models,   allow_destroy: true
+  validates :name,  presence: true
+  
+end
 # -*- coding: utf-8 -*-
 ActiveAdmin.register Subcategory do
   permit_params :name, :category_id,  models_attributes: [:id, :name, :_destroy]
@@ -24,9 +33,9 @@ ActiveAdmin.register Subcategory do
   end
 
   show do |x|
-    create_show(x, [:id, :name, :category], d: 
-                {table_hash: {prototype: [:name], models: [:name]}, 
-                  links_hash: {prototype: :subcategory_id, model: :subcategory_id}
+    create_show(x, [:id, :name], d: 
+                {table_hash: {prototype: [:name]}, 
+                  links_hash: {prototype: :subcategory_id}
                               
                 })
   end
