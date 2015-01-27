@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 module ApplicationHelper
-  require 'pry'
+  
   DICT = {name: "Имя",
           id: "Номер",
           asset: "Картинка",
