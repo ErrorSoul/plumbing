@@ -1,0 +1,56 @@
+
+
+.container
+  .row
+    .col-xs-12
+       
+      .panel.panel-default
+        .panel-body
+          Пример #1
+      #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+        - @category.each_with_index do |cat, ind|
+          .panel.panel-default
+            .panel-heading{:role => "tab", :id => cat.name}
+              %h4.panel-title
+                %a{"aria-controls" => cat.name, "aria-expanded" => "#{ind.eql?(0) ? true : false}", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "##{cat.id}"}
+                  = cat.name
+            .panel-collapse.collapse{"aria-labelledby" => cat.name, :role => "tabpanel", :id => cat.id}
+              
+              .panel.list-group
+              - cat.subcategories.each do |subcat|
+                %li.list-group-item
+                  %a{"aria-controls" => "#{subcat.class.name + subcat.id.to_s}", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "##{subcat.class.name + subcat.id.to_s}"}
+                    = subcat.name
+                  .collapse(id="#{subcat.class.name + subcat.id.to_s}")
+                    .list-group
+                    - subcat.vendors.each do |vend|
+
+                      %p.list-group-item= vend.name
+
+
+
+.container
+  .row
+    .col-xs-12
+      .panel.panel-default
+        .panel-body
+          Пример #2
+      %hr
+        - @category.each do |cat|
+          .dropdown.list-group-item
+            %a#dLabel.panel-title{"data-target" => "#", "data-toggle" => "dropdown", :href => "/page.html", :role => "button"}
+              = cat.name
+              %span.caret
+            %ul.dropdown-menu.multi-level{"aria-labelledby" => "dropdownMenu", :role => "menu"}
+              - cat.subcategories.each do |subcat|
+               
+                
+                %li.dropdown-submenu
+                  %a{:href => "#", :tabindex => "-1"}= subcat.name
+                  %ul.dropdown-menu
+                    - subcat.vendors.each do |v|
+                      
+
+                      %li
+                        %a{:href => "#"}= v.name
+                      
