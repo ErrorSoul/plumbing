@@ -13,7 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 
-gem 'sqlite3'
+
 
 #haml
 gem 'haml'
@@ -39,6 +39,7 @@ gem "devise"
 gem 'spring',        group: :development
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'puma'
   gem 'guard-rspec'
   gem 'libnotify'

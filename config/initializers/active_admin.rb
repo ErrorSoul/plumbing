@@ -7,6 +7,12 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "Plumbing"
 
+  config.site_title_link = "/main_pages"
+  
+  I18n.locale = :ru
+  I18n.load_path += Dir[File.expand_path("../../locales/**/*.yml", __FILE__)]
+  I18n.reload!
+
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #

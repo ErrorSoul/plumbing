@@ -170,7 +170,7 @@ Devise.setup do |config|
   # :both  = Enables both strategies
   # :none  = No unlock strategy. You should handle unlocking by yourself.
   # config.unlock_strategy = :both
-
+  config.secret_key = 'f1e921a7735e8c075c2cbe6aaec8501e87341e036373331e9bd4d012376b21835a56b9d325222bfc052759a086789ae5489a095110b3e2693f8e170e0fcbec2f'
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
   # config.maximum_attempts = 20
