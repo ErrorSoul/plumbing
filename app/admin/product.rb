@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 ActiveAdmin.register Product do
   
+  
 
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  config.clear_action_items!
-  permit_params :id, :subcategory_id, :model_id, :name, :description, :price, :marking,  variants_attributes: [:id, :option_type_id, value_attributes: [:id, :value, :value_type]]
+  
+  permit_params :id, :asset, :subcategory_id, :model_id, :name, :description, :price, :marking, :value_type,  variants_attributes: [:id, :option_type_id, value_attributes: [:id, :value, :value_type]]
   
 
   controller do 
@@ -25,13 +26,19 @@ ActiveAdmin.register Product do
       end
     end
   end
-   form do |f|
+
+   index do
+    selectable_column
+    column_creator([ :name, :asset, :marking], action_flag=true)
+  end
+   form(:html => { :multipart => true }) do |f|
     
     f.semantic_errors *f.object.errors.keys
     f.inputs 'Details' do
       f.input :name, label: ApplicationHelper::DICT[:name] 
       f.input :subcategory, label: "Подкатегория", :as => :select , :collection => Subcategory.all, include_blank: false
       f.input :model, label: ApplicationHelper::DICT[:model], :as => :select , :collection => Model.all, include_blank: false
+      f.input :asset, label: ApplicationHelper::DICT[:asset] 
       f.input :marking, label: ApplicationHelper::DICT[:marking]
       f.input :price, label: ApplicationHelper::DICT[:price]
       f.input :description, label: ApplicationHelper::DICT[:description]
@@ -49,7 +56,7 @@ ActiveAdmin.register Product do
   end
 
   show do |x|
-    create_show_row(x, [:id, :name, :subcategory,
+    create_show_row(x, [:id, :name, :asset, :subcategory,
                     :model, :description, :marking, :variants], nil)
     attributes_table do 
       row "Создать" do

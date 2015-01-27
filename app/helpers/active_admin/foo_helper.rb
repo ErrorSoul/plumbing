@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 module ActiveAdmin::FooHelper
+  
   class ActiveAdmin::Views::Pages::Show
     def column_creator(attributes,action_flag=nil)
       logger.debug "Person attributes #{attributes}"
@@ -18,6 +19,9 @@ module ActiveAdmin::FooHelper
             logger.debug "This is attr #{attr}"
             link_to obj[attr], create_my_path(obj)
           end
+
+       
+          
           
         when :asset
           column "Картинка", :asset do |obj|
@@ -49,9 +53,11 @@ module ActiveAdmin::FooHelper
 
           when :asset
             row ApplicationHelper::DICT[attr] do
-              image_tag(obj.asset.url)
+              div :class => "thumb" do
+                image_tag(obj.asset.url)
+              end
             end
-          when :category, :subcategory, :model, :country
+          when :category, :subcategory, :model, :country, :vendor
             if obj.send(attr)
 
               row ApplicationHelper::DICT[attr] do 

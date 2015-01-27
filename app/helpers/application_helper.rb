@@ -21,7 +21,8 @@ module ApplicationHelper
           price: "Цена",
           marking: "Артикуль",
           description: "Описание",
-          country: "Страна"
+          country: "Страна",
+          vendor: "Фирма"
           }
 
   DICT_ROD = {
@@ -48,7 +49,14 @@ module ApplicationHelper
             
             link_to obj[attr], create_my_path(obj)
           end
-          
+         when :vendor, :country
+           
+          column dict[attr], attr do |obj|
+            logger.debug "This is objUU #{obj.to_s}"
+            logger.debug "This is attrUU #{attr}"
+            puts "FFFF #{obj[attr]}"
+               link_to obj.send(attr).name, url_for([:admin, obj.send(attr)])
+          end  
         when :asset
           column "Картинка", :asset do |obj|
             div :class => "thumb" do

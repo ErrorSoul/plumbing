@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127015533) do
+ActiveRecord::Schema.define(version: 20150127075114) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -63,9 +63,12 @@ ActiveRecord::Schema.define(version: 20150127015533) do
     t.integer  "subcategory_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "vendor_id"
+    t.string   "asset"
   end
 
   add_index "models", ["subcategory_id"], name: "index_models_on_subcategory_id"
+  add_index "models", ["vendor_id"], name: "index_models_on_vendor_id"
 
   create_table "option_types", force: true do |t|
     t.string   "name"
@@ -85,6 +88,7 @@ ActiveRecord::Schema.define(version: 20150127015533) do
     t.integer  "model_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "asset"
   end
 
   add_index "products", ["model_id"], name: "index_products_on_model_id"

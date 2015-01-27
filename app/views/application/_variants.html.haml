@@ -9,10 +9,13 @@
 
 
       - v.input(:value, label: "#{x.object.option_type.name}")
-      = v.hidden_field(:value_type, value: "VariantInt")
+      // delete for edit
+      - if !f.object.name
+        = v.hidden_field(:value_type, value: "VariantInt")
   - else
     = x.semantic_fields_for :value  do |v|
 
       - v.input(:value, label: "#{x.object.option_type.name}")
-      
-      = v.hidden_field(:value_type, value: "VariantStr")
+      // delete for edit
+      - if !f.object.name
+        = v.hidden_field(:value_type, value: "VariantStr")

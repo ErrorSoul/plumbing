@@ -61,6 +61,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (0.8.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     childprocess (0.3.6)
@@ -229,6 +232,8 @@ GEM
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
     rubyzip (0.9.9)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -283,6 +288,7 @@ DEPENDENCIES
   activeadmin!
   bootstrap-sass (~> 3.2.0.2)
   capybara (>= 2.2.0)
+  carrierwave (= 0.8.0)
   childprocess (= 0.3.6)
   coffee-rails (~> 4.0.0)
   devise
@@ -302,6 +308,7 @@ DEPENDENCIES
   rails (= 4.1.6)
   rails_12factor
   rspec-rails
+  russian
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   selenium-webdriver (~> 2.35.1)
