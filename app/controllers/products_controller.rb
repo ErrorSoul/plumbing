@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-require 'pry'
+
 
 def new
   @prot = Prototype.includes(:option_types => :type).first
