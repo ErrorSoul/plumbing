@@ -11,12 +11,13 @@ ActiveAdmin.register Product do
 
   controller do 
    
-    
+   
     
     def new
       #pry.binding
       @prot = Prototype.includes(:option_types => :type).where('subcategory_id =?', params[:product][:subcategory_id]).first
-      @product = Product.new
+      @product = Product.new(subcategory_id: params[:product][:subcategory_id],
+                             model_id: params[:product][:model_id])
       for c in @prot.option_types
   
       
@@ -28,12 +29,12 @@ ActiveAdmin.register Product do
     
     f.semantic_errors *f.object.errors.keys
     f.inputs 'Details' do
-      f.input :name
-      f.input :subcategory, label: "Subcategory", :as => :select , :collection => Subcategory.all, include_blank: false
-      f.input :model, label: "Model", :as => :select , :collection => Model.all, include_blank: false
-      f.input :marking
-      f.input :price
-      f.input :description
+      f.input :name, label: ApplicationHelper::DICT[:name] 
+      f.input :subcategory, label: "Подкатегория", :as => :select , :collection => Subcategory.all, include_blank: false
+      f.input :model, label: ApplicationHelper::DICT[:model], :as => :select , :collection => Model.all, include_blank: false
+      f.input :marking, label: ApplicationHelper::DICT[:marking]
+      f.input :price, label: ApplicationHelper::DICT[:price]
+      f.input :description, label: ApplicationHelper::DICT[:description]
      
       
      
@@ -45,6 +46,18 @@ ActiveAdmin.register Product do
     end
     
    f.actions
+  end
+
+  show do |x|
+    create_show_row(x, [:id, :name, :subcategory,
+                    :model, :description, :marking, :variants], nil)
+    attributes_table do 
+      row "Создать" do
+        
+        link_to 'Новый продукт', new_admin_product_path(:product => { :subcategory_id => product.subcategory_id,
+   :model_id => product.model_id})
+      end
+    end
   end
 
 end

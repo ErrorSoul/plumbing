@@ -1,4 +1,5 @@
 ActiveAdmin.register VariantInt do
+  menu false
 
 
   # See permitted parameters documentation:

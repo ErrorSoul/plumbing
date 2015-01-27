@@ -9,15 +9,26 @@ module ApplicationHelper
           marking: "Артикул",
           subcategory: "Подкатегория",
           subcategories: "Подкатегории",
+          subcategory_id: "Подкатегория",
+          model_id: "Модель",
           prototype: "Прототип",
+          model: "Модель",
           models: "Модели",
           category: "Категория",
-          option_types: "Характеристики"}
+          option_types: "Характеристики",
+          product: "Товар",
+          products: "Товары",
+          price: "Цена",
+          marking: "Артикуль",
+          description: "Описание",
+          country: "Страна"
+          }
 
   DICT_ROD = {
     model: "Модель",
     subcategory: "Подкатегорию",
-    prototype: "Прототип"
+    prototype: "Прототип",
+    products: "Товары"
   }
 
     def create_my_path(obj)

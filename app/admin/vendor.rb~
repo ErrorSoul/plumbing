@@ -1,4 +1,4 @@
-ActiveAdmin.register PrototypeOptionType do
+ActiveAdmin.register Vendor do
 
 
   # See permitted parameters documentation:
@@ -7,8 +7,8 @@ ActiveAdmin.register PrototypeOptionType do
   # permit_params :list, :of, :attributes, :on, :model
   #
   # or
-  #ab
-   permit_params :prototype_id, :option_type_id
+  #
+  # permit_params do
   #   permitted = [:permitted, :attributes]
   #   permitted << :other if resource.something?
   #   permitted

@@ -3,7 +3,7 @@
 - f.semantic_fields_for :variants do |x|
          
        
-  - x.input(:option_type_id, value: x.object.option_type.id)
+  = x.hidden_field(:option_type_id, value: x.object.option_type.id)
   - if x.object.option_type.type.name.eql? "INT"
     = x.semantic_fields_for :value  do |v|
 

@@ -1,5 +1,4 @@
-ActiveAdmin.register PrototypeOptionType do
-  menu false
+ActiveAdmin.register Country do
 
 
   # See permitted parameters documentation:
@@ -9,7 +8,7 @@ ActiveAdmin.register PrototypeOptionType do
   #
   # or
   #
-   permit_params :prototype_id, :option_type_id
+  # permit_params do
   #   permitted = [:permitted, :attributes]
   #   permitted << :other if resource.something?
   #   permitted

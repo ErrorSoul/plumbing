@@ -1,7 +1,7 @@
 class Variant < ActiveRecord::Base
   belongs_to :product
   belongs_to :option_type
-  belongs_to :value, polymorphic: true
+  belongs_to :value, polymorphic: true, dependent: :destroy
   
   accepts_nested_attributes_for :value
   accepts_nested_attributes_for :option_type

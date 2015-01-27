@@ -5,6 +5,7 @@ ActiveAdmin.register Category do
   permit_params :name, subcategories_attributes: [:id, :name, :category_id, :_destroy]
 
   index do 
+    selectable_column
     column_creator([:id, :name, :updated_at], action_flag=true)
   end
   

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ActiveAdmin.register Model do
 
 
@@ -24,8 +25,24 @@ ActiveAdmin.register Model do
                   links_hash: {products: [:model_id, :subcategory_id]}
                               
                 })
+  end
+
+    sidebar "Details", only: :show do
+      attributes_table_for model do
+        row :name
+        
+        model.subcategory.prototype.option_types.each do |x|
+          row "Cвойство" do 
+            x.name
+          end
+        end
+      end
+    end
+ 
+    
+    
     
 
-  end
+  
 
 end

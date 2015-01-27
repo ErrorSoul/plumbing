@@ -4,7 +4,7 @@ class Prototype < ActiveRecord::Base
   accepts_nested_attributes_for :ptypes, allow_destroy: true
   has_many :option_types, through: :ptypes
   validates :name,  presence: true
-  before_create :check_single 
+  #before_create :check_single 
 
   private
   def check_single
@@ -12,7 +12,7 @@ class Prototype < ActiveRecord::Base
     if b.length > 0
       errors.add(:single, "should be one examle")
     else 
-      save
+      self.save
     end
   end
 end

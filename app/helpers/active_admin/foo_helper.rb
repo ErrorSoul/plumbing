@@ -40,18 +40,82 @@ module ActiveAdmin::FooHelper
         actions
       end
     end 
+
+
+    def create_show_row(obj, attributes, links_hash)
+       attributes_table do 
+        attributes.each do |attr|
+          case attr
+
+          when :asset
+            row ApplicationHelper::DICT[attr] do
+              image_tag(obj.asset.url)
+            end
+          when :category, :subcategory, :model, :country
+            if obj.send(attr)
+
+              row ApplicationHelper::DICT[attr] do 
+                puts "FFAAAAAAAAAAAAAAAAAAA", attr
+                puts "AAAAAAAAAAAAAAAAAAAAAAAAAA", obj[:subcategory]
+                link_to obj.send(attr).name, url_for([:admin, obj.send(attr)])
+              end
+            end
+          when :variants
+            obj.variants.each do |opt|
+              row opt.option_type.name do 
+                opt.value.value
+              end
+              
+            end
+              
+          when :type
+             row ApplicationHelper::DICT[attr] do 
+              link_to obj.send(attr).name, url_for([:admin, obj.subcategory])
+            end
+          else
+            row ApplicationHelper::DICT[attr] do 
+              obj[attr]
+            end
+            
+          end
+        end
+        #
+        create_links_row(obj, links_hash)
+      end
+      
+    end
     def create_links_row(x, links_hash)
       unless links_hash.nil?
         
         links_hash.each do |key, value|
+          # don't show line to create new prototype
+          # when prototype exist
+          # one prototype to subcategory
           if key.eql?(:prototype) and x.send(key)
           
           else
-            row "Cоздать" do
-              #link_to 'Новая коллекция', new_admin_subcategory_path(key => { value => x.id})
-              if x.class.name.eql?("Model")
+            
+            case x.class.name
+            when "Model"
+              row "Cоздать" do
+                #link_to 'Новая коллекция', new_admin_subcategory_path(key => { value => x.id})
                 link_to "Продукт", new_admin_product_path(product: {model_id: x.id,  subcategory_id: x.subcategory_id} )
-              else
+              end
+            when "Subcategory" 
+              # on subcategory show create model
+              # when prototype exist
+              if key.eql?(:model) and x.prototype
+                row "Cоздать" do
+                link_to ApplicationHelper::DICT_ROD[key], url_for(controller: "admin/#{key.to_s.pluralize}", action: 'new', key => {value => x.id} )
+                end
+              end
+              if key.eql?(:prototype) and not x.prototype
+                row "Cоздать" do
+                link_to ApplicationHelper::DICT_ROD[key], url_for(controller: "admin/#{key.to_s.pluralize}", action: 'new', key => {value => x.id} )
+                end
+              end
+            else
+              row "Cоздать" do
                 link_to ApplicationHelper::DICT_ROD[key], url_for(controller: "admin/#{key.to_s.pluralize}", action: 'new', key => {value => x.id} )
               end
             end
@@ -85,37 +149,7 @@ module ActiveAdmin::FooHelper
 
     def create_show(obj, attributes, d: {table_hash: nil, links_hash: nil})
       
-      attributes_table do 
-        attributes.each do |attr|
-          case attr
-
-          when :asset
-            row ApplicationHelper::DICT[attr] do
-              image_tag(obj.asset.url)
-            end
-          when :category, :subcategory
-            if obj.send(attr)
-
-              row ApplicationHelper::DICT[attr] do 
-                puts "FFAAAAAAAAAAAAAAAAAAA", attr
-                puts "AAAAAAAAAAAAAAAAAAAAAAAAAA", obj[:subcategory]
-                link_to obj.send(attr).name, url_for([:admin, obj.send(attr)])
-              end
-            end
-          when :type
-             row ApplicationHelper::DICT[attr] do 
-              link_to obj.send(attr).name, url_for([:admin, obj.subcategory])
-            end
-          else
-            row ApplicationHelper::DICT[attr] do 
-              obj[attr]
-            end
-            
-          end
-        end
-        #
-        create_links_row(obj, d[:links_hash])
-      end
+      create_show_row(obj, attributes, d[:links_hash])
       create_table_for_show(obj, d[:table_hash])
         
     end
