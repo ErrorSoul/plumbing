@@ -1,0 +1,16 @@
+
+= search_form_for @search, :url => subcategory_path, :html => {method: :get, class: "navbar-form pagination", role: 'search'} do |f|
+  = f.hidden_field :id_eq, value: category.id
+  
+  .input-group
+    - arr = arr_for_options(category.models)
+    - q = params[:q][:models_vendor_name_cont] if params[:q]
+    
+    = f.select(:models_vendor_name_cont, options_for_select(arr, q), {}, {class: 'form-control'}) 
+                  
+    .input-group-btn
+      
+      %button.btn.btn-md{:type => "submit"}
+        Бренды
+        %i.glyphicon.glyphicon-search
+          

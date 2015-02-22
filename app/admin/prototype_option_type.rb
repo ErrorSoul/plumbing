@@ -1,7 +1,6 @@
 ActiveAdmin.register PrototypeOptionType do
   menu false
 
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -9,11 +8,9 @@ ActiveAdmin.register PrototypeOptionType do
   #
   # or
   #
-   permit_params :prototype_id, :option_type_id
+  permit_params :prototype_id, :option_type_id
   #   permitted = [:permitted, :attributes]
   #   permitted << :other if resource.something?
   #   permitted
   # end
-
-
 end

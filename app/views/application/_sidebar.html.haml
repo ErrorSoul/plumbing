@@ -1,0 +1,21 @@
+.col-md-2
+  .panel.panel-default
+    .panel-heading
+      %h4.panel-title
+        Каталог
+  #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+    - @categories.each_with_index do |cat, ind|
+      .panel.panel-default
+        .panel-heading{:role => "tab", :id => cat.name}
+          %h4.panel-title
+            = link_to cat.name, category_path(cat)
+              
+            %span.icons-awesome
+              %i.fa.fa-caret-down.fa-2x.fa-fw.pull-right{"aria-controls" => cat.name, "aria-expanded" => "#{ind.eql?(0) ? true : false}", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "##{cat.id}"}
+              
+                  
+        .panel.list-group.collapse{"aria-labelledby" => cat.name, :role => "tabpanel", :id => cat.id}
+          - cat.subcategories.each do |subcat|
+            %li.list-group-item
+              = link_to subcat.name, subcategory_path(subcat)
+               

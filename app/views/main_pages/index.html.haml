@@ -1,56 +1,19 @@
 
 
-.container
-  .row
-    .col-xs-12
+.col-md-8
+  .panel.panel-default
+    .panel-heading
+      Каталог товара
+    .panel-body
+      %p
+        Мы рады приветствовать вас на сайте компании "АкваПоинт", и надеемся, что работа с нами доставит удовольствие. "АкваПоинт", работая на рынке поставок систем отопления, водоснабжения, внутренней канализации более 10 лет, сформировала для себя основные приоритеты деятельности на российском рынке – это поставка высококлассного оборудования ведущих производителей из Европы и Азии. Продвигая бренды ведущих фирм, за счет профессионализма и опыта наших специалистов, мы обеспечиваем высочайшее качество продаж и инженерной поддержки. Техническое обеспечение продаж во всех регионах России – непременное условие при сотрудничестве с "АкваПоинт". Развивая дилерские связи в России, "АкваПоинт" стремится к продвижения высочайших стандартов качества. Налаживая дилерские взаимоотношения, мы готовы передать наш опыт и знания, провести обучение специалистов на местах. Прекрасно отлаженная транспортная и складская логистика позволяет жестко контролировать всю цепочку движения, предлагать клиенту лучшие цены.
+  
+  .panel.panel-default
+    .panel-body
+      Basic panel example
+
+  = render partial: "category_iter", locals: {element: @categories, form_flag: nil}
+            
+            
+          
        
-      .panel.panel-default
-        .panel-body
-          Пример #1
-      #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
-        - @category.each_with_index do |cat, ind|
-          .panel.panel-default
-            .panel-heading{:role => "tab", :id => cat.name}
-              %h4.panel-title
-                %a{"aria-controls" => cat.name, "aria-expanded" => "#{ind.eql?(0) ? true : false}", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "##{cat.id}"}
-                  = cat.name
-            .panel-collapse.collapse{"aria-labelledby" => cat.name, :role => "tabpanel", :id => cat.id}
-              
-              .panel.list-group
-              - cat.subcategories.each do |subcat|
-                %li.list-group-item
-                  %a{"aria-controls" => "#{subcat.class.name + subcat.id.to_s}", "aria-expanded" => "false", "data-toggle" => "collapse", :href => "##{subcat.class.name + subcat.id.to_s}"}
-                    = subcat.name
-                  .collapse(id="#{subcat.class.name + subcat.id.to_s}")
-                    .list-group
-                    - subcat.vendors.each do |vend|
-
-                      %p.list-group-item= vend.name
-
-
-
-.container
-  .row
-    .col-xs-12
-      .panel.panel-default
-        .panel-body
-          Пример #2
-      %hr
-        - @category.each do |cat|
-          .dropdown.list-group-item
-            %a#dLabel.panel-title{"data-target" => "#", "data-toggle" => "dropdown", :href => "/page.html", :role => "button"}
-              = cat.name
-              %span.caret
-            %ul.dropdown-menu.multi-level{"aria-labelledby" => "dropdownMenu", :role => "menu"}
-              - cat.subcategories.each do |subcat|
-               
-                
-                %li.dropdown-submenu
-                  %a{:href => "#", :tabindex => "-1"}= subcat.name
-                  %ul.dropdown-menu
-                    - subcat.vendors.each do |v|
-                      
-
-                      %li
-                        %a{:href => "#"}= v.name
-                      

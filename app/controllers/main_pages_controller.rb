@@ -1,8 +1,6 @@
 class MainPagesController < ApplicationController
-
+  before_action :set_need_attr
   def index
-
-    @category = Category.includes(:subcategories => :models).all
-    
+    @categories ||= Category.includes(:subcategories).all
   end
 end

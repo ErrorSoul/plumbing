@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127075114) do
+ActiveRecord::Schema.define(version: 20150221170033) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20150127075114) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text"
+    t.string   "asset"
   end
 
   create_table "countries", force: true do |t|
@@ -118,6 +120,8 @@ ActiveRecord::Schema.define(version: 20150127075114) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text"
+    t.string   "asset"
   end
 
   add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id"

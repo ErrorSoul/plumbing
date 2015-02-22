@@ -5,19 +5,18 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Plumbing"
+  config.site_title = 'Plumbing'
 
-  config.site_title_link = "/main_pages"
-  
+  config.site_title_link = '/main_pages'
+
   I18n.locale = :ru
-  I18n.load_path += Dir[File.expand_path("../../locales/**/*.yml", __FILE__)]
+  I18n.load_path += Dir[File.expand_path('../../locales/**/*.yml', __FILE__)]
   I18n.reload!
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
   # config.site_title_link = "/"
-
 
   # Set an optional image to be displayed for the header
   # instead of a string (overrides :site_title)
@@ -239,6 +238,3 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 end
-
-
-
