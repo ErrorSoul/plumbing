@@ -56,9 +56,15 @@ namespace :db do
 
   def make_categories
     CATEGORIES.each_with_index do |cat, ind|
-      c = Category.create!(name: cat)
+      c = Category.create!(
+                           name: cat,
+                           text: Faker::Lorem.paragraph(3, true, 4),
+                           asset: File.open(File.join("app", ActionController::Base.helpers.asset_path("assets/images/category/#{ind}.jpg")))
+                           )
       SUBCAT[ind].each do |subc|
-        Subcategory.create!(name: subc, category: c)
+        Subcategory.create!(name: subc, 
+                            category: c,
+                            text: Faker::Lorem.paragraph(3, true, 4))
       end
     end
   end

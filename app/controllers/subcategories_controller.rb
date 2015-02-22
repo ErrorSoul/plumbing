@@ -2,13 +2,18 @@ class SubcategoriesController < ApplicationController
   before_action :set_need_attr
   def show 
     if params[:q].nil?
-      @subcategory = Subcategory.includes(:products, models: :vendor)
-        .find(params[:id])
+      @subcategory = Subcategory.all_fetch.find(params[:id])
+      @models = @subcategory.models
     end
     
     @search = Subcategory.ransack params[:q]
-    @subcategory ||= @search.result.includes(:products, models: :vendor).first
-   
-    @models = @subcategory.models.page(params[:page]).per(2)
+    @subcategory ||= @search.result.all_vendors.first
+    name = params[:q][:models_vendor_name_cont] if params[:q]
+    @models ||= Model.includes(:vendor, products: [variants: :value])
+      .where('vendors.name = ? and models.subcategory_id= ?',
+             name, @subcategory.id )
+      .references(:vendor)
+    @models = @models.page(params[:page]).per(2)
+    
   end
 end

@@ -1,0 +1,20 @@
+%table.table.table-bordered
+  %thead
+    %tr
+      - @subcategory.prototype.option_types.each do |product|
+        %th= product.name
+      %th= "Цена"
+      %th= "Купить"
+  
+      
+  %tbody
+    - if model.products.blank?
+      %tr
+        %td.col-md-6= "Не найдено"
+    - model.products.each do |product|
+      %tr
+        - product.variants.each do |product|
+          %td= product.value.value
+        %td 500
+        %td 
+          .btn.btn-default Купить

@@ -3,7 +3,7 @@ ActiveAdmin.register Model do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :id, :asset,  :subcategory_id, :name, :vendor_id
+  permit_params :id, :asset, :text,  :subcategory_id, :name, :vendor_id
 
   index do
     column_creator([:id, :name, :vendor, :asset, :updated_at], action_flag = true)
@@ -23,6 +23,7 @@ ActiveAdmin.register Model do
       f.input :name, label: ApplicationHelper::DICT[:name]
       f.input :subcategory, label: 'Подкатегория', as: :select, collection: Subcategory.all, include_blank: false
       f.input :vendor, label: ApplicationHelper::DICT[:vendor], as: :select, collection: Vendor.all, include_blank: false
+      f.input :text, label: ApplicationHelper::DICT[:text]
       f.input :asset, label: ApplicationHelper::DICT[:asset]
     end
 
@@ -30,7 +31,7 @@ ActiveAdmin.register Model do
   end
 
   show do |x|
-    create_show(x, [:id, :name, :subcategory, :vendor, :asset], d:
+    create_show(x, [:id, :name, :subcategory, :vendor, :text, :asset], d:
                 { table_hash: { products: [:name, :asset] },
                   links_hash: { products: [:model_id, :subcategory_id] }
 
