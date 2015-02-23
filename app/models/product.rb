@@ -23,6 +23,8 @@ class Product < ActiveRecord::Base
   has_many :values_int, through: :variants, source: :value, source_type: 'VariantInt'
   has_many :values_str, through: :variants, source: :value, source_type: 'VariantStr'
 
+  has_many :fetch_all, -> { includes(variants: :value) }
+
   validates :subcategory_id, :model_id, presence: true
   validates :marking, :description, :price, :name,  presence: true
 

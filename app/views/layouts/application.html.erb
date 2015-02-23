@@ -8,8 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render :partial => "navbar"  %>
   <div class="container-fluid">
+     
      <div class="row">
+       
        <%= render :partial => "sidebar" %>
        <%= yield %>
      </div>

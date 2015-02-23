@@ -1,8 +1,9 @@
 %table.table.table-bordered
   %thead
     %tr
-      - @subcategory.prototype.option_types.each do |product|
-        %th= product.name
+      %th= "Модель"
+      - @subcategory.prototype.option_types.each do |option|
+        %th= option.name
       %th= "Цена"
       %th= "Купить"
   
@@ -13,8 +14,9 @@
         %td.col-md-6= "Не найдено"
     - model.products.each do |product|
       %tr
-        - product.variants.each do |product|
-          %td= product.value.value
+        %td= product.name
+        - (product.values_int + product.values_str).each do |product|
+          %td= product.value
         %td 500
         %td 
           .btn.btn-default Купить
