@@ -17,6 +17,6 @@
         %td= product.name
         - (product.values_int + product.values_str).each do |product|
           %td= product.value
-        %td 500
+        %td= product.price
         %td 
           .btn.btn-default Купить

@@ -2,7 +2,7 @@
 namespace :db do
   desc 'Fill database with type of wp'
   task populate: :environment do
-    make_types
+    #make_types
     make_option_types
     make_countries
     make_vendors
