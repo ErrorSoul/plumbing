@@ -13,4 +13,6 @@ class VariantInt < ActiveRecord::Base
 
   has_one :variant, as: :value
   has_many :products, through: :variant
+
+  
 end

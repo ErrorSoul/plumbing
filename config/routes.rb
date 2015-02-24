@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :main_pages
   resources :categories
   resources :subcategories
+  resources :models
 
   # Example resource route with options:
   #   resources :products do

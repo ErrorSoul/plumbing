@@ -8,6 +8,7 @@ namespace :db do
     make_vendors
     make_categories
     make_models
+    make_prototypes
     make_admin
   end
   COUNTRY = %w(Рoccия Турция Чехия Германия Италия)
@@ -75,7 +76,20 @@ namespace :db do
     subcat.each do |s|
       3.times do
         s.models.create!(name: Faker::Address.state,
-                         vendor: vendors.sample)
+                         vendor: vendors.sample,
+                         text: Faker::Lorem.paragraph(3, true, 4))
+      end
+    end
+  end
+
+  def make_prototypes
+    subcat = Subcategory.all
+    optypes = OptionType.all
+    subcat.each do |s|
+      p = Prototype.create!(name: Faker::Company.name,
+                            subcategory: s)
+      3.times do 
+        p.ptypes.create!(option_type: optypes.sample)
       end
     end
   end

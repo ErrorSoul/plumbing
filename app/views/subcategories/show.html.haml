@@ -14,8 +14,8 @@
               = image_tag(category.asset.url, size: "100x100", class:'media-object')
 
           .media-body
-            = link_to content_tag(:span, category.name, class: "#{category.name}" + "_h3" ), category.subcategory
+            = link_to content_tag(:span, category.name, class: "#{category.name}" + "_h3" ), category
             %p
               Газовые котлы предназначены для работы на природном газе, одном из самых недорогих видов топлива. Благодаря простоте обращения и автоматизированности, занимают лидирующее место в области отопления. По способу крепления делятся на напольные и настенные. В зависимости от материала изготовления корпуса делятся на чугунные, стальные и медные. Медные и чугунные корпуса стойки к коррозии, по весу чугунные уступают медным и стальным. Чугунные более чувствительны к резким перепадам температуры. Одноконтурные не имеют собственного контура горячего водоснабжения, в отличие от двухконтурных.
           .col-md-12
-            = render partial: "product_table", locals: {model: category}
+            = render partial: "product_table", locals: {model: category, subcategory: @subcategory}
