@@ -17,7 +17,7 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'faker'
 gem 'formtastic'
-#gem 'russian'
+gem 'russian'
 gem 'carrierwave', '0.8.0'
 
 
