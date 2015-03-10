@@ -35,7 +35,7 @@ module ApplicationHelper
   def arr_for_options(arr)
     arr.map do |item|
       [item.vendor.name, item.vendor.name]
-    end
+    end.uniq
   end
 
   def create_my_path(obj)
