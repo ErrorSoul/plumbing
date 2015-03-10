@@ -14,7 +14,7 @@ require 'rails_helper'
 RSpec.describe Subcategory, type: :model do
   before do
     @subcategory = Subcategory.new(name: 'Terminators',
-                                   category_id: 1)
+                                   text: "Ahalai Mahalai",                                            category_id: 1)
   end
 
   subject { @subcategory }
@@ -34,6 +34,6 @@ RSpec.describe Subcategory, type: :model do
 
   describe 'when category_id is not present' do
     before { @subcategory.category_id = nil }
-    it { should be_invalid }
+    it { should be_valid }
   end
 end

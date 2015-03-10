@@ -26,7 +26,7 @@ RSpec.describe PrototypeOptionType, type: :model do
   %i(prototype_id option_type_id).each do |x|
     describe "when #{x} is not present" do
       before { @p.send("#{x}=", nil) }
-      it { should be_invalid }
+      it { should be_valid }
     end
   end
 end

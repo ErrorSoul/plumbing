@@ -12,7 +12,8 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   before do
-    @category = Category.new(name: 'Engine')
+    @category = Category.new(name: 'Engine',
+                             text:  "Ahalai Mahalai")
   end
 
   subject { @category }

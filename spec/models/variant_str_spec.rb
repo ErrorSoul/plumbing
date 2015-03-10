@@ -21,6 +21,6 @@ RSpec.describe VariantStr, type: :model do
 
   describe 'when value is not present' do
     before { @variant_str.value = nil }
-    it { should be_invalid }
+    it { should be_valid }
   end
 end

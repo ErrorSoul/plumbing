@@ -13,7 +13,8 @@ require 'rails_helper'
 
 RSpec.describe Prototype, type: :model do
   before do
-    @prototype = Prototype.new(subcategory_id: 1)
+    @prototype = Prototype.new(subcategory_id: 1,
+                               name: "Protoukr")
   end
 
   subject { @prototype }
@@ -24,9 +25,9 @@ RSpec.describe Prototype, type: :model do
   it { should respond_to(:name) }
   it { should be_valid }
 
-  describe 'when title is not present' do
+  describe 'when subcategory is not present' do
     before { @prototype.subcategory_id =  nil }
-    it { should_not be_valid }
+    it { should be_valid }
   end
   describe 'when name  is not present' do
     before { @prototype.name =  nil }

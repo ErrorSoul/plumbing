@@ -3,7 +3,7 @@
   = f.hidden_field :id_eq, value: category.id
   
   .input-group
-    - arr = arr_for_options(category.models)
+    - arr = arr_for_options(category.models.uniq)
     - q = params[:q][:models_vendor_name_cont] if params[:q]
     
     = f.select(:models_vendor_name_cont, options_for_select(arr, q), {}, {class: 'form-control'}) 

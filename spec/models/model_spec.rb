@@ -16,7 +16,8 @@ require 'rails_helper'
 RSpec.describe Model, type: :model do
   before do
     @model = Model.new(name: 'ROBOCOP',
-                       subcategory_id: 1)
+                       subcategory_id: 1,
+                       text: 'ahalahi mahalahi')
   end
   subject { @model }
   %i(name subcategory_id).each do |i|

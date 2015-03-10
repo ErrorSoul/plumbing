@@ -31,7 +31,7 @@ RSpec.describe Variant, type: :model do
   %i(product_id option_type_id value_id value_type).each do |x|
     describe "when #{x} is not present" do
       before { @variant.send("#{x}=", nil) }
-      it { should be_invalid }
+      it { should be_valid }
     end
   end
 end
