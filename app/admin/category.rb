@@ -16,11 +16,20 @@ ActiveAdmin.register Category do
       f.input :asset
     end
 
-    f.inputs  do
-      f.has_many :subcategories,  allow_destroy: true, heading: 'Свойства' do |b|
+    f.inputs "Contact", for: [:category,  Subcategory.new] do |b|  
+      
         b.input :name, label: 'Название свойства'
         b.input :text
         b.input :asset
+
+        b.has_many :models, allow_destroy: true, heading: "FFF" do |m|
+          
+          m.input :name, label: ApplicationHelper::DICT[:name]
+          m.input :subcategory, label: 'Подкатегория', as: :select, collection: Subcategory.all, include_blank: false
+          m.input :vendor, label: ApplicationHelper::DICT[:vendor], as: :select, collection: Vendor.all, include_blank: false
+          m.input :text, label: ApplicationHelper::DICT[:text]
+          m.input :asset, label: ApplicationHelper::DICT[:asset]
+        
       end
     end
 

@@ -1,2 +1,13 @@
 ru:
   not_found: 'Не найдено'
+  # Search
+  find:  'Поиск'
+  find_line: 'по артикулу/названию'
+
+  shopping_cart: 'Корзина'
+  
+
+  #admin
+  name:      'Имя'
+  attribute: 'Свойство'
+  vendor:    'Фирма'
