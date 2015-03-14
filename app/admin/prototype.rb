@@ -17,22 +17,13 @@ ActiveAdmin.register Prototype do
   index do
     column_creator([:id, :name, :updated_at], action_flag = true)
   end
-  form do |f|
+  form  do |f|
     f.semantic_errors *f.object.errors.keys
-    f.inputs 'Details' do
-      f.input :subcategory, label: 'Subcategory', as: :select, collection: Subcategory.all, include_blank: false
-      f.input :name
-    end
-
-    f.inputs  do
-      f.has_many :ptypes,  allow_destroy: true, heading:
-      'Характеристики' do |b|
-        b.input :option_type, label: 'Название свойства', as: :select, collection: OptionType.all,  include_blank: false
-      end
-    end
-
+    render partial: 'prototype_form', locals: {f: f}
     f.actions
   end
+  
+
   show do |x|
     create_show(x, [:id, :name, :subcategory], d:
                 { table_hash: { option_types: [:name] },

@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-
-# -*- coding: utf-8 -*-
 ActiveAdmin.register Subcategory do
-  permit_params :name, :category_id, :asset, :text,  models_attributes: [:id, :name, :_destroy]
+  permit_params :name, :category_id, :asset, :text,  models_attributes: [:id, :asset, :text,  :subcategory_id, :name, :vendor_id, :_destroy], prototype_attributes: [:id, :name, :subcategory_id,:_destroy, ptypes_attributes: [:option_type_id, :_destroy, :id]]
 
   index do
     column_creator([:id, :name, :asset, :updated_at], action_flag = true)
@@ -15,6 +13,27 @@ ActiveAdmin.register Subcategory do
       f.input :name
       f.input :text
       f.input :asset
+    end
+     
+    panel t(:prototype) do 
+      f.inputs for: [:prototype_attributes, f.object.prototype || Prototype.new], heading: "Ata" do |x|
+        
+      x.input :name
+   
+
+       
+          x.has_many :ptypes,  allow_destroy: true, heading: 'Характеристики' do |b|
+            b.input :option_type, label: t('name_attr'), as: :select, collection: OptionType.all,  include_blank: false
+          
+        end
+      end
+end
+    
+
+    f.inputs do 
+      f.has_many :models, allow_destroy: true, heading: t('subcategory_model') do |f|
+        render partial: 'admin/models/model_form', locals: {f: f}
+      end
     end
 
     f.actions
@@ -55,10 +74,20 @@ ActiveAdmin.register Subcategory do
 
   sidebar I18n.t('activerecord.models.model.one'), only: :show do
     if subcategory.prototype.present?
-      if subcategory.model.blank?
+      if subcategory.models.empty?
         link_to t('formtastic.create', model: t('activerecord.models.model.one')), 
               new_admin_model_path(model: {subcategory_id: subcategory.id}),
               class: 'button'
+
+      else
+         attributes_table_for subcategory do
+          subcategory.models.each do |mod|
+            row t(:name) do 
+              link_to mod.name, admin_model_path(mod)
+            end
+          end
+        end
+        
       end
     end
       

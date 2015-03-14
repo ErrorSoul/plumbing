@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ActiveAdmin.register Category do
-  permit_params :name, :text, :asset, subcategories_attributes: [:id, :name, :text, :asset, :category_id, :_destroy]
+  permit_params :name, :text, :asset, subcategories_attributes: [:id, :name, :text, :asset, :category_id, :_destroy ]
 
   index do
     selectable_column
@@ -10,29 +10,20 @@ ActiveAdmin.register Category do
 
   form(html: { multipart: true }) do |f|
     f.semantic_errors *f.object.errors.keys
-    f.inputs 'Details' do
+    f.inputs t(:details) do
       f.input :name
       f.input :text
       f.input :asset
     end
 
-    f.inputs "Contact", for: [:category,  Subcategory.new] do |b|  
-      
-        b.input :name, label: 'Название свойства'
-        b.input :text
-        b.input :asset
-
-        b.has_many :models, allow_destroy: true, heading: "FFF" do |m|
-          
-          m.input :name, label: ApplicationHelper::DICT[:name]
-          m.input :subcategory, label: 'Подкатегория', as: :select, collection: Subcategory.all, include_blank: false
-          m.input :vendor, label: ApplicationHelper::DICT[:vendor], as: :select, collection: Vendor.all, include_blank: false
-          m.input :text, label: ApplicationHelper::DICT[:text]
-          m.input :asset, label: ApplicationHelper::DICT[:asset]
+    f.inputs t(:subcategories) do
+      f.has_many :subcategories,  allow_destroy: true, heading: t(:names) do |b|
         
+          b.input :name, label: t(:name)
+          b.input :text
+          b.input :asset
       end
     end
-
     f.actions
   end
 
@@ -43,12 +34,12 @@ ActiveAdmin.register Category do
                 })
   end
 
-  sidebar 'Details', only: :show do
+  sidebar I18n.t(:details), only: :show do
     attributes_table_for category do
       row :name
       category.subcategories.each do |x|
-        row 'Podkategoriya' do
-          x.name
+        row t(:subcategory) do
+          link_to x.name, admin_subcategory_path(x)
         end
       end
     end

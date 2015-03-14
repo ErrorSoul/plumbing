@@ -1,0 +1,15 @@
+
+
+    f.inputs t('details') do
+      f.input :subcategory, label: t('subcategory'), as: :select, collection: Subcategory.all, include_blank: false
+      f.input :name
+    end
+
+    f.inputs  do
+      f.has_many :ptypes,  allow_destroy: true, heading:
+      'Характеристики' do |b|
+        b.input :option_type, label: t('name_attr'), as: :select, collection: OptionType.all,  include_blank: false
+      end
+    end
+
+    

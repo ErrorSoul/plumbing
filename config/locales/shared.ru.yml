@@ -8,6 +8,16 @@ ru:
   
 
   #admin
-  name:      'Имя'
-  attribute: 'Свойство'
-  vendor:    'Фирма'
+  name:        'Имя'
+  names:        'Названия'
+  attribute:   'Свойство'
+  vendor:      'Фирма'
+  subcategory: 'Подкатегория'
+  subcategories: 'Подкатегории'
+  attributes:  'Характеристики'
+  name_attr:   'Название свойства' 
+  details:     'Детали'
+
+  subcategory_model: 'Подкатегория/модель'
+
+
