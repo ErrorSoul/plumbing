@@ -63,10 +63,14 @@ module ApplicationHelper
            link_to obj.send(attr).name, url_for([:admin, obj.send(attr)])
          end
       when :asset
-        column 'Картинка', :asset do |obj|
+        column t(:asset), :asset do |obj|
           div class: 'thumb' do
             image_tag(obj.asset.url)
           end
+        end
+      when :valuta
+        column t(:valuta), :valuta do |obj|
+          obj.valuta.name
         end
       else
         column dict[attr], attr do |obj|

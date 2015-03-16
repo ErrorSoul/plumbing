@@ -14,6 +14,7 @@
 class Model < ActiveRecord::Base
   belongs_to :subcategory
   belongs_to :vendor
+  belongs_to :valuta
   has_many :products, inverse_of: :model
   #validates :name, :subcategory_id,  presence: true
   validates :text, presence: true

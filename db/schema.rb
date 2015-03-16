@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222101334) do
+ActiveRecord::Schema.define(version: 20150316021851) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -68,9 +68,11 @@ ActiveRecord::Schema.define(version: 20150222101334) do
     t.integer  "vendor_id"
     t.string   "asset"
     t.text     "text"
+    t.integer  "valuta_id"
   end
 
   add_index "models", ["subcategory_id"], name: "index_models_on_subcategory_id"
+  add_index "models", ["valuta_id"], name: "index_models_on_valuta_id"
   add_index "models", ["vendor_id"], name: "index_models_on_vendor_id"
 
   create_table "option_types", force: true do |t|
@@ -134,6 +136,13 @@ ActiveRecord::Schema.define(version: 20150222101334) do
   end
 
   add_index "types", ["name"], name: "index_types_on_name", unique: true
+
+  create_table "valuta", force: true do |t|
+    t.string   "name"
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "variant_ints", force: true do |t|
     t.integer  "value"

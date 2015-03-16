@@ -60,6 +60,11 @@ module ActiveAdmin::FooHelper
                 link_to obj.send(attr).name, url_for([:admin, obj.send(attr)])
               end
             end
+          when :valuta
+            row :valuta do
+              obj.valuta.name
+            end
+          
           when :variants
             obj.variants.each do |opt|
               row opt.option_type.name do
@@ -72,7 +77,7 @@ module ActiveAdmin::FooHelper
               link_to obj.send(attr).name, url_for([:admin, obj.subcategory])
             end
           else
-            row ApplicationHelper::DICT[attr] do
+            row ApplicationHelper::DICT[attr]  do
               obj[attr]
             end
 
