@@ -25,13 +25,13 @@ ActiveAdmin.register Product do
   form(html: { multipart: true }) do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs 'Details' do
-      f.input :name, label: ApplicationHelper::DICT[:name]
-      f.input :subcategory, label: 'Подкатегория', as: :select, collection: Subcategory.all, include_blank: false
-      f.input :model, label: ApplicationHelper::DICT[:model], as: :select, collection: Model.all, include_blank: false
-      f.input :asset, label: ApplicationHelper::DICT[:asset]
-      f.input :marking, label: ApplicationHelper::DICT[:marking]
-      f.input :price, label: ApplicationHelper::DICT[:price]
-      f.input :description, label: ApplicationHelper::DICT[:description]
+      f.input :name, label: t(:name)
+      f.input :subcategory, label: t(:subcategory), as: :select, collection: Subcategory.all, include_blank: false
+      f.input :model, label: t(:model), as: :select, collection: Model.all, include_blank: false
+      f.input :asset, label: t(:asset)
+      f.input :marking, label: t(:marking)
+      f.input :price, label: t(:price)
+      f.input :description, label: t(:description)
     end
     f.inputs do
       render 'variants', f: f

@@ -3,7 +3,7 @@ ActiveAdmin.register Model do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :id, :asset, :text,  :subcategory_id, :name, :vendor_id
+  permit_params :id, :asset, :text,  :subcategory_id, :name, :vendor_id, products_attributes: [:id, :asset, :subcategory_id, :model_id, :name, :description, :price, :marking, :value_type, :_destroy,  variants_attributes: [:id, :option_type_id, :product_id, :_destroy, value_attributes: [:id, :value, :value_type, :destroy]]]
 
   index do
     column_creator([:id, :name, :vendor, :asset, :updated_at], action_flag = true)
@@ -17,18 +17,8 @@ ActiveAdmin.register Model do
   #   permitted
   # end
 
-  form(html: { multipart: true }) do |f|
-    f.semantic_errors *f.object.errors.keys
-    f.inputs 'Details' do
-      f.input :name, label: ApplicationHelper::DICT[:name]
-      f.input :subcategory, label: 'Подкатегория', as: :select, collection: Subcategory.all, include_blank: false
-      f.input :vendor, label: ApplicationHelper::DICT[:vendor], as: :select, collection: Vendor.all, include_blank: false
-      f.input :text, label: ApplicationHelper::DICT[:text]
-      f.input :asset, label: ApplicationHelper::DICT[:asset]
-    end
-
-    f.actions
-  end
+  form partial: 'x'
+ 
 
   show do |x|
     create_show(x, [:id, :name, :subcategory, :vendor, :text, :asset], d:
@@ -38,10 +28,12 @@ ActiveAdmin.register Model do
                 })
   end
 
-  sidebar 'Details', only: :show do
+  sidebar I18n.t(:details), only: :show do
     attributes_table_for model do
-      row :name
-      row ApplicationHelper::DICT[:vendor] do |x|
+      row t(:name) do |x|
+        x.name
+      end
+      row t(:vendor) do |x|
         x.vendor.name
       end
 

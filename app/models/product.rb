@@ -25,7 +25,7 @@ class Product < ActiveRecord::Base
 
  
 
-  validates :subcategory_id, :model_id, presence: true
+  validates :model_id, presence: true
   validates :marking, :description, :price, :name,  presence: true
 
   mount_uploader :asset, AssetUploader

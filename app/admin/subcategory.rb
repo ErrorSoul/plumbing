@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ActiveAdmin.register Subcategory do
-  permit_params :name, :category_id, :asset, :text,  models_attributes: [:id, :asset, :text,  :subcategory_id, :name, :vendor_id, :_destroy], prototype_attributes: [:id, :name, :subcategory_id,:_destroy, ptypes_attributes: [:option_type_id, :_destroy, :id]]
+  permit_params :name, :category_id, :asset, :text,  models_attributes: [:id, :asset, :text,  :subcategory_id, :name, :vendor_id, :_destroy], prototype_attributes: [:id, :name, :subcategory_id,:_destroy, ptypes_attributes: [:id, :option_type_id,:prototype_id, :_destroy ]]
 
   index do
     column_creator([:id, :name, :asset, :updated_at], action_flag = true)
@@ -8,7 +8,7 @@ ActiveAdmin.register Subcategory do
 
   form(html: { multipart: true }) do |f|
     f.semantic_errors *f.object.errors.keys
-    f.inputs 'Details' do
+    f.inputs t(:details) do
       f.input :category, label: 'Category', as: :select, collection: Category.all, include_blank: false
       f.input :name
       f.input :text
@@ -17,12 +17,16 @@ ActiveAdmin.register Subcategory do
      
     panel t(:prototype) do 
       f.inputs for: [:prototype_attributes, f.object.prototype || Prototype.new], heading: "Ata" do |x|
+      
         
       x.input :name
-   
+      x.input :id
 
        
-          x.has_many :ptypes,  allow_destroy: true, heading: 'Характеристики' do |b|
+          x.has_many :ptypes,  allow_destroy: true, heading: t(:attributes) do |b|
+          
+            b.input :prototype_id
+         
             b.input :option_type, label: t('name_attr'), as: :select, collection: OptionType.all,  include_blank: false
           
         end
@@ -30,11 +34,12 @@ ActiveAdmin.register Subcategory do
 end
     
 
-    f.inputs do 
-      f.has_many :models, allow_destroy: true, heading: t('subcategory_model') do |f|
+    panel t('subcategory_model') do 
+      f.has_many :models, allow_destroy: true do |f|
         render partial: 'admin/models/model_form', locals: {f: f}
       end
     end
+    
 
     f.actions
   end

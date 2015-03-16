@@ -17,5 +17,7 @@ class Model < ActiveRecord::Base
   has_many :products, inverse_of: :model
   #validates :name, :subcategory_id,  presence: true
   validates :text, presence: true
+
+  accepts_nested_attributes_for :products
   mount_uploader :asset, AssetUploader
 end

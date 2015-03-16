@@ -1,0 +1,27 @@
+
+f.inputs t(:details) do
+  f.input :name, label: t(:name)
+      f.input :subcategory, label: t(:subcategory), as: :select, collection: Subcategory.all, include_blank: false
+      f.input :vendor, label: t(:vendor), as: :select, collection: Vendor.all, include_blank: false
+      f.input :text, label: t(:text)
+      f.input :asset, label: t(:asset)
+    end
+    f.inputs do 
+      f.has_many :products do |z|
+      
+        z.input :name
+        
+       
+      
+      
+        render partial: 'x', locals: {z: z}
+     
+      end
+      
+      
+    end
+ 
+
+        
+ 
+  
