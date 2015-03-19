@@ -5,10 +5,7 @@
 #  id             :integer          not null, primary key
 #  product_id     :integer
 #  option_type_id :integer
-#  value_id       :integer
-#  value_type     :string(255)
-#  created_at     :datetime
-#  updated_at     :datetime
+#  value          :string(255)
 #
 
 class Variant < ActiveRecord::Base

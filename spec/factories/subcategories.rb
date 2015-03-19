@@ -5,8 +5,8 @@
 #  id          :integer          not null, primary key
 #  name        :string(255)
 #  category_id :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  text        :text
+#  asset       :string(255)
 #
 
 FactoryGirl.define do

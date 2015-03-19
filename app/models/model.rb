@@ -9,6 +9,8 @@
 #  updated_at     :datetime
 #  vendor_id      :integer
 #  asset          :string(255)
+#  text           :text
+#  valuta_id      :integer
 #
 
 class Model < ActiveRecord::Base

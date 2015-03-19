@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316021851) do
+ActiveRecord::Schema.define(version: 20150319180115) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -47,11 +47,9 @@ ActiveRecord::Schema.define(version: 20150316021851) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
   create_table "categories", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "text"
-    t.string   "asset"
+    t.string "name"
+    t.text   "text"
+    t.string "asset"
   end
 
   create_table "countries", force: true do |t|
@@ -110,29 +108,23 @@ ActiveRecord::Schema.define(version: 20150316021851) do
   add_index "prototype_option_types", ["prototype_id"], name: "index_prototype_option_types_on_prototype_id"
 
   create_table "prototypes", force: true do |t|
-    t.string   "name"
-    t.integer  "subcategory_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "name"
+    t.integer "subcategory_id"
   end
 
   add_index "prototypes", ["subcategory_id"], name: "index_prototypes_on_subcategory_id"
 
   create_table "subcategories", force: true do |t|
-    t.string   "name"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "text"
-    t.string   "asset"
+    t.string  "name"
+    t.integer "category_id"
+    t.text    "text"
+    t.string  "asset"
   end
 
   add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id"
 
   create_table "types", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
   end
 
   add_index "types", ["name"], name: "index_types_on_name", unique: true
@@ -157,23 +149,17 @@ ActiveRecord::Schema.define(version: 20150316021851) do
   end
 
   create_table "variants", force: true do |t|
-    t.integer  "product_id"
-    t.integer  "option_type_id"
-    t.integer  "value_id"
-    t.string   "value_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "product_id"
+    t.integer "option_type_id"
+    t.string  "value"
   end
 
   add_index "variants", ["option_type_id"], name: "index_variants_on_option_type_id"
   add_index "variants", ["product_id"], name: "index_variants_on_product_id"
-  add_index "variants", ["value_id", "value_type"], name: "index_variants_on_value_id_and_value_type"
 
   create_table "vendors", force: true do |t|
-    t.string   "name"
-    t.integer  "country_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "name"
+    t.integer "country_id"
   end
 
   add_index "vendors", ["country_id"], name: "index_vendors_on_country_id"
