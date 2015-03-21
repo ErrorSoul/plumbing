@@ -3,7 +3,7 @@ ActiveAdmin.register Model do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :id, :asset, :valuta_id, :text,  :subcategory_id, :name, :vendor_id, products_attributes: [:id, :asset, :subcategory_id, :model_id, :name, :description, :price, :marking, :value_type, :_destroy,  variants_attributes: [:id, :option_type_id, :product_id, :_destroy, value_attributes: [:id, :value, :value_type, :destroy]]]
+  permit_params :id, :asset, :valuta_id, :text, :percent,  :subcategory_id, :name, :vendor_id, products_attributes: [:id, :asset, :subcategory_id, :model_id, :name, :description, :price, :marking, :value_type, :_destroy,  variants_attributes: [:id, :option_type_id, :product_id, :_destroy, value_attributes: [:id, :value, :value_type, :destroy]]]
 
   index do
     column_creator([:id, :name, :vendor, :asset, :updated_at], action_flag = true)
@@ -21,7 +21,7 @@ ActiveAdmin.register Model do
  
 
   show do |x|
-    create_show(x, [:id, :name, :subcategory, :vendor,:valuta, :text, :asset], d:
+    create_show(x, [:id, :name, :subcategory, :vendor,:valuta, :percent, :text, :asset], d:
                 { table_hash: { products: [:name, :asset] },
                   links_hash: { products: [:model_id, :subcategory_id] }
 

@@ -18,29 +18,35 @@
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
-          %a{:href => "#"}
-            Link
-            %span.sr-only (current)
         %li
-          %a{:href => "#"} Link
+          %a{:href => "#"}
+            = t(:price)
+            %span.sr-only (current)
+
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            Dropdown
+            = t(:about_us)
             %span.caret
           %ul.dropdown-menu{:role => "menu"}
             %li
-              %a{:href => "#"} Action
+              %a{:href => "#"}= t(:shop)
             %li
-              %a{:href => "#"} Another action
+              %a{:href => "#"}= t(:forum)
             %li
-              %a{:href => "#"} Something else here
+              %a{:href => "#"}= t(:vacantions)
             %li.divider
             %li
-              %a{:href => "#"} Separated link
+              %a{:href => "#"}= t(:our_works)
+            %li
+              %a{:href => "#"}= t(:news)
             %li.divider
             %li
-              %a{:href => "#"} One more separated link
+              %a{:href => "#"}= t(:actions)
+        %li
+          %a{:href => "#"}= t(:about_us)
+        %li
+          %a{:href => "#"}= t(:delivery)
+        
       %form.navbar-form.navbar-right{:role => "search"}
         .form-group
           %input.form-control{:placeholder => "#{t :find_line}", :type => "text"}

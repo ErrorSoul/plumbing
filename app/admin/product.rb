@@ -3,7 +3,7 @@ ActiveAdmin.register Product do
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 
-  permit_params :id, :asset, :subcategory_id, :model_id, :name, :description, :price, :marking, :value_type,  variants_attributes: [:id, :option_type_id, value_attributes: [:id, :value, :value_type]]
+  permit_params :id, :asset, :subcategory_id, :model_id, :name, :description, :price, :marking, :value_type,  variants_attributes: [:id, :option_type_id, :value]
 
   controller do
     def new
@@ -13,7 +13,7 @@ ActiveAdmin.register Product do
                              model_id: params[:product][:model_id])
       for c in @prot.option_types
 
-        @product.variants.build(option_type: c, value: c.type.name.eql?('INT') ? VariantInt.new : VariantStr.new)
+        @product.variants.build(option_type: c)
       end
     end
   end
@@ -34,7 +34,11 @@ ActiveAdmin.register Product do
       f.input :description, label: t(:description)
     end
     f.inputs do
-      render 'variants', f: f
+      f.semantic_fields_for :variants do |x|
+        x.input  :option_type 
+        #x.input :option_type, label: t(:option_type), as: :select, collection: OptionType.all, include_blank: false
+        x.input :value, label: x.object.option_type.name
+      end
     end
 
     f.actions

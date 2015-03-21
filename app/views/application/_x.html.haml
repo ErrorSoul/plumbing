@@ -1,5 +1,5 @@
 .panel
-  = semantic_form_for [:admin, @model], html: { multipart: true } do |f|
+  = semantic_form_for [:admin, @model], :builder => ActiveAdmin::FormBuilder, html: { multipart: true } do |f|
     %fieldset.inputs
       = f.semantic_errors *f.object.errors.keys
       %ol
@@ -7,6 +7,7 @@
         = f.input :subcategory, label: t(:subcategory), as: :select, collection: Subcategory.all, include_blank: false
         = f.input :vendor, label: t(:vendor), as: :select, collection: Vendor.all, include_blank: false
         = f.input :valuta, label: t(:valuta), as: :select, collection: Valuta.all, include_blank: false
+        = f.input :percent, label: t(:percent)
         = f.input :text, label: t(:text)
         = f.input :asset, label: t(:asset)
         - if f.object.products.empty? 
@@ -14,36 +15,27 @@
           - prot = f.object.subcategory.prototype
           - for c in prot.option_types
 
-            - b.variants.build(option_type: c, value: c.type.name.eql?('INT') ? VariantInt.new : VariantStr.new)
+            - b.variants.build(option_type: c)
         .panel.product_panel
           %fieldset.inputs.product_product
+            
             = f.semantic_fields_for :products  do |p|
+              
+              .panya
+                %h3=  p.object
+                %ol
+                  = p.hidden_field :subcategory_id, value: f.object.subcategory_id
+                  = p.input :name, label: t(:name)
+                  = p.input :asset, label: t(:asset)
+                  = p.input :marking, label: t(:marking)
+                  = p.input :price, label: t(:price)
+                  = p.input :description, label: t(:description)
 
-              %h3=  p.object
-              %ol
-                = p.hidden_field :subcategory_id, value: f.object.subcategory_id
-                = p.input :name, label: t(:name)
-                = p.input :asset, label: t(:asset)
-                = p.input :marking, label: t(:marking)
-                = p.input :price, label: t(:price)
-                = p.input :description, label: t(:description)
 
+                  = p.semantic_fields_for :variants do |x|
+                    = x.input :option_type_id
 
-                = p.semantic_fields_for :variants do |x|
-                  = x.input :option_type_id
-                  
-                  - if x.object.option_type.type.name.eql? "INT"
-                    = x.semantic_fields_for :value do |v|
-                      = v.input :value, label: "#{x.object.option_type.name}"
-                      - if p.object.new_record?
-                        //delete for edit
-                        = v.hidden_field 'value_type', value: "VariantInt"
-                  - else 
-                    = x.semantic_fields_for :value do |v|
-                      = v.input :value, label: "#{x.object.option_type.name}"
-                      - if p.object.new_record?
-                        = v.hidden_field 'value_type', value: "VariantStr"
-
+                    = x.input :value 
 
 
       = f.actions

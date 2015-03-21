@@ -21,6 +21,8 @@ class Model < ActiveRecord::Base
   #validates :name, :subcategory_id,  presence: true
   validates :text, presence: true
 
+  scope :all_fetch, -> {includes(:vendor,:valuta, products: [variants: :option_type])}
+
   accepts_nested_attributes_for :products
   mount_uploader :asset, AssetUploader
 end

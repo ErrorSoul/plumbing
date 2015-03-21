@@ -1,5 +1,5 @@
 
-= search_form_for @search, :url => subcategory_path, :html => {method: :get, class: "navbar-form pagination", role: 'search'} do |f|
+= search_form_for @search, url: subcategory_path, html: {method: :get, class: "navbar-form pagination pull-#{arrow}", role: 'search'} do |f|
   = f.hidden_field :id_eq, value: category.id
   
   .input-group

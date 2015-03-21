@@ -3,19 +3,5 @@
 - f.semantic_fields_for :variants do |x|
          
        
-  = x.hidden_field(:option_type_id, value: x.object.option_type.id)
-  - if x.object.option_type.type.name.eql? "INT"
-    = x.semantic_fields_for :value  do |v|
-
-
-      - v.input(:value, label: "#{x.object.option_type.name}")
-      // delete for edit
-      - unless f.object.name.present?
-        = v.hidden_field(:value_type, value: "VariantInt")
-  - else
-    = x.semantic_fields_for :value  do |v|
-
-      - v.input(:value, label: "#{x.object.option_type.name}")
-      // delete for edit
-      - unless f.object.name.present?
-        = v.hidden_field(:value_type, value: "VariantStr")
+  = x.input :option_type, label: t(:option_type), as: :select, collection: OptionType.all, include_blank: false
+  = x.input :value, label: t(:value)

@@ -13,7 +13,7 @@
           - unless form_flag.nil?
             .col-md-12
               .row
-                .col-md-4.pull-left
+                .col-md-6.pull-left
                   .row
-                    = render partial: "sorted_form", locals: {category: category}
+                    = render partial: "sorted_form", locals: {category: category, arrow: 'left'}
             

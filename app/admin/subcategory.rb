@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ActiveAdmin.register Subcategory do
-  permit_params :name, :category_id, :asset, :text,  models_attributes: [:id, :asset, :text,  :subcategory_id, :name,:valuta_id, :vendor_id, :_destroy], prototype_attributes: [:id, :name, :subcategory_id,:_destroy, ptypes_attributes: [:id, :option_type_id,:prototype_id, :_destroy ]]
+  permit_params :name, :category_id, :asset, :text,  models_attributes: [:id, :asset, :text, :percent, :subcategory_id, :name,:valuta_id, :vendor_id, :_destroy], prototype_attributes: [:id, :name, :subcategory_id,:_destroy, ptypes_attributes: [:id, :option_type_id,:prototype_id, :_destroy ]]
 
   index do
     column_creator([:id, :name, :asset, :updated_at], action_flag = true)

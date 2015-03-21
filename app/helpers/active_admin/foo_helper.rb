@@ -62,16 +62,23 @@ module ActiveAdmin::FooHelper
             end
           when :valuta
             row :valuta do
-              obj.valuta.name
+              #obj.valuta.name
+              "VALUTA"
             end
           
           when :variants
             obj.variants.each do |opt|
               row opt.option_type.name do
-                opt.value.value
+                opt.value
               end
             end
+            
+          when :percent
+            row t(:percent) do
+              obj.send(attr)
+            end
 
+            
           when :type
             row ApplicationHelper::DICT[attr] do
               link_to obj.send(attr).name, url_for([:admin, obj.subcategory])

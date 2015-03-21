@@ -1,5 +1,9 @@
 ru:
   not_found: 'Не найдено'
+  buy:        'Купить'
+  about_us:   'О нас'
+  delivery:    'Оплата и доставка'
+  
   # Search
   find:  'Поиск'
   find_line: 'по артикулу/названию'
@@ -21,3 +25,8 @@ ru:
   subcategory_model: 'Подкатегория/модель'
 
 
+  #field
+  model: 'Модель'
+  price: 'Цена'
+  percent: 'Процент'
+  

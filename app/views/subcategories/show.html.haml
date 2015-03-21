@@ -1,9 +1,9 @@
 .col-md-8
   = render partial: "category_header",  locals: {element: @subcategory}
-  .col-md-8
+  .col-md-6
     = paginate @models
-  .col-md-4
-    =  render partial: "sorted_form", locals: {category: @subcategory}
+  .col-md-6
+    =  render partial: "sorted_form", locals: {category: @subcategory, arrow: 'right'}
 
   .col-md-12
     .row

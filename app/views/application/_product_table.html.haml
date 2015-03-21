@@ -1,11 +1,11 @@
 %table.table.table-bordered
   %thead
     %tr
-      %th= "Модель"
+      %th= t(:model)
       - subcategory.prototype.option_types.each do |option|
         %th= option.name
-      %th= "Цена"
-      %th= "Купить"
+      %th= t(:price)
+      %th= t(:buy)
   
       
   %tbody
@@ -15,8 +15,9 @@
     - model.products.each do |product|
       %tr
         %td= product.name
-        - (product.values_int + product.values_str).each do |product|
-          %td= product.value
-        %td= product.price
+        - product.variants.each do |variant|
+          %td= variant.value
+        %td= product.p_price model
         %td 
-          .btn.btn-default Купить
+          .btn.btn-default
+            = t(:buy)

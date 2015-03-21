@@ -29,4 +29,9 @@ class Product < ActiveRecord::Base
   validates :marking, :description, :price, :name,  presence: true
 
   mount_uploader :asset, AssetUploader
+
+  def p_price(model)
+    m = price *  model.valuta.value
+    m + (m * (model.percent/100.0))
+  end
 end
