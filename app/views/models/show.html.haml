@@ -1,9 +1,8 @@
 .col-md-8
   = render partial: "category_header",  locals: {element: @model}
 
-  .col-md-12
-    .row
-      = breadcrumbs pretext: "You are here: ", separator: " &rsaquo; ", display_single_fragment: true, style: :bootstrap
+  .col-md-12(ng-app='product')
+    .row(ng-controller="CartController")
       .media
         .col-md-2
           %a.pull-left(href="#")

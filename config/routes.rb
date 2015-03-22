@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   resources :models
   resources :line_items, defaults: { format: 'json' }
   
-  get 'cart' => "main_pages#cart"
+  get 'cart'    => 'main_pages#cart'
+  get 'working' => 'main_pages#working'
   # Example resource route with options:
   #   resources :products do
   #     member do

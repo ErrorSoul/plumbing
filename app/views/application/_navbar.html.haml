@@ -20,7 +20,7 @@
       %ul.nav.navbar-nav
         %li
           %a{:href => "#"}
-            = t(:price)
+            = t(:catalogs)
             %span.sr-only (current)
 
         %li.dropdown
@@ -29,23 +29,22 @@
             %span.caret
           %ul.dropdown-menu{:role => "menu"}
             %li
-              %a{:href => "#"}= t(:shop)
+              %a{:href => "/working"}= t(:shop)
             %li
-              %a{:href => "#"}= t(:forum)
+              %a{:href => "/working"}= t(:forum)
             %li
-              %a{:href => "#"}= t(:vacantions)
+              %a{:href => "/working"}= t(:vacantions)
             %li.divider
             %li
-              %a{:href => "#"}= t(:our_works)
+              %a{:href => "/working"}= t(:our_works)
             %li
-              %a{:href => "#"}= t(:news)
-            %li.divider
-            %li
-              %a{:href => "#"}= t(:actions)
+              %a{:href => "/working"}= t(:news)
+            
+            
         %li
-          %a{:href => "#"}= t(:about_us)
+          %a{:href => "/working"}= t(:contacts)
         %li
-          %a{:href => "#"}= t(:delivery)
+          %a{:href => "/working"}= t(:delivery)
         
       %form.navbar-form.navbar-right{:role => "search"}
         .form-group
