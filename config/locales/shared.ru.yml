@@ -3,6 +3,8 @@ ru:
   buy:        'Купить'
   about_us:   'О нас'
   delivery:    'Оплата и доставка'
+  you_are_here: 'Вы здесь'
+  home:         'Главная'
   
   # Search
   find:  'Поиск'
