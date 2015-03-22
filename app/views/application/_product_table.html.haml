@@ -5,7 +5,9 @@
       - subcategory.prototype.option_types.each do |option|
         %th= option.name
       %th= t(:price)
-      %th= t(:buy)
+      %th{'ng-click'=>'x()'}
+        {{3*3}}
+      /%th= t(:buy)
   
       
   %tbody
@@ -19,5 +21,5 @@
           %td= variant.value
         %td= product.p_price model
         %td 
-          .btn.btn-default
+          .btn.btn-default(ng-click="add_to_cart(#{product.id})")
             = t(:buy)

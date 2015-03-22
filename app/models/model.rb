@@ -11,6 +11,7 @@
 #  asset          :string(255)
 #  text           :text
 #  valuta_id      :integer
+#  percent        :integer
 #
 
 class Model < ActiveRecord::Base

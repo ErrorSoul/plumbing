@@ -20,11 +20,10 @@ class Product < ActiveRecord::Base
 
   has_many :variants, inverse_of: :product, dependent: :destroy
   has_many :option_types, through: :variants
+  has_many :line_items
+
   accepts_nested_attributes_for :variants
   
-
- 
-
   validates :model_id, presence: true
   validates :marking, :description, :price, :name,  presence: true
 

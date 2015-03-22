@@ -1,5 +1,7 @@
 class SubcategoriesController < ApplicationController
   before_action :set_need_attr
+  before_action :set_cart
+  
   def show 
     if params[:q].nil?
       @subcategory = Subcategory.all_fetch.find(params[:id])

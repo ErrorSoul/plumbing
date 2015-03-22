@@ -7,6 +7,6 @@ class CategoriesController < ApplicationController
       item.id == params[:id].to_i
     end.first
     @subcategories = @category.subcategories.includes(models: :vendor)
-    @subcategories = @subcategories.page(params[:page]).per(3)
+    @subcategories = @subcategories.page(params[:page]).per(25)
   end
 end
