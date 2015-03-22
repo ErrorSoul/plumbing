@@ -23,6 +23,11 @@ crumb :model do |model|
   parent :subcategory, model.subcategory
 end
 
+crumb :cart do 
+  link t(:shopping_cart), root_path
+  parent :root
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

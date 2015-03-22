@@ -15,7 +15,7 @@
 
   .affix{
     width: 100%;
-    z-index: 1;
+    z-index: 3;
     top: 0;
     }
 
@@ -41,7 +41,7 @@
       #footer {
         height: 100px;
         padding-top: 20px;
-        margin-top: 60px;
+        margin-top: 100px;
       }
       #footer {
         background-color: #f5f5f5;
@@ -58,4 +58,24 @@
       }
 #footer {
   background-color: #f5f5f5;
+  }
+
+
+.cart_quantity_input {
+  color: #696763;
+  float: left;
+  font-size: 22px;
+  text-align: center;
+  font-family: 'Roboto',sans-serif;
+  width: 50px;
+  height: 50px;
+  
+}
+
+
+.glyphicon-remove-circle {
+  font-size: 24px;
+  &:hover {
+    color: orange;
+    }
   }

@@ -5,6 +5,9 @@ ru:
   delivery:    'Оплата и доставка'
   you_are_here: 'Вы здесь'
   home:         'Главная'
+  empty_cart:   'Ваша корзина пуста'
+  update_cart:  'Обновить корзину'
+  order:        'Оформить заказ'
   
   # Search
   find:  'Поиск'
@@ -31,4 +34,9 @@ ru:
   model: 'Модель'
   price: 'Цена'
   percent: 'Процент'
+  product: 'Товар'
+  quantity: 'Количество'
+  marking:  'Артикул'
+  summary:  'Стоимость'
+  total:    'Итого'
   

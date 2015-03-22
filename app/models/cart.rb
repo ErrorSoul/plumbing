@@ -1,12 +1,3 @@
-# == Schema Information
-#
-# Table name: carts
-#
-#  id         :integer          not null, primary key
-#  created_at :datetime
-#  updated_at :datetime
-#
-
 class Cart < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
 
@@ -19,4 +10,9 @@ class Cart < ActiveRecord::Base
     end
     current_item
   end
+
+  def total
+    line_items.sum(:quantity)
+  end
+    
 end

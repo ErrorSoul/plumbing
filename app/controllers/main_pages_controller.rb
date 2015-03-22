@@ -5,4 +5,7 @@ class MainPagesController < ApplicationController
   def index
     @categories ||= Category.includes(:subcategories).all
   end
+
+  def cart; end
+
 end

@@ -1,0 +1,57 @@
+- breadcrumb @cart
+.col-md-8(ng-app='product')
+  - if @cart.line_items.empty?
+    .alert.alert-warning(role="alert")
+      = t(:empty_cart)
+
+    
+  - else
+    .ttable(ng-controller="CartShowController")
+      .alert.alert-warning(role="alert" ng-show="empty_table")
+        = t(:empty_cart)
+      .alert.alert-success(role="alert" ng-show="notice")
+        {{notice}}
+      %table.table.table-bordered(ng-hide="empty_table")
+        %thead
+          %tr
+            %th= t(:asset)
+            %th= t(:product)
+            %th= t(:marking)
+            %th= t(:quantity)
+            %th= t(:price)
+            %th= t(:summary)
+            %th= t(:delete)
+
+
+        %tbody
+          %tr(ng-repeat='item in items')
+            %td
+              %img.cart-image{:alt => "",  :src => "{{item.product.asset.url}}"}
+            %td
+              {{item.product.name}}
+            %td
+              {{item.product.marking}}
+            %td
+              %input.cart_quantity_input{:autocomplete => "off", :name => "quantity", "ng-model" => "item.quantity", :type => "number", :value => "1", :min => "1", "ng-disabled" => "button_hide"}
+            %td
+              {{p_price(item, item.product.price, item.product.model.valuta.value, item.product.model.percent)}}
+            %td
+              {{item.product.summ * item.quantity}}
+            %td
+              %span.glyphicon.glyphicon-remove-circle(ng-really-message="Вы уверены?" ng-really-click="button_hide || delete($index)" )
+                
+          %tr
+            %td(colspan='5')
+              %h3
+              = t(:total)
+            %td(colspan='2')
+              %h3
+                {{total()}}
+
+      
+      .button-cart(ng-hide="empty_table")
+        %button.btn.btn-primary{:type => "button"}
+          = t(:order)
+        %button.btn.btn-primary(ng-click='line_items_update()')
+          = t(:update_cart)
+      

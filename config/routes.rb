@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   resources :subcategories
   resources :models
   resources :line_items, defaults: { format: 'json' }
-
+  
+  get 'cart' => "main_pages#cart"
   # Example resource route with options:
   #   resources :products do
   #     member do

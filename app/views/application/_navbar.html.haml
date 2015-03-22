@@ -55,11 +55,11 @@
           
       %ul.nav.navbar-nav.navbar-right
         %li
-          %a#cart_item{:href => "#"} 
+          %a#cart_item{:href => "/cart"} 
             = t :shopping_cart
             %span.glyphicon.glyphicon-shopping-cart
 
             - unless @cart.line_items.empty?
               %span.badge
-                = @cart.line_items.size
+                = @cart.total
        
