@@ -14,7 +14,7 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to "Главная", main_pages_path, class: "navbar-brand"
+      = link_to t(:home), main_pages_path, class: "navbar-brand"
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
@@ -54,8 +54,12 @@
           = t :find
           
       %ul.nav.navbar-nav.navbar-right
-        %li#cart_item
-          %a{:href => "#"} 
+        %li
+          %a#cart_item{:href => "#"} 
             = t :shopping_cart
             %span.glyphicon.glyphicon-shopping-cart
+
+            - unless @cart.line_items.empty?
+              %span.badge
+                = @cart.line_items.size
        

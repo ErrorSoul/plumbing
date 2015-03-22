@@ -9,7 +9,8 @@ class LineItemsController < ApplicationController
     respond_to do |format|
 
       if @line_item.save
-        format.json {render json: {notice: 'Line item was successfully created'}}
+        format.json {render json: {line_size: @cart.line_items.size,
+                                   notice: 'Line item was successfully created'}}
       else
         format.json {render json: @line_item.errors,
 status: :unprocessable_entity}

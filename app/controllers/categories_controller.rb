@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_need_attr
+  before_action :set_cart
 
   def show
     @search = Subcategory.ransack params[:q]
