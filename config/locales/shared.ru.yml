@@ -40,6 +40,9 @@ ru:
   marking:  'Артикул'
   summary:  'Стоимость'
   total:    'Итого'
+  create_product: 'Cоздать продукт'
+  create_model:   'Cоздать модель'
+  create_subcategory: 'Создать подкатегорию'
   
   
   #navbar

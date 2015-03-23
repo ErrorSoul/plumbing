@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'persons/profile'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
   
   get 'cart'    => 'main_pages#cart'
   get 'working' => 'main_pages#working'
+  get 'persons/profile', as: 'user_root'
   # Example resource route with options:
   #   resources :products do
   #     member do

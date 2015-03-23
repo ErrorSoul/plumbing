@@ -29,9 +29,11 @@ ActiveAdmin.register Category do
 
   show do |x|
     create_show(x, [:id, :name, :asset, :text], d:
-                { table_hash: { subcategories: [:name] },
-                  links_hash: { subcategory: :category_id }
+                { table_hash: { subcategories: [:name] }
+                  
                 })
+
+    a  I18n.t(:create_subcategory), class: 'button', href: new_admin_subcategory_path(subcategory: {  category_id: category.id })
   end
 
   sidebar I18n.t(:details), only: :show do

@@ -35,7 +35,7 @@ ActiveAdmin.register Product do
     end
     f.inputs do
       f.semantic_fields_for :variants do |x|
-        x.input  :option_type 
+        x.input  :option_type, wrapper_html: {class: 'hide_input'}
         #x.input :option_type, label: t(:option_type), as: :select, collection: OptionType.all, include_blank: false
         x.input :value, label: x.object.option_type.name
       end

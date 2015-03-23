@@ -20,12 +20,12 @@ ActiveAdmin.register Subcategory do
       
         
       x.input :name
-      x.input :id
+      x.input :id, wrapper_html: {class: 'hide_input'}
 
        
           x.has_many :ptypes,  allow_destroy: true, heading: t(:attributes) do |b|
           
-            b.input :prototype_id
+            b.input :prototype_id, wrapper_html: {class: 'hide_input'}
          
             b.input :option_type, label: t('name_attr'), as: :select, collection: OptionType.all,  include_blank: false
           
@@ -51,8 +51,9 @@ end
 
                 })
 
-    button :fff
+    a  I18n.t(:create_model), class: 'button', href: new_admin_model_path(model: {  subcategory_id: subcategory.id })
   end
+
 
   
 

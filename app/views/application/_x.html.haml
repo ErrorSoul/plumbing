@@ -33,9 +33,9 @@
 
 
                   = p.semantic_fields_for :variants do |x|
-                    = x.input :option_type_id
+                    = x.input :option_type_id, wrapper_html: {class: 'hide_input'}
 
-                    = x.input :value 
+                    = x.input :value, label: x.object.option_type.name
 
 
       = f.actions
