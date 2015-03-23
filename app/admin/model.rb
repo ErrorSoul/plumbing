@@ -7,7 +7,7 @@ ActiveAdmin.register Model do
   config.clear_action_items!
   
 
-  permit_params :id, :asset, :valuta_id, :text, :percent,  :subcategory_id, :name, :vendor_id, products_attributes: [:id, :asset, :subcategory_id, :model_id, :name, :description, :price, :marking, :value_type, :_destroy,  variants_attributes: [:id, :option_type_id, :product_id, :_destroy, value_attributes: [:id, :value, :value_type, :destroy]]]
+  permit_params :id, :asset, :valuta_id, :text, :percent,  :subcategory_id, :name, :vendor_id, products_attributes: [:id, :asset, :subcategory_id, :model_id, :name, :description, :price, :marking, :value_type, :_destroy,  variants_attributes: [:id, :option_type_id, :product_id, :_destroy, :value]]
 
   index do
     selectable_column

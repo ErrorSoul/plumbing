@@ -24,7 +24,7 @@ class Product < ActiveRecord::Base
 
   accepts_nested_attributes_for :variants
   
-  validates :model_id, presence: true
+  #validates :model_id, presence: true
   validates :marking, :description, :price, :name,  presence: true
 
   mount_uploader :asset, AssetUploader

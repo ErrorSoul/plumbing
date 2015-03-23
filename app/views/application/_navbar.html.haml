@@ -45,14 +45,8 @@
           %a{:href => "/working"}= t(:contacts)
         %li
           %a{:href => "/working"}= t(:delivery)
-        
-      %form.navbar-form.navbar-right{:role => "search"}
-        .form-group
-          %input.form-control{:placeholder => "#{t :find_line}", :type => "text"}
-        %button.btn.btn-default{:type => "submit"}
-          = t :find
-          
-      %ul.nav.navbar-nav.navbar-right
+
+      %ul.nav.navbar-nav
         %li
           %a#cart_item{:href => "/cart"} 
             = t :shopping_cart
@@ -61,4 +55,12 @@
             - unless @cart.line_items.empty?
               %span.badge
                 = @cart.total
+      
+      %form.navbar-form{:role => "search"}
+        .form-group
+          %input.form-control{:placeholder => "#{t :find_line}", :type => "text"}
+        %button.btn.btn-default{:type => "submit"}
+          = t :find
+          
+     
        

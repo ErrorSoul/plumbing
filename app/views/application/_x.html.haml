@@ -23,6 +23,7 @@
               
               .panya
                 %h3=  p.object
+                %h3=  f.object
                 %ol
                   = p.hidden_field :subcategory_id, value: f.object.subcategory_id
                   = p.input :name, label: t(:name)
@@ -30,7 +31,7 @@
                   = p.input :marking, label: t(:marking)
                   = p.input :price, label: t(:price)
                   = p.input :description, label: t(:description)
-
+                  = p.input :model_id, value: f.object.id, wrapper_html: {class: 'hide_input'}
 
                   = p.semantic_fields_for :variants do |x|
                     = x.input :option_type_id, wrapper_html: {class: 'hide_input'}
