@@ -62,8 +62,8 @@ module ActiveAdmin::FooHelper
             end
           when :valuta
             row :valuta do
-              #obj.valuta.name
-              "VALUTA"
+              obj.valuta.name
+              
             end
           
           when :variants
