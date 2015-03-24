@@ -4,6 +4,7 @@ namespace :db do
   task populate: :environment do
     make_types
     make_option_types
+    make_valuta
     make_countries
     make_vendors
     make_categories
@@ -34,6 +35,11 @@ namespace :db do
     for c in t
       Type.create!(name: c)
     end
+  end
+
+  def make_valuta
+    Valuta.create!(name: 'dollar', value: 60)
+    Valuta.create!(name: 'euro', value: 65)
   end
 
   def make_admin
@@ -73,10 +79,13 @@ namespace :db do
   def make_models
     subcat = Subcategory.all
     vendors = Vendor.all
+    valuta  = Valuta.all
     subcat.each do |s|
       3.times do
         s.models.create!(name: Faker::Address.state,
                          vendor: vendors.sample,
+                         percent: 10,
+                         valuta: valuta.sample,
                          text: Faker::Lorem.paragraph(3, true, 4))
       end
     end
