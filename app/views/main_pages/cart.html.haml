@@ -1,3 +1,5 @@
+= render partial: 'cart_modal'
+
 - breadcrumb @cart
 .col-md-8(ng-app='product')
   - if @cart.line_items.empty?
@@ -49,7 +51,7 @@
                 {{total()}}
 
       
-      .button-cart(ng-hide="empty_table")
+      .button-cart{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button", "ng-hide"=>"empty_table"}
         %button.btn.btn-primary{:type => "button"}
           = t(:order)
         %button.btn.btn-primary(ng-click='line_items_update()')

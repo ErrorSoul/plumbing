@@ -5,8 +5,11 @@ class ApplicationController < ActionController::Base
   
   include CurrentCart
   include SetModels
+  
 
+  before_action :set_need_attr
+  before_action :set_cart
   def after_sign_in_path_for(resource)
-    current_user_path
+    request.referrer
   end
 end

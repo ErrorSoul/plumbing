@@ -55,6 +55,13 @@
             - unless @cart.line_items.empty?
               %span.badge
                 = @cart.total
+        %li
+          -  if user_signed_in?
+             
+            %a{:href => "/cart"}
+              = current_user.email 
+          - else
+            FFFF
       
       %form.navbar-form{:role => "search"}
         .form-group
