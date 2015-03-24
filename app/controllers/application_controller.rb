@@ -7,9 +7,5 @@ class ApplicationController < ActionController::Base
   include SetModels
   
 
-  before_action :set_need_attr
-  before_action :set_cart
-  def after_sign_in_path_for(resource)
-    request.referrer
-  end
+  
 end
