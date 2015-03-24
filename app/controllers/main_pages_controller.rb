@@ -1,4 +1,4 @@
-class MainPagesController < Devise::RegistrationsController
+class MainPagesController < ApplicationController
   before_action :set_need_attr
   before_action :set_cart
 

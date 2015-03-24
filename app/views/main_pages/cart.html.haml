@@ -1,7 +1,7 @@
 = render partial: 'cart_modal'
 
 - breadcrumb @cart
-.col-md-8(ng-app='product')
+.col-md-8
   - if @cart.line_items.empty?
     .alert.alert-warning(role="alert")
       = t(:empty_cart)
