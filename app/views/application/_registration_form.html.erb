@@ -1,7 +1,7 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_for(User.new, url: user_registration_path, html: {id: 'sign_up_user', :'data-type' => 'json'}, remote: true) do |f| %>
+ 
 
   <div class="field">
     <%= f.label :email %><br />
@@ -22,12 +22,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit t :submit %>
   </div>
   
 <% end %>
-<button ng-click='xara()'>
-    dfdf
-  </button>
 
-<%= render "devise/shared/links" %>
+
+

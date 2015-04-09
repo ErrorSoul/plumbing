@@ -51,8 +51,8 @@
                 {{total()}}
 
       
-      .button-cart{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button", "ng-hide"=>"empty_table"}
-        %button.btn.btn-primary{:type => "button"}
+      .button-cart
+        %button.btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button", "ng-hide"=>"empty_table"}
           = t(:order)
         %button.btn.btn-primary(ng-click='line_items_update()')
           = t(:update_cart)
