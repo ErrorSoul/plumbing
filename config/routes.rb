@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  
- 
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users, controllers: { registrations: 'authentication/registrations'}
-  
-
-  
-
+  devise_for :users, controllers: {
+    registrations: 'authentication/registrations',
+    sessions:      'authentication/sessions'
+  }
 
   #devise_scope :user do
     #get "/cart" => "main_pages#cart"
@@ -33,7 +31,9 @@ Rails.application.routes.draw do
   resources :subcategories
   resources :models
   resources :line_items, defaults: { format: 'json' }
-  
+  resources :orders, only: :create
+  resource  :users
+
   get 'cart'    => 'main_pages#cart'
   get 'working' => 'main_pages#working'
   get 'persons/profile', as: 'user_root'

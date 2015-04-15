@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 ActiveAdmin.register Country do
+  menu parent: "Дополнительно"
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #

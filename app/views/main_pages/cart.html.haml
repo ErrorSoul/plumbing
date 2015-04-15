@@ -6,14 +6,26 @@
     .alert.alert-warning(role="alert")
       = t(:empty_cart)
 
-    
   - else
     .ttable(ng-controller="CartShowController")
-      .alert.alert-warning(role="alert" ng-show="empty_table")
+      .alert.alert-warning(role="alert" ng-show="empty_table && order_flag")
         = t(:empty_cart)
-      .alert.alert-success(role="alert" ng-show="notice")
+      #cart_notice.alert.alert-success(role="alert" ng-show="notice")
         {{notice}}
-      %table.table.table-bordered(ng-hide="empty_table")
+      .col-sm-6.col-sm-offset-3(ng-show='order_flag')
+
+        %form{name: "form", role: "form", "ng-submit" => "form.$valid && create_order(order)", "novalidate" => true}
+          .form-group
+            %label{for: "address"}
+              = t(:address)
+            %textarea.form-control{placeholder: t(:address), type: "text", "ng-model" => "order.address", "ng-minlength" =>"2", 'required'=>true}
+          .form-group
+            %label{:for => "phone"}
+              = t(:phone)
+            %input#phone.form-control{placeholder: t(:phone), type: "phone", "ng-model" => 'order.phone',"ng-minlength" =>"7", 'required'=>true}
+          %button.btn.btn-default{:type => "submit" ,"ng-disabled"=>"form.$invalid"} Submit
+
+      %table.table.table-bordered(ng-hide="empty_table || order_flag")
         %thead
           %tr
             %th= t(:asset)
@@ -41,7 +53,6 @@
               {{item.product.summ * item.quantity}}
             %td
               %span.glyphicon.glyphicon-remove-circle(ng-really-message="Вы уверены?" ng-really-click="button_hide || delete($index)" )
-                
           %tr
             %td(colspan='5')
               %h3
@@ -50,10 +61,24 @@
               %h3
                 {{total()}}
 
-      
-      .button-cart
-        %button.btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button", "ng-hide"=>"empty_table"}
+      .button-cart{"ng-hide"=>"empty_table || order_flag"}
+        %button#real_order_button.btn.btn-primary{style: "display: #{ user_signed_in? ? 'inline' : 'none' }", "ng-click"=>"contact_form()" } 
           = t(:order)
-        %button.btn.btn-primary(ng-click='line_items_update()')
+
+        %button#modal_button.btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button",  style: "display: #{ user_signed_in? ? 'none' : 'inline' } " }
+          = t(:order)
+
+        %button.btn.btn-primary(ng-click="line_items_update()")
           = t(:update_cart)
-      
+        /%button.btn.btn-default{"ng-click" => "toggleModal()"} Open modal
+
+        /%modal{:title => "{{user.email}}", :email => "user.email", :visible => "showModal"}
+        /  %form{:name => "form",:role => "form", "novalidate" => true}
+        /    .form-group
+        /      %label{:for => "email"} Email address
+        /      %input#email.form-control{:placeholder => "Enter email", :type => "email", "ng-model" => 'scope.user.email'}/
+        /    .form-group
+        /      %label{:for => "password"} Password
+        /      %input#password.form-control{:placeholder => "Password", :type => "password", "ng-model" => 'scope.user.password'}/
+        /    {{user.email}}
+        /    %button.btn.btn-default(ng-click='mail()') Submit

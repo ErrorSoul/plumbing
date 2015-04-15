@@ -1,0 +1,19 @@
+%h2= t :login
+- resource = User.new
+= form_for(resource,  url: user_session_path, method: :post,  html: {id: 'sign_up_user', :'data-type' => 'json'}, remote: true) do |f| 
+
+  .form-group
+    = f.label t :email, class: "control-label" 
+    %br/
+    = f.email_field :email, class: "form-control", autofocus: true, placeholder: t(:email)
+
+  .form-group
+    = f.label t :password, class: "control-label" 
+    %br/
+    = f.password_field :password, class: "form-control", autofocus: true, placeholder: t(:password)
+
+  
+    
+   
+  %button.btn.btn-large.btn-info.col-sm-12
+    = t :login

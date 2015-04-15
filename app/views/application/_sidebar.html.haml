@@ -7,7 +7,7 @@
     - @categories.each_with_index do |cat, ind|
       .panel.panel-default
         .panel-heading{:role => "tab", :id => cat.name}
-          %h4.panel-title
+          %h5.panel-title.panel_bottom
             = link_to cat.name, category_path(cat)
               
             %span.icons-awesome

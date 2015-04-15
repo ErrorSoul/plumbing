@@ -7,8 +7,47 @@ angular.module('product')
     ($httpProvider) ->
       authToken = $("meta[name=csrf-token]").attr("content")
       $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken
-      
 ]
+angular.module('product').directive 'modal', ->
+  {
+    template: '<div class="modal fade">' + '<div class="modal-dialog">' + '<div class="modal-content">' + '<div class="modal-header">' + '<button type="button" ng-click="toggleModal()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' + '<h4 class="modal-title">{{ title }}</h4>' +   '</div>' + '<div class="modal-body" ng-transclude></div>' + '</div>' + '</div>' + '</div>'
+    restrict: 'E'
+    transclude: true
+    replace: true
+    link: (scope, element, attrs) ->
+      scope.user = {}
+      scope.user.email = 'aaa'
+      scope.mail = () ->
+        console.log(scope.user.email, "EMAIL")
+      scope.title = attrs.title
+      scope.$watch attrs.visible, (value) ->
+        if value == true
+          $(element).modal 'show'
+        else
+          $(element).modal 'hide'
+        return
+
+      $("#email").on 'change', ->
+        scope.user.email  = $("#email").val()
+        console.log('scope.user.email', scope.user.email)
+        scope.$apply()
+
+      #$(element).on 'input', ->
+      #  console.log('fffffaaaa')
+      #
+      $(element).on 'shown.bs.modal', ->
+        scope.$apply ->
+          scope.$parent[attrs.visible] = true
+          return
+        return
+      $(element).on 'hidden.bs.modal', ->
+        scope.$apply ->
+          scope.$parent[attrs.visible] = false
+          return
+        return
+      return
+
+  }
 
 
 angular.module('product').controller "CartController", ['$scope', '$http', ($scope, $http) ->
@@ -33,7 +72,6 @@ angular.module('product').controller "CartController", ['$scope', '$http', ($sco
             $('#cart_item').css({'color': 'initial'})
           badge_animate = ->
             $('.badge').css({'color': 'white'})
-            
           $('.badge').css({'color':'#88ff88'})
             .animate({'color': '#FE980F'}, 6000, badge_animate)
           cart_item.css({'color':'#88ff88'})
@@ -41,9 +79,7 @@ angular.module('product').controller "CartController", ['$scope', '$http', ($sco
 
         .error((data) ->
           console.log(data))
-        
       ]
-          
 angular.module('product').directive('ngReallyClick', [ () ->
     restrict: 'A'
     link: (scope, elem, attrs) ->
@@ -51,10 +87,13 @@ angular.module('product').directive('ngReallyClick', [ () ->
         message = attrs.ngReallyMessage
         if message and confirm(message)
           scope.$apply(attrs.ngReallyClick))
-  
   ])
-         
 angular.module('product').controller "CartShowController", ["$scope", "$http","$timeout",  ($scope, $http, $timeout) ->
+    $scope.showModal = false
+    $scope.toggleModal = ->
+      $scope.showModal = !$scope.showModal
+      console.log("showmodal", $scope.showModal)
+
     $http.get("line_items/1").success((data) ->
       if data.message
         $scope.message = data.message
@@ -77,25 +116,25 @@ angular.module('product').controller "CartShowController", ["$scope", "$http","$
       summ =  m + (m * (percent/100.0))
       item.product.summ = summ
       return summ
-      
-   
-      
+
+    $scope.consa = ->
+      console.log('i am Worked')
     $scope.delete_notice = ->
-      $scope.notice = false 
+      $scope.notice = false
     #update quantity in items
     $scope.update_cart = (callback, error_callback) ->
-      update_items = [] 
+      update_items = []
       angular.forEach $scope.items, (item) ->
         update_items.push({id: item.id, quantity: item.quantity})
       $http({method: "PATCH", url: "/line_items/1", data: {items: update_items}})
         .success(callback).error(error_callback)
-      
+
     #error callback
     error_callback = (error) ->
       console.log(error, "FFF")
     $scope.t = ->
       console.log("FFFFFFFFFFFFFFFFKKKK")
-    #for save cart    
+    #for save cart
     $scope.line_items_update = ->
       #success callback
       callback = (data) ->
@@ -107,32 +146,36 @@ angular.module('product').controller "CartShowController", ["$scope", "$http","$
         else console.log(data)
       $scope.update_cart(callback, error_callback)
 
-    #for create order 
+    #for create order
     $scope.contact_form = () ->
       #success callback
       callback = (data) ->
         if data.message is "Your line_item updated"
-          $scope.button_hide = true
+          $scope.order_flag = true
+          $scope.notice = "Куда вам доставить?"
         else
           console.log(data)
 
 
       $scope.update_cart(callback, error_callback)
 
-    #create order 
+    #create order
     $scope.create_order = (order) ->
       callback = (data) ->
         if data.message = "Your order saved"
-          $scope.button_hide = false
-          $scope.message = "Ваш заказ принят. Спасибо за покупку"
+          $scope.order_flag = false
+          $scope.empty_table = true
+          $scope.notice = "Ваш заказ принят. Спасибо за покупку! Вы можете перейти в "
+          $("#cart_item").find('.badge').html("")
+          $("#cart_notice").append('<a href="/persons/profile">Личный кабинет</a>')
       $http.post("/orders", order: order).success(callback)
         .error(error_callback)
-        
+
     $scope.delete = (idx) ->
       post_to_delete = $scope.items[idx]
       $http.delete("/line_items/#{post_to_delete.id}").success((data) ->
         if data.message is "Your post deleted"
-          
+
           console.log(data, 'delete.data')
           if data.line_size is 0
             $scope.empty_table = true
@@ -140,11 +183,5 @@ angular.module('product').controller "CartShowController", ["$scope", "$http","$
           #post_to_delete.hideValue = true)
           $scope.items.splice(idx, 1))
             .error((error) -> console.log(error))
-            
-
 
     ]
-
-
-
-  

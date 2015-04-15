@@ -1,0 +1,24 @@
+.col-sm-8
+  - breadcrumb :enter
+  .col-sm-6.col-sm-offset-3
+    %h2= t :login
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
+
+      .form-group
+        = f.label t :email, class: "control-label" 
+        %br/
+        = f.email_field :email, class: "form-control", autofocus: true, placeholder: t(:email)
+
+      .form-group
+        = f.label t :password, class: "control-label" 
+        %br/
+        = f.password_field :password, class: "form-control", autofocus: true, placeholder: t(:password)
+
+      - if devise_mapping.rememberable?
+        .field.col-sm-6
+          = f.check_box :remember_me
+          = f.label t :remember_me
+        
+       
+      %button.btn.btn-large.btn-info.col-sm-12
+        = t :login

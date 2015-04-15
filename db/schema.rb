@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323210340) do
+ActiveRecord::Schema.define(version: 20150413170020) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -69,9 +69,11 @@ ActiveRecord::Schema.define(version: 20150323210340) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "quantity",   default: 1
+    t.integer  "order_id"
   end
 
   add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
 
   create_table "models", force: true do |t|
@@ -98,6 +100,17 @@ ActiveRecord::Schema.define(version: 20150323210340) do
   end
 
   add_index "option_types", ["type_id"], name: "index_option_types_on_type_id"
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.text     "address"
+    t.string   "phone"
+    t.string   "total"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -159,6 +172,7 @@ ActiveRecord::Schema.define(version: 20150323210340) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

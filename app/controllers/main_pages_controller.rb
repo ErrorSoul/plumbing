@@ -1,4 +1,7 @@
 class MainPagesController < ApplicationController
+  include CurrentCart
+  include SetModels
+
   before_action :set_need_attr
   before_action :set_cart
 
@@ -11,13 +14,12 @@ class MainPagesController < ApplicationController
   end
 
   def create
-    @user= User.new params
+    @user = User.new params
+
     if @user.save
       redirect_to cart_path
-    else 
+    else
       redirect_to root_path
     end
   end
-    
-
 end

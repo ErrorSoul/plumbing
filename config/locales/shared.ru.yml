@@ -17,7 +17,7 @@ ru:
   shopping_cart: 'Корзина'
   
 
-  #admin
+  # admin
   name:          'Имя'
   names:         'Названия'
   attribute:     'Свойство'
@@ -30,8 +30,21 @@ ru:
 
   subcategory_model: 'Подкатегория/модель'
 
-
-  #field
+  # sign up
+  sign_up: 'Регистрация'
+  login_or_signup: 'Войдите или зарегистрируйтесь'
+  enter:   'Вход'
+  address: 'Aдрес'
+  phone:   'Телефон'
+  login:   'Войти'
+  remember_me: 'Запомнить меня'
+  email:   'Email'
+  hello:   'Здравствуйте'
+  exit:    'Выход'
+  profile: 'Личный кабинет'
+  # field
+  password: 'Пароль'
+  password_confirmation: 'Подтверждение пароля'
   model:    'Модель'
   price:    'Цена'
   percent:  'Процент'
@@ -45,7 +58,7 @@ ru:
   create_subcategory: 'Создать подкатегорию'
   
   
-  #navbar
+  # navbar
   shop:       'Наш магазин'
   forum:      'Форум'
   vacantions: 'Вакансии'

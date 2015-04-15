@@ -17,6 +17,16 @@
        <%= render :partial => "sidebar" %>
        <div class="col-md-8">
 	 <%= breadcrumbs  separator: " &rsaquo; ", display_single_fragment: true, style: :bootstrap %>
+	 <% if notice %>
+	  <div class="alert alert-info" role="alert">
+	    <p class="notice"><%= notice %></p>
+	  </div>
+	 <% end %>
+	 <% if alert %>
+	 <div class="alert alert-info" role="alert">
+	   <p class="alert"><%= alert %></p>
+	 </div>
+	 <% end %>
        </div>
 
        <%= yield %>

@@ -2,13 +2,12 @@ crumb :root  do
   link t(:home), root_path
 end
 
-
 crumb :category do |category|
   link category.name, category_path(category)
   parent :root
 end
 
-crumb :categories do 
+crumb :categories do
   link "Categories", categories_path
   parent :root
 end
@@ -23,11 +22,25 @@ crumb :model do |model|
   parent :subcategory, model.subcategory
 end
 
-crumb :cart do 
+crumb :cart do
   link t(:shopping_cart), root_path
   parent :root
 end
 
+crumb :enter do
+  link t(:enter), new_user_session_path
+  parent :root
+end
+
+crumb :signup do
+  link t(:sign_up), new_user_registration_path
+  parent :root
+end
+
+crumb :profile do
+  link t(:profile), user_root_path
+  parent :root
+end
 
 # crumb :projects do
 #   link "Projects", projects_path

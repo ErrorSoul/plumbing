@@ -1,8 +1,8 @@
 class LineItemsController < ApplicationController
-
+  include CurrentCart
+  include SetModels
   before_action :set_cart, only: [:create, :show, :destroy, :update]
-
-
+  skip_before_action :verify_authenticity_token, only: [:update]
   def show
     @line_item = LineItem.includes(product: [model: :valuta]).where('cart_id = ?', @cart.id)
     if @line_item.empty?
@@ -15,20 +15,25 @@ class LineItemsController < ApplicationController
   def create
     product_id = params[:line_item][:product_id]
     @line_item = @cart.add_product(product_id)
-    
-    respond_to do |format|
 
+    respond_to do |format|
       if @line_item.save
-        format.json {render json: {line_size: @cart.total,
-                                   notice: 'Line item was successfully created'}}
+        format.json {
+          render json: {
+            line_size: @cart.total,
+            notice: 'Line item was successfully created'
+          }
+        }
       else
-        format.json {render json: @line_item.errors,
-status: :unprocessable_entity}
+        format.json {
+          render json: @line_item.errors,
+          status: :unprocessable_entity
+        }
       end
     end
   end
 
-  def update 
+  def update
     @list_update = params[:items]
     x = @list_update.map do |lin|
       if LineItem.find(lin[:id])
@@ -38,17 +43,16 @@ status: :unprocessable_entity}
         false
       end
     end
-    
     if x.all?
-      render json: {message: "Your line_item updated", line_size: @cart.total }
-    else 
-      render json: {message: "something gone wrong"}
+      render json: { message: "Your line_item updated", line_size: @cart.total }
+    else
+      render json: { message: "something gone wrong" }
     end
   end
 
   def destroy
     @cart.line_items.destroy(params[:id])
-    render json: {message: "Your post deleted", line_size: @cart.total}
+    render json: { message: "Your post deleted", line_size: @cart.total }
   end
 
 end
