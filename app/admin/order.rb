@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 ActiveAdmin.register Order do
-  require "pry"
+  
 
   filter :user, label: "Клиент"
   filter :phone, label: "Телефон"
