@@ -22,8 +22,8 @@
             = f.semantic_fields_for :products  do |p|
               
               .panya
-                %h3=  p.object
-                %h3=  f.object
+                %h3 Товар
+                
                 %ol
                   = p.hidden_field :subcategory_id, value: f.object.subcategory_id
                   = p.input :name, label: t(:name)
