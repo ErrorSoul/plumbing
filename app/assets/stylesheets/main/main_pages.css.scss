@@ -7,6 +7,13 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import url(//fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,cyrillic);
+@mixin add-shadow {
+  -webkit-box-shadow: 7px 7px 7px -4px #B5B6F0;
+  -moz-box-shadow: 7px 7px 7px -4px #B5B6F0;
+  box-shadow: 7px 7px 7px -4px #B5B6F0;
+  }
+
 .icons-awesome {
   vertical-align: super;
   }
@@ -31,13 +38,12 @@
       html,
       body {
         height: 100%;
+        font-family: 'Roboto Slab', serif;
         /* The html and body elements cannot have any padding or margin. */
       }
 
-      
 
       /* Set the fixed height of the footer here */
-      
       #footer {
         height: 100px;
         padding-top: 20px;
@@ -87,6 +93,72 @@
   }
 
 
-.panel_bottom{
+.panel-bottom{
   font-size: 12px;
 }
+
+.table-partial {
+  margin-top: 15px;
+  }
+
+
+.navbar-shadow {
+  @include add-shadow;
+  }
+
+.element-header-shadow {
+  @include add-shadow;
+  }
+
+.image-shadow {
+  @include add-shadow;
+  }
+
+.media-shadow {
+  @include add-shadow;
+  }
+
+.sidebar-element-shadow {
+  @include add-shadow;
+  border: none;
+  }
+
+.breadcrumb {
+  @include add-shadow;
+  }
+
+.panel-heading {
+  background-color: rgb(163, 214, 250);
+  }
+
+.panel-default > .panel-color{
+  background-color: rgb(163, 214, 250);
+  color: white;
+  }
+
+
+.panel-default > .panel-color-font{
+  background-color: rgb(163, 214, 250);
+  color: white;
+  font-size: 22px;
+  }
+
+
+.navbar-nav > li:hover {
+  background-color: rgb(163, 214, 250);
+  color: white;
+  a:hover{color: white;}
+
+}
+
+.navbar-nav > li > .dropdown-menu > li > a:hover {
+  color: black;
+  }
+
+
+  .navbar-header:hover {
+    background-color: rgb(163, 214, 250);
+    .navbar-brand  {
+      color: white;
+      }
+        }

@@ -8,15 +8,14 @@
   .col-md-12
     .row(ng-controller="CartController")
       - @models.each do |category|
-        .media
+        .media.media-shadow
           .col-md-2
             %a.pull-left(href="#")
-              = image_tag(category.asset.url, size: "100x100", class:'media-object')
-
+              = image_tag(category.asset.url, size: "100x100", class:'media-object image-shadow')
+          
           .media-body
             = link_to content_tag(:span, category.name, class: "#{category.name}" + "_h3" ), category
             
-            %p= category.text
-              
-          .col-md-12
+            %p= category.text  
+          .col-md-12.table-partial
             = render partial: "product_table", locals: {model: category, subcategory: @subcategory}

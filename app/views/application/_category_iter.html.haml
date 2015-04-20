@@ -1,10 +1,10 @@
 .col-md-12
   .row
     - element.each do |category|
-      .media
+      .media.media-shadow
         .col-md-2
           %a.pull-left(href="#")
-            = image_tag(category.asset.url, size: "100x100", class:'media-object')
+            = image_tag(category.asset.url, size: "100x100", class:'media-object image-shadow')
             
         .media-body
           = link_to content_tag(:span, category.name, class: "#{category.name}" + "_h3" ), category
