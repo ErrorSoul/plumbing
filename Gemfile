@@ -20,7 +20,6 @@ gem 'formtastic'
 gem 'russian'
 gem 'carrierwave', '0.8.0'
 
-
 # Paginate
 gem 'kaminari'
 
@@ -32,8 +31,7 @@ gem "gretel"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster.
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
@@ -46,6 +44,11 @@ group :development do
   gem "binding_of_caller"
   gem 'annotate'
   gem 'spring'
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
 end
 
 group :development, :test do
@@ -68,18 +71,7 @@ group :test do
 end
 group :production do
   # Use postgresql as the database for Active Record
-  gem 'pg'
-
+  gem 'mysql2'
+  gem 'unicorn'
   gem 'rails_12factor'
 end
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
