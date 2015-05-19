@@ -44,7 +44,7 @@ Rails.application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
-  config.action_controller.asset_host = Settings.assets.host
+  config.action_controller.asset_host = Settings.domain
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 

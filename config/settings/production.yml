@@ -1,0 +1,26 @@
+domain: &domain 'rustepel.ru'
+
+assets:
+  host: &asset_host 'http://rustepel.ru'
+
+mailer:
+  from: 'no-reply@rustepel.com'
+
+  base:
+    raise_delivery_errors: true
+    perform_deliveries: true
+    delivery_method: :smtp
+    asset_host: *asset_host
+
+    default_url_options:
+      host: *domain
+
+    smtp_settings:
+      address: 'smtp.mandrillapp.com'
+      port: '587'
+      authentication: :plain
+      user_name: 'carap100@yandex.ru'
+      password: "cBJnsMFQJDq65887DkLJDQ"
+      domain: 'rustepel.ru'
+      enable_starttls_auto: true
+

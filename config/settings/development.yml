@@ -1,0 +1,17 @@
+domain: &domain 'localhost:3000'
+
+mailer:
+  from: 'dev.no-reply@afinance.com'
+
+  base:
+    raise_delivery_errors: false
+    perform_deliveries: true
+    delivery_method: :smtp
+    asset_host: *domain
+
+    default_url_options:
+      host: *domain
+
+    smtp_settings:
+      address: 'localhost'
+      port: '1025'
