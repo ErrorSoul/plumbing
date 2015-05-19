@@ -1,0 +1,25 @@
+ru:
+
+  report_message_mailer:
+    message_created:
+      report_message_created:   'Возникла ошибка!'
+      page_header_html:         'Здравствуйте!'
+
+      page_body_html:  |
+        <p> Возникла ошибка: </p>
+        <p> %{error_class}. %{error_message} </p>
+
+
+    feedback_created:
+      report_message_created:   'Обратная связь от пользователей'
+      page_header_html:         'Здравствуйте!'
+
+      page_user_html: |
+        <p> Пользователь %{name} %{last_name} </p>
+        <p> Почта для ответа %{email} </p>
+        <p> Телефон %{phone} </p>
+        <p> сообщает: %{body} </p>
+
+      page_body_html: |
+        <p> Возникла ошибка: </p>
+        <p> %{error_class}. %{error_message} </p>

@@ -26,4 +26,13 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   has_many  :orders
+
+  after_create :send_mail_user_created
+  #after_update :send_mail_password_changed
+
+  private
+
+  def send_mail_user_created
+    UserMailer.user_created(self).deliver
+  end
 end

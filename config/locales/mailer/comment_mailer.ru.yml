@@ -1,0 +1,20 @@
+ru:
+  comment_mailer:
+    comment_to_manager: 
+      comment_created:  'Вам оставлен комментарий'
+      page_header_html: '<h3>Здравствуйте, %{user_name}!</h3>'
+      
+      page_body_html:   |
+        <p> Аудитор оставил вам комментарий 
+        <br /> по одному из ваших агентов/клиентов :</p>
+        <p> Aгент/Клиент %{name} </p>
+
+    comment_to_auditor:
+      comment_created:  'Вам оставлен комментарий'
+      page_header_html: '<h3>Здравствуйте, %{user_name}!</h3>'
+      
+      page_body_html:   |
+        <p> Менеджер оставил вам комментарий 
+        <br /> по одному из  агентов: </p>
+        <p> Aгент/Клиент %{name} </p>
+       
