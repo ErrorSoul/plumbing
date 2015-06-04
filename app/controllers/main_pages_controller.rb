@@ -6,6 +6,7 @@ class MainPagesController < ApplicationController
   before_action :set_cart
 
   def index
+    logger.info "FFFFFFFFFFFFFFFFFFFFF"
     @categories ||= Category.includes(:subcategories).all
   end
 
