@@ -14,6 +14,10 @@ class MainPagesController < ApplicationController
     @user = User.new
   end
 
+  def contact; end
+
+  def delivery; end
+
   def create
     @user = User.new params
 

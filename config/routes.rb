@@ -36,6 +36,8 @@ Rails.application.routes.draw do
 
   get 'cart'    => 'main_pages#cart'
   get 'working' => 'main_pages#working'
+  get 'contact' => 'main_pages#contact'
+  get 'delivery' => 'main_pages#delivery'
   get 'persons/profile', as: 'user_root'
   # Example resource route with options:
   #   resources :products do

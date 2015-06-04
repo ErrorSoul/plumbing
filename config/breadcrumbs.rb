@@ -42,6 +42,16 @@ crumb :profile do
   parent :root
 end
 
+crumb :contact do
+  link t(:contacts), '#'
+  parent :root
+end
+
+crumb :delivery do
+  link t(:delivery), '#'
+  parent :root
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

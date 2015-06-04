@@ -9,6 +9,7 @@ ru:
   update_cart:  'Обновить корзину'
   order:        'Оформить заказ'
   working:      'Раздел в разработке'
+  we_are_here:  'Мы находимся здесь'
 
   # Search
   find:  'Поиск'
