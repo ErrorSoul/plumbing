@@ -9,24 +9,24 @@ ru:
   update_cart:  'Обновить корзину'
   order:        'Оформить заказ'
   working:      'Раздел в разработке'
-  
+
   # Search
   find:  'Поиск'
   find_line: 'по артикулу/названию'
 
   shopping_cart: 'Корзина'
-  
 
   # admin
-  name:          'Имя'
-  names:         'Названия'
-  attribute:     'Свойство'
-  vendor:        'Фирма'
-  subcategory:   'Подкатегория'
-  subcategories: 'Подкатегории'
-  attributes:    'Характеристики'
-  name_attr:     'Название свойства' 
-  details:       'Детали'
+  name:           'Имя'
+  names:          'Названия'
+  attribute:      'Свойство'
+  vendor:         'Фирма'
+  subcategory:    'Подкатегория'
+  subcategories:  'Подкатегории'
+  attributes:     'Характеристики'
+  name_attr:      'Название свойства'
+  details:        'Детали'
+  need_prototype: 'Для создания моделей нужен прототип. Создайте прототип'
 
   subcategory_model: 'Подкатегория/модель'
 

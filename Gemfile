@@ -75,5 +75,4 @@ group :production do
   # Use postgresql as the database for Active Record
   gem 'mysql2'
   gem 'unicorn'
-  gem 'rails_12factor'
 end
