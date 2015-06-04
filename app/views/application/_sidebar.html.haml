@@ -1,4 +1,4 @@
-.col-md-2
+.col-md-2.col-md-new-width
   .panel.panel-default.sidebar-element-shadow
     .panel-heading.panel-color
       %h4.panel-title
@@ -7,16 +7,13 @@
     - @categories.each_with_index do |cat, ind|
       .panel.panel-default.sidebar-element-shadow
         .panel-heading.panel-color{role: "tab", id: cat.name}
-          .panel-title.panel-bottom
-            
+          %h5.panel-title.panel-bottom
             = link_to cat.name, category_path(cat)
-            
-            %span.icons-awesome.pull-right
-              %i.fa.fa-caret-down.fa-2x.fa-fw.pull-right{"aria-controls" => cat.name, "aria-expanded" => "#{ind.eql?(0) ? true : false}", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "##{cat.id}"}
-            
-                
+
+            %span.icons-awesome
+              %i.fa.fa-caret-down.fa-2x.fa-fw{"aria-controls" => cat.name, "aria-expanded" => "#{ind.eql?(0) ? true : false}", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "##{cat.id}"}
+
         .panel.list-group.collapse.panel-bottom{"aria-labelledby" => cat.name, :role => "tabpanel", :id => cat.id}
           - cat.subcategories.each do |subcat|
             %li.list-group-item
               = link_to subcat.name, subcategory_path(subcat)
-               
