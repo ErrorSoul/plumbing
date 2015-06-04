@@ -73,8 +73,8 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   #config.log_formatter = ::Logger::Formatter.new
-  config.log_level = :info
-  RAILS_DEFAULT_LOGGER = Logger.new('log/production.log')
+  #config.log_level = :info
+  #RAILS_DEFAULT_LOGGER = Logger.new('log/production.log')
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
