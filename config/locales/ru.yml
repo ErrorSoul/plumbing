@@ -11,7 +11,7 @@ ru:
         few: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         many: "%{resource}: сохранение не удалось из-за %{count} ошибок"
         other: "%{resource}: сохранение не удалось из-за %{count} ошибки"
- 
+
   devise:
     failure:
       already_authenticated: "Вы уже вошли в систему."
@@ -59,16 +59,47 @@ ru:
 
 
 
-
-  
   formtastic:
       :create: 'Создать %{model}'
-      :update: 'Update %{model}'  
+      :update: 'Обновить  %{model}'
+      labels:
+        name: 'Имя'
+        created_at: 'Дата создания'
+        updated_at: 'Последнее изменение'
+        prototype:  'Прототип'
+        vendor:  'Фирма'
+        vendors:  'Фирма'
+        product:  'Продукт'
+        products:  'Продукт'
+        text:  'Текст'
+        asset:  'Файл/Картинка'
+        category:  'Подкатегория'
+        categories: 'Категория'
+        subcategories: 'Подкатегория'
+        subcategory:  'Подкатегория'
+        model: 'Модель'
+        models:  'Модель'
+        valuta:  'Валюта'
+        percent: 'Процент'
+        option_types: 'Cвойство'
+        price:  'Цена'
+        marking: 'Артикль'
+        variants: 'Вариант'
+        description: 'Описание'
+        line_items:  'Товарная позиция'
+        country:   "Страна"
 
-  activerecord: 
-      models: 
-        user: 
-          one: "Usuario" 
+  activerecord:
+      models:
+        attributes:
+          destination:
+            subcategory:
+              one: "Подкатерогию"
+              many: "Податегории"
+              other: "Подкатегории"
+              few: "Подкатегорий"
+        user:
+          one: "Usuario"
           other: "Usuarios"
       models:
         product:
@@ -117,12 +148,19 @@ ru:
             other: "Свойства"
             few: "Свойств"
 
+        prototype_option_type:
+            one: "Свойство"
+            many: "Свойства"
+            other: "Свойства"
+            few: "Свойств"
+
         country:
             one: "Cтрану"
             other: "Cтраны"
             many: "cтран"
             few: "страны"
-        paint:     
+
+        paint:
             one: "Рисунок"
             other: "Рисунок"
             many: "Рисунок"
@@ -132,7 +170,7 @@ ru:
             other: "Помещение"
             many: "Помещение"
             few: "Помещение"
-        type: 
+        type:
             one: "Тип"
             other: "Тип"
             many: "Тип"
@@ -158,7 +196,7 @@ ru:
             many: "Заказы"
             few: "Заказы"
         tip:
-            one: "Совет" 
+            one: "Совет"
             other: "Coвет"
             many: "Coвет"
             few: "Совет"

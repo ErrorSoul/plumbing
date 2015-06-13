@@ -67,3 +67,21 @@ ru:
   news:       'Новости'
   catalogs:   'Каталоги и цены'
   contacts:   'Контакты'
+
+
+  #
+  # shared
+  #
+  category: 'Категория'
+  prototype: 'Прототип'
+  asset:     'Файл/Картинка'
+  text:      'Текст'
+  client:     "Клиент"
+  phone:       "Телефон"
+  address:    "Aдрес"
+  created_at: "Дата создания"
+  order_id:   "Номер Заказа"
+  sum:        "Сумма заказа"
+  date_create: 'Принят'
+  valuta:      'Валюта'
+  description: 'Описание'

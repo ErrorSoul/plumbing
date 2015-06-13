@@ -9,16 +9,16 @@ ActiveAdmin.register Subcategory do
   form(html: { multipart: true }) do |f|
     f.semantic_errors *f.object.errors.keys
     f.inputs t(:details) do
-      f.input :category, label: 'Category', as: :select, collection: Category.all, include_blank: false
-      f.input :name
-      f.input :text
-      f.input :asset
+      f.input :category, label: t(:category), as: :select, collection: Category.all, include_blank: false
+      f.input :name, label: t(:name)
+      f.input :text, label: t(:text)
+      f.input :asset, label: t(:asset)
     end
 
     panel t(:prototype) do
       f.inputs for: [:prototype_attributes, f.object.prototype || Prototype.new], heading: "Ata" do |x|
 
-      x.input :name
+      x.input :name, label: t(:name)
       x.input :id, wrapper_html: {class: 'hide_input'}
 
           x.has_many :ptypes,  allow_destroy: true, heading: t(:attributes) do |b|
