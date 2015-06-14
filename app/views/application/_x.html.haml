@@ -30,7 +30,7 @@
                   = p.input :asset, label: t(:asset)
                   = p.input :marking, label: t(:marking)
                   = p.input :price, label: t(:price)
-                  = p.input :description, label: t(:description)
+                  = p.input :description, label: t(:description), input_html: { class: "redactor" }
                   = p.input :model_id, value: f.object.id, wrapper_html: {class: 'hide_input'}
 
                   = p.semantic_fields_for :variants do |x|

@@ -17,7 +17,7 @@
         %td= product.name
         - product.variants.each do |variant|
           %td= variant.value
-        %td= product.p_price model
+        %td= product.p_price(model).round
         %td 
           .btn.btn-default(ng-click="add_to_cart(#{product.id})")
             = t(:buy)
