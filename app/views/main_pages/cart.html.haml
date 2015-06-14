@@ -48,7 +48,7 @@
             %td
               %input.cart_quantity_input{:autocomplete => "off", :name => "quantity", "ng-model" => "item.quantity", :type => "number", :value => "1", :min => "1", "ng-disabled" => "button_hide"}
             %td
-              {{p_price(item, item.product.price, item.product.model.valuta.value, item.product.model.percent)}}
+              {{p_price(item, item.product.price, item.product.model.valuta.value, item.product.model.percent) | currency:"":0 }}
             %td
               {{item.product.summ * item.quantity}}
             %td
@@ -59,7 +59,7 @@
               = t(:total)
             %td(colspan='2')
               %h3
-                {{total()}}
+                {{total() | currency:"":0 }}
 
       .button-cart{"ng-hide"=>"empty_table || order_flag"}
         %button#real_order_button.btn.btn-primary{style: "display: #{ user_signed_in? ? 'inline' : 'none' }", "ng-click"=>"contact_form()" } 
