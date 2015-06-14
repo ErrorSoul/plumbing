@@ -27,6 +27,15 @@ GIT
       i18n
       polyamorous (~> 1.1)
 
+GIT
+  remote: git@github.com:SammyLin/redactor-rails.git
+  revision: 7e1f466d78ac6c50ffa764b7ee64cb1d65d23150
+  specs:
+    redactor-rails (0.5.0)
+      devise
+      mime-types
+      orm_adapter
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -245,10 +254,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.0)
       json (~> 1.4)
-    redactor-rails (0.5.0)
-      devise
-      mime-types
-      orm_adapter
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rspec (3.1.0)
@@ -366,7 +371,7 @@ DEPENDENCIES
   rails (= 4.1.6)
   rails_config
   ransack!
-  redactor-rails
+  redactor-rails!
   rspec-rails
   russian
   sass-rails (~> 4.0.3)
