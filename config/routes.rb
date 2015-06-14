@@ -35,10 +35,7 @@ Rails.application.routes.draw do
   resources :line_items, defaults: { format: 'json' }
   resources :orders, only: :create
   resource  :users
-  get 'redactor_rails/pictures' => 'redactor_rails/pictures#index'
-  post 'redactor_rails/pictures' => 'redactor_rails/pictures#create'
-  get 'redactor_rails/documents' => 'redactor_rails/documents#index'
-  post 'redactor_rails/documents' => 'redactor_rails/documents#create'
+  
   
 
 
