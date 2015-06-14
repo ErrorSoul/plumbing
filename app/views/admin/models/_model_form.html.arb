@@ -1,7 +1,7 @@
 f.input :name, label: t(:name)
           
-f.input :vendor, label: t(:name), as: :select, collection: Vendor.all, include_blank: false
+f.input :vendor, label: t(:vendor), as: :select, collection: Vendor.all, include_blank: false
 f.input :valuta_id, label: t(:valuta), as: :select, collection: Valuta.all, include_blank: false
 f.input :percent, label: t(:percent)
-f.input :text, label: t(:text)
+f.input :text, label: t(:text), input_html: { class: "redactor" }
 f.input :asset, label: t(:asset)

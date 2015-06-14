@@ -193,6 +193,7 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
+    mini_magick (4.2.4)
     mini_portile (0.6.2)
     minitest (5.6.0)
     multi_json (1.11.0)
@@ -244,6 +245,10 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.0)
       json (~> 1.4)
+    redactor-rails (0.5.0)
+      devise
+      mime-types
+      orm_adapter
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rspec (3.1.0)
@@ -354,12 +359,14 @@ DEPENDENCIES
   jquery-rails
   kaminari
   libnotify
+  mini_magick
   mysql2
   pry-rails
   puma
   rails (= 4.1.6)
   rails_config
   ransack!
+  redactor-rails
   rspec-rails
   russian
   sass-rails (~> 4.0.3)
