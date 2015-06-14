@@ -50,7 +50,7 @@ ActiveAdmin.register Product do
       end
 
       f.input :price, label: t(:price)
-      f.input :description, label: t(:description)
+      f.input :description, label: t(:description), input_html: { class: 'redactor' }
     end
 
     f.inputs do

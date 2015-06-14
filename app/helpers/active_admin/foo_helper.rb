@@ -61,9 +61,19 @@ module ActiveAdmin::FooHelper
               end
             end
           when :valuta
-            row :valuta do
+            row t(:valuta) do
               obj.valuta.name
               
+            end
+
+          when :description
+            row t(:description) do
+              obj.description.html_safe
+            end
+          
+          when :text
+            row t(:text) do
+              obj.text.html_safe
             end
           
           when :variants

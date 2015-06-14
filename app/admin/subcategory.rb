@@ -11,7 +11,7 @@ ActiveAdmin.register Subcategory do
     f.inputs t(:details) do
       f.input :category, label: t(:category), as: :select, collection: Category.all, include_blank: false
       f.input :name, label: t(:name)
-      f.input :text, label: t(:text)
+      f.input :text, label: t(:text), input_html: { class: 'redactor' }
       f.input :asset, label: t(:asset)
     end
 

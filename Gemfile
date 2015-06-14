@@ -19,6 +19,7 @@ gem 'faker'
 gem 'formtastic'
 gem 'russian'
 gem 'carrierwave', '0.8.0'
+gem 'mini_magick'
 
 # Paginate
 gem 'kaminari'
@@ -28,6 +29,9 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 
 # Gretel
 gem "gretel"
+
+# editor
+gem 'redactor-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
