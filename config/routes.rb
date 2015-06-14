@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  mount RedactorRails::Engine => '/redactor_rails'
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: {
@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
+  #mount RedactorRails::Engine => '/redactor_rails'
   root 'main_pages#index'
   resources :products
   resources :main_pages
@@ -34,6 +35,12 @@ Rails.application.routes.draw do
   resources :line_items, defaults: { format: 'json' }
   resources :orders, only: :create
   resource  :users
+  get 'redactor_rails/pictures' => 'redactor_rails/pictures#index'
+  post 'redactor_rails/pictures' => 'redactor_rails/pictures#create'
+  get 'redactor_rails/documents' => 'redactor_rails/documents#index'
+  post 'redactor_rails/documents' => 'redactor_rails/documents#create'
+  
+
 
   get 'cart'    => 'main_pages#cart'
   get 'working' => 'main_pages#working'
