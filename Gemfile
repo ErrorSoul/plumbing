@@ -31,7 +31,7 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem "gretel"
 
 # editor
-gem 'redactor-rails', git: 'git@github.com:SammyLin/redactor-rails.git'
+gem 'redactor-rails', '= 0.4.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
