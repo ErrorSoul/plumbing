@@ -25,15 +25,15 @@
     .col-md-10
       .col-md-6
         %h4.price-product
-          = @product.price
+          = @product.p_price(@product.model)
           Pуб
       .col-md-6
         %button.btn.btn-success.btn-lg.btn-buy(ng-click="add_to_cart(#{@product.id})") Купить
 
-  .col-md-12
+  .col-md-11
     %h2.text-center Описание
     .row
-      .col-md-12.center-block
+      .col-md-12
         %p= @product.description.html_safe
   .col-md-11
     = render partial: "product_table", locals: {model: @product.model, subcategory: @product.model.subcategory}
