@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_need_attr
+  before_action :set_cart
   def new
     @prot = Prototype.includes(option_types: :type).first
     @product = Product.new
@@ -8,6 +10,10 @@ class ProductsController < ApplicationController
     end
 
     # pry.binding
+  end
+
+  def show
+    @product = Product.find(params[:id])
   end
 
   def create

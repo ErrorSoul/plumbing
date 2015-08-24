@@ -4,6 +4,18 @@
     
   .panel-body
     - breadcrumb  element
-    %p= element.text
+    - if element.class.name == 'Model'
+      .media
+        .col-md-2
+          %a.pull-left(href="#")
+            = image_tag(element.asset.url, size: "100x100", class:'media-object image-shadow')
+
+        .media-body
+          = link_to content_tag(:span, element.name, class: "#{element.name}" + "_h3" ), element
+          %p
+            =  element.text
+    - else 
+      %p= element.text
+    
     
 

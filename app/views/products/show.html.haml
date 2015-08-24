@@ -1,0 +1,39 @@
+- breadcrumb @product
+
+.col-md-10(ng-controller="CartController")
+  %h2.text-center= @product.name
+  .col-md-6
+    = image_tag(@product.asset.url, size: "300x300")
+  .col-md-6
+    %h3= @product.name
+    %p.marking-product= @product.marking
+    %p= @product.subcategory.name
+    %p
+      = @product.model.vendor.name
+      ,
+      = @product.model.vendor.country.name
+    .col-md-10
+      .row
+      
+        %table.table.table-striped
+
+          %tbody
+            - @product.variants.each do |variant|
+              %tr
+                %td= variant.option_type.name
+                %td= variant.value
+    .col-md-10
+      .col-md-6
+        %h4.price-product
+          = @product.price
+          Pуб
+      .col-md-6
+        %button.btn.btn-success.btn-lg.btn-buy(ng-click="add_to_cart(#{@product.id})") Купить
+
+  .col-md-10
+    %h2.text-center Описание
+    .row
+      .col-md-10.center-block
+        %p= @product.description.html_safe
+  .col-md-11
+    = render partial: "product_table", locals: {model: @product.model, subcategory: @product.model.subcategory}

@@ -13,8 +13,8 @@
       %tr
         %td(colspan='10')= t :not_found
     - model.products.each do |product|
-      %tr
-        %td= product.name
+      %tr{ class: ("danger" if @product && (@product.id == product.id))}
+        %td= link_to product.name, product_path(product)
         - product.variants.each do |variant|
           %td= variant.value
         %td= product.p_price(model).round
