@@ -18,12 +18,12 @@ crumb :subcategory do |subcategory|
 end
 
 crumb :model do |model|
-  link model.name.mb_chars.truncate(15), model_path(model)
+  link model.name.mb_chars.truncate(25), model_path(model)
   parent :subcategory, model.subcategory
 end
 
 crumb :product do |product|
-  link product.name.mb_chars.truncate(15), product_path(product)
+  link product.name.mb_chars.truncate(35), product_path(product)
   parent :model, product.model
 end
 
