@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613204720) do
+ActiveRecord::Schema.define(version: 20150824185448) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,6 +46,20 @@ ActiveRecord::Schema.define(version: 20150613204720) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "bootsy_image_galleries", force: true do |t|
+    t.integer  "bootsy_resource_id"
+    t.string   "bootsy_resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bootsy_images", force: true do |t|
+    t.string   "image_file"
+    t.integer  "image_gallery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "carts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -56,6 +70,16 @@ ActiveRecord::Schema.define(version: 20150613204720) do
     t.text   "text"
     t.string "asset"
   end
+
+  create_table "comments", force: true do |t|
+    t.text     "body"
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["product_id"], name: "index_comments_on_product_id"
 
   create_table "countries", force: true do |t|
     t.string   "name"

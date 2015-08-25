@@ -185,3 +185,37 @@ angular.module('product').controller "CartShowController", ["$scope", "$http","$
             .error((error) -> console.log(error))
 
     ]
+
+
+angular.module('product').controller "CommentsController", ["$scope", "$http","$timeout",  ($scope, $http, $timeout) ->
+  $scope.checkForm = ->
+      if  $scope.expertForm.$valid
+        true
+      else
+        $scope.expertForm.name.$setTouched(true)
+        $scope.expertForm.name.$setDirty(true)
+        $scope.expertForm.body.$setTouched(true)
+        $scope.expertForm.body.$setDirty(true)
+        false
+
+  $scope.submit = (comment) ->
+      $http.post("/send_comment", comment: comment)
+        .success( (data) ->
+          console.log("data", data)
+          if data.message and data.message is 'send'
+            $scope.comment.name = ""
+            $scope.comment.body = ""
+            $scope.expertForm.name.$setUntouched(true)
+            $scope.expertForm.name.$setPristine(true)
+            $scope.expertForm.body.$setUntouched(true)
+            $scope.expertForm.body.$setPristine(true)
+            $scope.flag_confirm = true
+            comment = data.comment
+            $scope.comments.push(comment)
+        ).error((error) ->
+          console.log('error', error)
+        )
+      console.log("submit")
+
+
+  ]

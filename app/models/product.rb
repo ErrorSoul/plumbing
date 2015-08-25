@@ -21,6 +21,7 @@ class Product < ActiveRecord::Base
   has_many :variants, inverse_of: :product, dependent: :destroy
   has_many :option_types, through: :variants
   has_many :line_items
+  has_many :comments
 
   accepts_nested_attributes_for :variants
   
@@ -31,6 +32,6 @@ class Product < ActiveRecord::Base
 
   def p_price(model)
     m = price *  model.valuta.value
-    m + (m * (model.percent/100.0))
+    m + (m * (model.percent/100.0)) + 1
   end
 end

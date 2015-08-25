@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get 'contact' => 'main_pages#contact'
   get 'delivery' => 'main_pages#delivery'
   get 'persons/profile', as: 'user_root'
+  post "send_comment" => "comments#send_comment"
   # Example resource route with options:
   #   resources :products do
   #     member do
