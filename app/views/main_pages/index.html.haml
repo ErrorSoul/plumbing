@@ -3,7 +3,7 @@
 .col-md-10
   .panel.panel-default.element-header-shadow
     .panel-heading.panel-color-font
-      Каталог товара
+      Добро пожаловать!
     .panel-body
       .col-md-12.center-block
         %p
@@ -14,7 +14,7 @@
           Налаживая дилерские взаимоотношения, мы готовы передать наш опыт и знания, провести обучение специалистов на местах. Прекрасно отлаженная транспортная и складская логистика позволяет жестко контролировать всю цепочку движения, предлагать клиенту лучшие цены.
 
   .panel.panel-default
-    .panel-body
+    .panel-body.without-border
       %h3 Каталог 
   //= render partial: "category_table", locals: {element: @categories, form_flag: nil}
   = render partial: "category_iter", locals: {element: @categories, form_flag: nil}

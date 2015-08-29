@@ -28,7 +28,7 @@
           = @product.p_price(@product.model).round
           Pуб
       .col-md-6
-        %button.btn.btn-success.btn-lg.btn-buy(ng-click="add_to_cart(#{@product.id})") Купить
+        %button.btn.btn-leel.btn-lg.btn-buy(ng-click="add_to_cart(#{@product.id})") Купить
 
   .col-md-11
     %h2.text-center Описание
@@ -38,10 +38,10 @@
   .col-md-11
     = render partial: "product_table", locals: {model: @product.model, subcategory: @product.model.subcategory}
   .col-md-11(ng-controller="CommentsController")
-    .col-md-12.border-comment
-      %h4.text-center Отзывы
+    .col-md-12.border-comments
+      %h4.text-center.reviews Отзывы
       .col-md-10.center-block(ng-init="comments= #{@product.comments.to_json}")
-        .col-md-12.border-comment.comment.margin-bottom
+        .col-md-12.border-comment.comment-sizes.margin-bottom
           %form.css-form(name="expertForm")
             .ara(ng-init="comment.product_id = #{@product.id}")
             .form-group.col-md-10
@@ -51,13 +51,13 @@
             .form-group.col-md-10
               %label.control-label.col-md-2{:for => "exampleInputPassword1"} Отзыв
               .col-md-10
-                %textarea.form-control{:rows => 5, "ng-model" => "comment.body", "name" => "body", :required => "required"}
+                %textarea.form-control{:rows => 5, :placeholder => "Ваш отзыв", "ng-model" => "comment.body", "name" => "body", :required => "required"}
             .col-md-10.form-group
               .col-md-10.pull-right
-                %button.btn.btn-default.btn-lg.center-block.comment-button.pull-right.btn-success(ng-click="checkForm() && submit(comment)") Отправить
+                %button.btn.btn-default.btn-lg.center-block.comment-button.pull-right.btn-leel(ng-click="checkForm() && submit(comment)") Отправить
           
         %ul.media-list
-          %li.media.border-comment.comment(ng-repeat="comment in comments")
+          %li.media.border-comment.comment-sizes.comment(ng-repeat="comment in comments")
             .media-body
               .col-md-12
                 .col-md-6
