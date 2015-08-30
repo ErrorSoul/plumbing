@@ -71,5 +71,5 @@
 - if @models.size > 0
   .col-md-12
     - @models.each do |model|
-      %div(class="col-md-#{12/@models.size}")
-        = image_tag(model.asset.url, size: "320x320")
+      .col-md-4
+        = image_tag(model.asset.url, class: "img-responsive")
