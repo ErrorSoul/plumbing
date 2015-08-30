@@ -70,6 +70,11 @@
 
 - if @models.size > 0
   .col-md-12
+    %h3.text-center.similar-products= t(:similar_products)
     - @models.each do |model|
       .col-md-4
-        = image_tag(model.asset.url, size: "280x280")
+        .col-md-12.margin-bottom
+          = image_tag(model.asset.url, size: "280x280", class: "center-block")
+        %p.text-center
+          = link_to(model.name, model_path(model))
+        %h4.text-center= model.subcategory.name
