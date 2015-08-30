@@ -6,7 +6,22 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+$main_color: #B5F0D4;
 
+@font-face {
+        font-family: "Kaushan";
+        src: asset-url('main/regular.otf') format("truetype");
+    }
+
+@font-face {
+        font-family: "Segoe";
+        src: asset-url('main/segoe.ttf') format("truetype");
+    }
+
+
+$breadcrumb: #7DB79C;
+$breadcrumb_hover: #B5B6F0;
+$violet: #B5B6F0;
 @import url(//fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,cyrillic);
 @mixin add-shadow {
   -webkit-box-shadow: 7px 7px 7px -4px #B5B6F0;
@@ -40,7 +55,9 @@
       html,
       body {
         height: 100%;
-        font-family: 'Roboto Slab', serif;
+        //font-family: 'Roboto Slab', serif;
+        font-family: 'Kaushan', serif;
+        font-size: 16px;
         /* The html and body elements cannot have any padding or margin. */
       }
 
@@ -128,26 +145,30 @@
 .breadcrumb {
   @include add-shadow;
   }
+a {
+  color: $breadcrumb;
+  &:hover{color: $violet;} 
+}
 
 .panel-heading {
-  background-color: rgb(163, 214, 250);
+  //background-color: $main_color;
   }
 
 .panel-default > .panel-color{
-  background-color: rgb(163, 214, 250);
+  background-color: $main_color;
   color: white;
   }
 
 
 .panel-default > .panel-color-font{
-  background-color: rgb(163, 214, 250);
+  background-color: $main_color;
   color: white;
   font-size: 22px;
   }
 
 
 .navbar-nav > li:hover {
-  background-color: rgb(163, 214, 250);
+  background-color: $main_color;
   color: white;
   a:hover{color: white;}
 
@@ -159,7 +180,7 @@
 
 
   .navbar-header:hover {
-    background-color: rgb(163, 214, 250);
+    background-color: $main_color;
     .navbar-brand  {
       color: white;
       }
@@ -255,4 +276,38 @@
   &:hover {
     background-color: #f2dede;
     }
+  }
+
+
+.product-head-table {
+  background-color: $violet;
+  color: white;
+  font-size: 15px;
+  th {
+    text-align: center;
+    }
+  }
+.product-body-table {
+  font-size: 18px;
+  text-align: center;
+  }
+.btn-black-border {
+  border: 1px solid;
+  }
+
+@media(min-width: 768px) {
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 0px;
+}
+}
+
+.navbar-default .navbar-nav > .open > a {
+  background-color: $main_color;
+  &:hover, &:focus {
+    background-color: $main_color;
+    }
+  }
+
+.segoe-font {
+  font-family: 'Segoe', sans-serif;
   }

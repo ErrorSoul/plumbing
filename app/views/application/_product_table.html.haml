@@ -1,5 +1,5 @@
 %table.table.table-bordered
-  %thead
+  %thead.product-head-table
     %tr
       %th= t(:model)
       - subcategory.prototype.option_types.each do |option|
@@ -8,7 +8,7 @@
       %th= t(:buy)
   
       
-  %tbody
+  %tbody.product-body-table
     - if model.products.blank?
       %tr
         %td(colspan='10')= t :not_found
@@ -19,5 +19,5 @@
           %td= variant.value
         %td= product.p_price(model).round
         %td 
-          .btn.btn-default(ng-click="add_to_cart(#{product.id})")
+          .btn.btn-default.btn-black-border(ng-click="add_to_cart(#{product.id})")
             = t(:buy)

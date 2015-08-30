@@ -33,7 +33,7 @@
   .col-md-11
     %h2.text-center Описание
     .row
-      .col-md-12
+      .col-md-12.segoe-font
         %p= @product.description.html_safe
   .col-md-11
     = render partial: "product_table", locals: {model: @product.model, subcategory: @product.model.subcategory}
@@ -67,3 +67,11 @@
                 .col-md-12
                   %p {{comment.body}}
          
+
+.col-md-12
+  .col-md-3
+    %p adsfads
+  .col-md-3
+    %p adsfads
+  .col-md-3
+    %p adsfads
