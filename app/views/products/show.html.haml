@@ -68,10 +68,8 @@
                   %p {{comment.body}}
          
 
-.col-md-12
-  .col-md-3
-    %p adsfads
-  .col-md-3
-    %p adsfads
-  .col-md-3
-    %p adsfads
+- if @models.size > 0
+  .col-md-12
+    - @models.each do |model|
+      %div(class="col-md-#{12/@models.size}")
+        = image_tag(model.asset.url, size: "320x320")

@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @models = (@product.subcategory.models - [@product.model]).take(4)
   end
 
   def create

@@ -113,7 +113,7 @@ $violet: #B5B6F0;
 
 
 .panel-bottom{
-  font-size: 12px;
+  //font-size: 12px;
 }
 
 .table-partial {
@@ -310,4 +310,8 @@ a {
 
 .segoe-font {
   font-family: 'Segoe', sans-serif;
+  }
+
+.dropdown-menu > li > a:hover {
+  background-color: $main_color;
   }
