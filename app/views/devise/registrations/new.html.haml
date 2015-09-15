@@ -6,12 +6,12 @@
       .form-group{ class: resource.errors[:name].empty? ? "" : "has-error"}
         = f.label :name, t(:name), class: "control-label" 
         = f.text_field :name, class: "form-control", autofocus: true, placeholder: t(:name)
-        %p= resource.errors[:email].empty? ? "" : resource.errors[:email].first
+        %p= resource.errors[:name].empty? ? "" : resource.errors[:name].first
       
       .form-group{ class: resource.errors[:email].empty? ? "" : "has-error"}
         = f.label :email, t(:email), class: "control-label", for: "user_email"
         = f.email_field :email, class: "form-control", autofocus: true, placeholder: t(:email)
-        %p= resource.errors[:email].empty? ? "" : resource.errors[:name].first
+        %p= resource.errors[:email].empty? ? "" : resource.errors[:email].first
 
      
 

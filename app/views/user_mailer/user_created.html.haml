@@ -1,6 +1,7 @@
 .col-sm-12
   .jumbotron.col-sm-8.center-block
-    = t :page_header_html, scope: @scope, user_name: @user.name
-    = t :page_body_html,   scope: @scope, login: @user.email, password: @user.password
+    .col-sm-8.center-block
+      = t :page_header_html, scope: @scope, user_name: @user.name
+      = t :page_body_html,   scope: @scope, login: @user.email, password: @user.password
 
-    %p= link_to t(:enter), root_url, class: 'btn btn-success btn-md'
+      %p= link_to t(:enter), root_url, class: 'btn btn-success btn-md'
