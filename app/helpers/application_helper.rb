@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 module ApplicationHelper
+  def file_type(name)
+    type = name.split('.').last
+    type == 'xlsx' ? 'xls' : type
+  end
   DICT = { name: 'Имя',
            id: 'Номер',
            asset: 'Картинка',
@@ -72,6 +76,7 @@ module ApplicationHelper
         column t(:valuta), :valuta do |obj|
           obj.valuta.name
         end
+
       else
         column dict[attr], attr do |obj|
           obj[attr]

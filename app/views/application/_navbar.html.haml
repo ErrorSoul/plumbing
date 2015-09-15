@@ -18,9 +18,7 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li
-          %a{:href => "#"}
-            = t(:catalogs)
-            %span.sr-only (current)
+          = link_to(t(:catalogs), price_path)
 
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button", 'aria-labelledby'=>"dropdownMenu1"}

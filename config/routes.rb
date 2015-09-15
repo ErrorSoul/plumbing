@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   get 'working' => 'main_pages#working'
   get 'contact' => 'main_pages#contact'
   get 'delivery' => 'main_pages#delivery'
+  get 'price'    => 'main_pages#price'
   get 'persons/profile', as: 'user_root'
   post "send_comment" => "comments#send_comment"
   # Example resource route with options:

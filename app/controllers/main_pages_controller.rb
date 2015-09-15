@@ -18,6 +18,10 @@ class MainPagesController < ApplicationController
 
   def delivery; end
 
+  def price
+    @catalogs = Catalog.all
+  end
+
   def create
     @user = User.new params
 

@@ -6,6 +6,10 @@ crumb :category do |category|
   link category.name, category_path(category)
   parent :root
 end
+crumb :catalogs do
+  link t(:catalogs), root_path
+  parent :root
+end
 
 crumb :categories do
   link "Categories", categories_path
