@@ -147,6 +147,11 @@ ru:
             many: "Свойства"
             other: "Свойства"
             few: "Свойств"
+        catalog:
+            one: "Католог"
+            many: "Катологи"
+            other: "Католог"
+            few: "Катологи"
 
         prototype_option_type:
             one: "Свойство"

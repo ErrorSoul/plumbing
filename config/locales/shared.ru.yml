@@ -86,5 +86,11 @@ ru:
   valuta:      'Валюта'
   description: 'Описание'
 
-
   similar_products: 'Похожие товары'
+
+  phone: "Телефон"
+  address: "Адрес"
+  created_at_order: "Дата оформления заказа"
+  show_orders: "Показать все заказы"
+  new_orders: 'Новые заказы'
+  clients: 'Клиенты'

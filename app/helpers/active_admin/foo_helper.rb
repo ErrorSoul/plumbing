@@ -63,32 +63,35 @@ module ActiveAdmin::FooHelper
           when :valuta
             row t(:valuta) do
               obj.valuta.name
-              
+            end
+
+          when :file
+            row t(:asset) do |obj|
+              obj.asset.file.original_filename
             end
 
           when :description
             row t(:description) do
               obj.description.html_safe
             end
-          
+
           when :text
             row t(:text) do
               obj.text.html_safe
             end
-          
+
           when :variants
             obj.variants.each do |opt|
               row opt.option_type.name do
                 opt.value
               end
             end
-            
+
           when :percent
             row t(:percent) do
               obj.send(attr)
             end
 
-            
           when :type
             row ApplicationHelper::DICT[attr] do
               link_to obj.send(attr).name, url_for([:admin, obj.subcategory])

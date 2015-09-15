@@ -6,17 +6,17 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
 
-        panel "Новые заказы" do
+        panel I18n.t(:new_orders) do
           table_for Order.order("created_at desc").limit(5) do
-            column "Клиент",:name do |order|
+            column I18n.t(:clients),:name do |order|
               link_to order.user.name, admin_order_path(order)
             end
-            column "Телефон", :phone
-            column "Адрес" , :address
-            column "Сумма заказа", :total
-            column "Дата оформления заказа", :created_at
+            column I18n.t(:phone), :phone
+            column  I18n.t(:address), :address
+            column I18n.t(:total), :total
+            column I18n.t(:created_at_order), :created_at
           end
-          strong { link_to "Показать все заказы", admin_orders_path }
+          strong { link_to I18n.t(:show_orders), admin_orders_path }
         end
 
       end

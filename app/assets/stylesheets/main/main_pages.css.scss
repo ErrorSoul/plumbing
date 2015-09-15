@@ -325,3 +325,23 @@ a {
 .margin-bottom {
   margin-bottom: 20px;
   }
+
+
+.pdf {
+  background: image-url('ico/pdf.png') center center no-repeat;
+  height: 100px;
+  width: 100px;
+  }
+.pdf:hover {background: image-url('ico/pdf_a.png') center center no-repeat  }
+
+.xls {
+  background: image-url('ico/xls.png') center center no-repeat;
+  height: 100px;
+  width: 100px;
+  }
+.xls:hover {background: image-url('ico/xls_a.png') center center no-repeat  }
+
+.file_image {
+  height: 100px;
+  width: 100px;
+  }
