@@ -45,6 +45,7 @@ gem 'activeadmin', github: 'activeadmin'
 
 gem 'rails_config'
 
+gem "state_machines-activerecord"
 group :development do
   gem 'better_errors'
   gem "binding_of_caller"

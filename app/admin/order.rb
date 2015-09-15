@@ -1,10 +1,12 @@
 # -*- coding:utf-8 -*-
 ActiveAdmin.register Order do
+  permit_params :user_id, :phone, :address, :state, :total 
 
   filter :user, label: I18n.t(:client)
   filter :phone, label: I18n.t(:phone)
   filter :address, label: I18n.t(:address)
   filter :created_at, label: I18n.t(:created_at)
+  filter :state, label: I18n.t(:state), as: :select, collection: Order::STATES.map{|x| [I18n.t(x), x]}
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -32,13 +34,26 @@ ActiveAdmin.register Order do
   column t(:address), :address do |x|
       x.address
     end
-
+  column t(:state), :state do |x|
+      span class: status_label(x.state) do
+        I18n.t x.state
+      end
+    end
     column t(:sum), :total
     column t(:date_create), :created_at
   actions
   end
 
 
+  form(html: { multipart: true }) do |f|
+    f.semantic_errors *f.object.errors.keys
+    f.inputs t(:details) do
+      f.input :state, label: t(:state), as: :select,
+        collection: Order::STATES.map{|x| [I18n.t(x), x]}, include_blank: false
+    end
+
+    f.actions
+  end
   show do |x|
     attributes_table do
 

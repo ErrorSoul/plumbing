@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 module ApplicationHelper
+  include LabelStatusHelper
+
   def file_type(name)
     type = name.split('.').last
     type == 'xlsx' ? 'xls' : type

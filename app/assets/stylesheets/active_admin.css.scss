@@ -48,3 +48,79 @@
   width: 80%;
   left: 20%;
 }
+
+
+.label_admin {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+
+
+a.label:hover, a.label:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 44, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_labels.scss */
+.label-default {
+  background-color: #777777;
+}
+/* line 8, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_labels.scss */
+.label-default[href]:hover, .label-default[href]:focus {
+  background-color: #5e5e5e;
+}
+
+/* line 48, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_labels.scss */
+.label-primary {
+  background-color: #428bca;
+}
+/* line 8, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_labels.scss */
+.label-primary[href]:hover, .label-primary[href]:focus {
+  background-color: #3071a9;
+}
+
+/* line 52, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_labels.scss */
+.label-success {
+  background-color: #5cb85c;
+}
+/* line 8, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_labels.scss */
+.label-success[href]:hover, .label-success[href]:focus {
+  background-color: #449d44;
+}
+
+/* line 56, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_labels.scss */
+.label-info {
+  background-color: #5bc0de;
+}
+/* line 8, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_labels.scss */
+.label-info[href]:hover, .label-info[href]:focus {
+  background-color: #31b0d5;
+}
+
+/* line 60, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_labels.scss */
+.label-warning {
+  background-color: #f0ad4e;
+}
+/* line 8, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_labels.scss */
+.label-warning[href]:hover, .label-warning[href]:focus {
+  background-color: #ec971f;
+}
+
+/* line 64, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_labels.scss */
+.label-danger {
+  background-color: #d9534f;
+}
+/* line 8, /home/errorsoul/.rvm/gems/ruby-2.0.0-p481/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_labels.scss */
+.label-danger[href]:hover, .label-danger[href]:focus {
+  background-color: #c9302c;
+}

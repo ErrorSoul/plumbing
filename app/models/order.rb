@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
+  STATES = %w(new process pay_ok pay_error).freeze
   belongs_to :user
   before_save :calculator
   after_create :order_created
@@ -14,7 +15,26 @@ class Order < ActiveRecord::Base
   end
 
   def calculator
-    self.total = line_items.to_a.sum{|l| l.product.price * l.quantity}
+    self.total = line_items.to_a.sum{ |l| l.product.price * l.quantity }
+  end
+
+  def calculator_rub
+    line_items.to_a.sum{ |l| l.product.p_price(l.product.p_price.model) * l.quantity }
+  end
+
+  state_machine :state, initial: :new do
+
+    event :process do
+      transition new: :process
+    end
+
+    event :pay_ok do
+      transition process: :pay_ok
+    end
+
+    event :pay_error  do
+      transition process: :pay_error
+    end
   end
 
   def calculator_rub
