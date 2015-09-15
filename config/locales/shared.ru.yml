@@ -94,3 +94,13 @@ ru:
   show_orders: "Показать все заказы"
   new_orders: 'Новые заказы'
   clients: 'Клиенты'
+
+  state:   'Статус'
+  new:     'Новый'
+  process: 'В процессе'
+  pay_ok:  "Оплачено"
+  pay_error: 'Ошибка оплаты'
+  total_r:  'Итого (руб)'
+
+  send_client_order: 'Заказ от магазина Rustepel.ru'
+  send_shop_order:   'Поступил новый заказ'

@@ -1,0 +1,28 @@
+%h2 Заказ
+.col-sm-6.center-block
+  %hr
+  - @order.line_items.each.with_index(1) do |l, ind|
+    %h4(style="color: blue")
+      Товар
+      %span #
+      = ind
+    %p 
+      %b Название:         
+      %span 
+        = l.product.name
+    %p 
+      %b Aртикул:          
+      %span 
+        = l.product.marking
+    %p 
+      %b Количество
+      %span 
+        = l.quantity
+    %p  
+      %b Цена:              
+      %span
+        = l.product.p_price l.product.model
+    %p
+      %b Стоимость:       
+      %span 
+        = l.product.p_price(l.product.model) * l.quantity

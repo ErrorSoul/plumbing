@@ -1,0 +1,31 @@
+.row
+  .col-sm-12
+    .jumbotron.col-sm-10.center-block
+      .col-sm-8.center-block
+        %h3
+          Добрый день!
+        %p
+          Поступил новый заказ от
+          %span
+            = @user.name
+        %p
+          Телефон
+          %span
+            = @order.phone
+
+        %p
+          Адрес
+          %span
+            = @order.address
+        %p
+          Email
+          %span
+            = @user.email
+        = render partial: "order_part"
+
+        %h2
+          Итого
+          %span(style='color:red')
+            = @order.calculator_rub
+
+        %p= link_to t(:enter), user_root_url, class: 'btn btn-success btn-md'
