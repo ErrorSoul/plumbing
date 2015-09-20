@@ -345,3 +345,17 @@ a {
   height: 100px;
   width: 100px;
   }
+
+
+.pointer {
+  cursor: pointer;
+  font-size: 40px;
+  }
+
+.table-cart {
+  text-align: center;
+  }
+.table-cart > thead > tr > th,
+.table-bordered > thead > tr > td {
+  text-align: center;
+  }

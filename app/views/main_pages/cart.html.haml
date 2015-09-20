@@ -1,7 +1,7 @@
 = render partial: 'cart_modal'
 
 - breadcrumb @cart
-.col-md-8
+.col-md-10
   - if @cart.line_items.empty?
     .alert.alert-warning(role="alert")
       = t(:empty_cart)
@@ -23,9 +23,9 @@
             %label{:for => "phone"}
               = t(:phone)
             %input#phone.form-control{placeholder: t(:phone), type: "phone", "ng-model" => 'order.phone',"ng-minlength" =>"7", 'required'=>true}
-          %button.btn.btn-default{:type => "submit" ,"ng-disabled"=>"form.$invalid"} Submit
+          %button.btn.btn-default{:type => "submit" ,"ng-disabled"=>"form.$invalid"} Заказать
 
-      %table.table.table-bordered(ng-hide="empty_table || order_flag")
+      %table.table.table-bordered.table-cart(ng-hide="empty_table || order_flag")
         %thead
           %tr
             %th= t(:asset)
@@ -46,29 +46,27 @@
             %td
               {{item.product.marking}}
             %td
-              %input.cart_quantity_input{:autocomplete => "off", :name => "quantity", "ng-model" => "item.quantity", :type => "number", :value => "1", :min => "1", "ng-disabled" => "button_hide"}
+              %input.center-block.cart_quantity_input{:autocomplete => "off", :name => "quantity", "ng-model" => "item.quantity", :type => "number", :value => "1", :min => "1", "ng-disabled" => "button_hide"}
             %td
               {{p_price(item, item.product.price, item.product.model.valuta.value, item.product.model.percent) |  number: 0 }}
-            %td
+            %td.pointer
               {{item.product.summ * item.quantity |  number: 0}}
-            %td
-              %span.glyphicon.glyphicon-remove-circle(ng-really-message="Вы уверены?" ng-really-click="button_hide || delete($index)" )
+            %td(style="text-align: center")
+              %span.pointer.glyphicon.glyphicon-remove-circle(ng-really-message="Вы уверены?" ng-really-click="button_hide || delete($index)" )
           %tr
-            %td(colspan='5')
-              %h3
+            %td.pointer(colspan='5')
               = t(:total)
-            %td(colspan='2')
-              %h3
-                {{total() |  number: 0}}
+            %td.pointer(colspan='2' style="color: brown")
+              {{total() |  number: 0}}
 
       .button-cart{"ng-hide"=>"empty_table || order_flag"}
         %button#real_order_button.btn.btn-primary{style: "display: #{ user_signed_in? ? 'inline' : 'none' }", "ng-click"=>"contact_form()" } 
           = t(:order)
 
-        %button#modal_button.btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button",  style: "display: #{ user_signed_in? ? 'none' : 'inline' } " }
+        %button#modal_button.btn.btn-primary.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button",  style: "display: #{ user_signed_in? ? 'none' : 'inline' } " }
           = t(:order)
 
-        %button.btn.btn-primary(ng-click="line_items_update()")
+        %button.btn.btn-primary.btn-lg(ng-click="line_items_update()")
           = t(:update_cart)
         /%button.btn.btn-default{"ng-click" => "toggleModal()"} Open modal
 

@@ -40,6 +40,9 @@ ActiveAdmin.register Order do
       end
     end
     column t(:sum), :total
+    column t(:total_r) do |x|
+      x.calculator_rub
+    end
     column t(:date_create), :created_at
   actions
   end
@@ -75,6 +78,10 @@ ActiveAdmin.register Order do
 
       row t(:sum) do
         x.total
+      end
+
+      row t(:total_r) do
+        x.calculator_rub
       end
 
       row t(:created_at) do

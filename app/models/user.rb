@@ -27,12 +27,24 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   has_many  :orders
 
+  before_validation :put_password, on: :create
   after_create :send_mail_user_created
   #after_update :send_mail_password_changed
 
   private
 
+  def put_password
+    self.password = generate_password if self.password.nil?
+  end
+
+
   def send_mail_user_created
     UserMailer.user_created(self).deliver
+  end
+
+  def generate_password
+    [("a".."z"), (1..100), ("A".."Z")].map do |range|
+      range.to_a.sample(3)
+    end.shuffle.join.slice(0, 8)
   end
 end

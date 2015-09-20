@@ -21,7 +21,7 @@ ActiveAdmin.register_page "Dashboard" do
               end
             end
             column I18n.t(:total), :total
-            column I18n.t(:total) do |obj|
+            column I18n.t(:total_r) do |obj|
               obj.calculator_rub
             end
             column I18n.t(:created_at_order), :created_at
