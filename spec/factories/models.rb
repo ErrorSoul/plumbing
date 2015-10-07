@@ -11,7 +11,7 @@
 #  asset          :string(255)
 #  text           :text
 #  valuta_id      :integer
-#  percent        :integer
+#  percent        :integer          default(0)
 #
 
 FactoryGirl.define do

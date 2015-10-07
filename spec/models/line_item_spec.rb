@@ -8,6 +8,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  quantity   :integer          default(1)
+#  order_id   :integer
 #
 
 require 'rails_helper'

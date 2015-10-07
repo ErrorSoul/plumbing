@@ -16,6 +16,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string(255)
+#  user_type              :string(255)      default("user")
 #
 
 class User < ActiveRecord::Base

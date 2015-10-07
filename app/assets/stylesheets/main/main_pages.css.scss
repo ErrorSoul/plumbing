@@ -39,7 +39,7 @@ $violet: #B5B6F0;
 .icons-awesome {
   vertical-align: super;
   position: absolute;
-  right: 6%;
+  right: 5%;
   }
 
 
@@ -367,4 +367,13 @@ a {
 .table-cart > thead > tr > th,
 .table-bordered > thead > tr > td {
   text-align: center;
+  }
+
+
+.head-background {
+  background: image-url('head/3.jpg') no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   }
