@@ -1,6 +1,6 @@
 %h2= t :login
 - resource = User.new
-= form_for(resource,  url: user_session_path, method: :post,  html: {id: 'sign_up_user', :'data-type' => 'json'}, remote: true) do |f| 
+= form_for(resource,  url: user_session_path, method: :post,  html: {id: 'sign_in_user', :'data-type' => 'json'}, remote: true) do |f| 
 
   .form-group
     = f.label t :email, class: "control-label" 

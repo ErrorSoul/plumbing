@@ -6,7 +6,13 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-$main_color: #B5F0D4;
+$main_color_old: #B5F0D4;
+$main_color: #4CC724;
+
+@font-face {
+  font-family: "MainFont";
+  src: asset-url('main/myfont.ttf') format("truetype");
+  }
 
 @font-face {
         font-family: "Kaushan";
@@ -19,7 +25,8 @@ $main_color: #B5F0D4;
     }
 
 
-$breadcrumb: #7DB79C;
+$breadcrumb_old: #7DB79C;
+$breadcrumb: $main_color;
 $breadcrumb_hover: #B5B6F0;
 $violet: #B5B6F0;
 @import url(//fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,cyrillic);
@@ -56,7 +63,7 @@ $violet: #B5B6F0;
       body {
         height: 100%;
         //font-family: 'Roboto Slab', serif;
-        font-family: 'Kaushan', serif;
+        font-family: 'MainFont', serif;
         font-size: 16px;
         /* The html and body elements cannot have any padding or margin. */
       }

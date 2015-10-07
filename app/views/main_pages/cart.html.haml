@@ -60,7 +60,7 @@
               {{total() |  number: 0}}
 
       .button-cart{"ng-hide"=>"empty_table || order_flag"}
-        %button#real_order_button.btn.btn-primary{style: "display: #{ user_signed_in? ? 'inline' : 'none' }", "ng-click"=>"contact_form()" } 
+        %button#real_order_button.btn.btn-primary.btn-lg{style: "display: #{ user_signed_in? ? 'inline' : 'none' }", "ng-click"=>"contact_form()" } 
           = t(:order)
 
         %button#modal_button.btn.btn-primary.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button",  style: "display: #{ user_signed_in? ? 'none' : 'inline' } " }
