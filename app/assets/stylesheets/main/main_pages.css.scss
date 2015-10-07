@@ -7,7 +7,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 $main_color_old: #B5F0D4;
-$main_color: #5BB33F;
+$main_color_old1: #5BB33F;
+$main_color:  #B5B6F0; 
 
 @font-face {
   font-family: "MainFont";
@@ -318,7 +319,7 @@ a {
   }
 
 .segoe-font {
-  font-family: 'Segoe', sans-serif;
+  font-family: 'MainFont', sans-serif;
   }
 
 .dropdown-menu > li > a:hover {
@@ -371,9 +372,25 @@ a {
 
 
 .head-background {
-  background: asset-url('head/3.jpg') no-repeat center;
+  background: asset-url('head/4.jpg') no-repeat center ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  }
+
+.head-body {
+  width: 37%;
+  opacity: 0.73;
+  background-color: white;
+  margin-top: 45px;
+  margin-bottom: 45px;
+  padding: 10px 0px;
+}
+
+.head-right {
+  width: 37%;
+  width: 37%;
+  opacity: 0.73;
+  background-color: white;
   }
