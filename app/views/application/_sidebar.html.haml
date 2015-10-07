@@ -10,7 +10,7 @@
           .panel-title.panel-bottom
             = link_to cat.name, category_path(cat)
 
-            %span.pull-right.col-md-2
+            %span.icons-awesome
               %i.fa.fa-caret-down.fa-2x.fa-fw{"aria-controls" => cat.name, "aria-expanded" => "#{ind.eql?(0) ? true : false}", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "##{cat.id}"}
 
         .panel.list-group.collapse.panel-bottom{"aria-labelledby" => cat.name, :role => "tabpanel", :id => cat.id}
