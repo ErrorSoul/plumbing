@@ -25,11 +25,12 @@ $main_color:  #B5B6F0;
         src: asset-url('main/segoe.ttf') format("truetype");
     }
 
-
+$violet: #3033C1;
 $breadcrumb_old: #7DB79C;
-$breadcrumb: $main_color;
-$breadcrumb_hover: #B5B6F0;
-$violet: #B5B6F0;
+$breadcrumb: $violet;
+//$breadcrumb_hover: #B5B6F0;
+$breadcrumb_hover:  $main_color;
+
 @import url(//fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,cyrillic);
 @mixin add-shadow {
   -webkit-box-shadow: 7px 7px 7px -4px #B5B6F0;
@@ -290,7 +291,7 @@ a {
 
 
 .product-head-table {
-  background-color: $violet;
+  background-color: $main_color;
   color: white;
   font-size: 15px;
   th {
@@ -382,6 +383,7 @@ a {
 .head-body {
   width: 37%;
   opacity: 0.73;
+  //color: white;
   background-color: white;
   margin-top: 45px;
   margin-bottom: 45px;
@@ -389,8 +391,24 @@ a {
 }
 
 .head-right {
-  width: 37%;
+  position: absolute;
+  right: 5%;
+  top: 140px;
   width: 37%;
   opacity: 0.73;
   background-color: white;
+  padding: 10px 10px;
+  }
+.head-address {
+  background-color: white;
+  text-align: center;
+  opacity: 0.73;
+  }
+
+nav#nav {
+  font-size: 18px;
+  }
+
+.panel-title {
+  font-size: 17px;
   }
