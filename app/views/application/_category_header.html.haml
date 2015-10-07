@@ -13,7 +13,7 @@
         .media-body
           = link_to content_tag(:span, element.name, class: "#{element.name}" + "_h3" ), element
           %p
-            =  element.text
+            =  element.text.html_safe
     - else 
       %p= element.text
     

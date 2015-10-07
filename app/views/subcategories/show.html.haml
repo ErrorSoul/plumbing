@@ -16,6 +16,6 @@
           .media-body
             = link_to content_tag(:span, category.name, class: "#{category.name}" + "_h3" ), category
             
-            %p= category.text  
+            %p= category.text.html_safe
           .col-md-12.table-partial
             = render partial: "product_table", locals: {model: category, subcategory: @subcategory}

@@ -10,7 +10,7 @@
 
             .media-body
               = link_to content_tag(:span, category.name, class: "#{category.name}" + "_h3" ), category
-              %p= category.text
+              %p= category.text.html_safe
     .col-md-10.center-block
       %ul.pagination
         - element.in_groups_of(3, false).each.with_index(1) do |x, ind|
