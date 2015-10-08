@@ -422,8 +422,11 @@ nav#nav {
   font-size: 18px;
   }
 
-.panel-title {
+.panel-body {
   font-size: 17px;
+  }
+.panel-body > a {
+  color: white;
   }
 
 #accordion {
