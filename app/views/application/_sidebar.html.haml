@@ -7,7 +7,7 @@
     - @categories.each_with_index do |cat, ind|
       .panel.panel-default.sidebar-element-shadow
         .panel-heading.panel-color{role: "tab", id: cat.name}
-          .panel-title.panel-bottom
+          .panel-body.panel-bottom
             = link_to cat.name, category_path(cat)
 
             %span.icons-awesome
