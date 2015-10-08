@@ -10,12 +10,14 @@
           .panel-body.panel-bottom
             .row
               .col-md-12
-                .col-md-9.sidebar-link
-                  = link_to cat.name, category_path(cat)
-                .col-md-3
+                .row
+                  .col-md-10.sidebar-link
+                    .row
+                      = link_to cat.name, category_path(cat)
+                  .col-md-2.pull-right
 
-            
-                  %i.fa.fa-caret-down.fa-2x.fa-fw{"aria-controls" => cat.name, "aria-expanded" => "#{ind.eql?(0) ? true : false}", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "##{cat.id}"}
+
+                    %i.fa.fa-caret-down.fa-2x.fa-fw{"aria-controls" => cat.name, "aria-expanded" => "#{ind.eql?(0) ? true : false}", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "##{cat.id}"}
 
         .panel.list-group.collapse.panel-bottom{"aria-labelledby" => cat.name, :role => "tabpanel", :id => cat.id}
           - cat.subcategories.each do |subcat|
