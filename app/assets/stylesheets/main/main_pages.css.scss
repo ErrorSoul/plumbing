@@ -422,8 +422,12 @@ nav#nav {
   font-size: 18px;
   }
 
-.panel-body {
+.panel-sidebar {
   font-size: 17px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: -10px;
+  margin-bottom: -10px;
   }
 .sidebar-link > a {
   color: white;
