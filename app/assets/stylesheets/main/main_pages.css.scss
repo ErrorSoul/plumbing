@@ -16,6 +16,11 @@ $main_color:  #B5B6F0;
   }
 
 @font-face {
+  font-family: "BoldFont";
+  src: asset-url('main/mybold.ttf') format("truetype");
+  }
+
+@font-face {
         font-family: "Kaushan";
         src: asset-url('main/regular.otf') format("truetype");
     }
@@ -381,28 +386,39 @@ a {
   }
 
 .head-body {
-  width: 37%;
-  opacity: 0.73;
-  //color: white;
-  background-color: white;
+  font-family: 'BoldFont', sans-serif;
+  width: 65%;
+  //opacity: 0.43;
+  //color: #23409C;
+  color: white;
+  background: rgba(30,61,154,0.45);
   margin-top: 45px;
   margin-bottom: 45px;
   padding: 10px 0px;
+  h2 {
+    font-size: 34px;
+    opacity: 1;
+    
+    }
 }
 
 .head-right {
   position: absolute;
   right: 5%;
-  top: 140px;
-  width: 37%;
-  opacity: 0.73;
-  background-color: white;
+  top: 70px;
+  width: 30%;
+  color: white;
+  background: rgba(30,61,154,0.45);
+  //opacity: 0.73;
+  //background-color: white;
   padding: 10px 10px;
   }
 .head-address {
-  background-color: white;
+  color: cornsilk;
+  margin-top: -50px;
+  //background-color: white;
   text-align: center;
-  opacity: 0.73;
+  //opacity: 1;
   }
 
 nav#nav {
