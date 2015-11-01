@@ -1,5 +1,13 @@
 
 
-- breadcrumb :profile 
-.col-sm-8
-  %h5= t(:hello) + ", #{current_user.name}"
+- breadcrumb :profile
+.row
+  .col-sm-8
+    %h3(style='text-align: center')= t(:hello) + ", #{current_user.name}"
+    - if current_user.user_type.in? %w(montaj distibutor)
+      .col-sm-12
+        = render partial: 'main_pages/catalog',
+          locals: {catalogs: Catalog.where(user_type: current_user.user_type), size: 12}
+    - else
+      %h5(style='text-align: center') Ваш заказ
+      = render partial: 'order_table', locals: {order: current_user.orders.first}

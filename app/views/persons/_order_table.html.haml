@@ -1,0 +1,28 @@
+%table.table.table-bordered.table-cart(ng-hide="empty_table || order_flag")
+  %thead
+    %tr
+      %th= t(:asset)
+      %th= t(:product)
+      %th= t(:marking)
+      %th= t(:quantity)
+
+ 
+
+
+  %tbody
+    - order.line_items.each do |line|
+      %tr
+        %td
+          = image_tag(line.product.asset.url, class: 'cart-image')
+        %td
+          = line.product.name
+        %td
+          = line.product.marking
+        %td
+          = line.quantity
+        
+%h4
+  Итоговая стоимость
+  = order.calculator_rub
+  %span
+    руб

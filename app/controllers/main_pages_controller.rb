@@ -19,7 +19,7 @@ class MainPagesController < ApplicationController
   def delivery; end
 
   def price
-    @catalogs = Catalog.all
+    @catalogs = Catalog.all.where(user_type: 'user')
   end
 
   def create

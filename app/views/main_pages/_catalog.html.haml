@@ -1,0 +1,10 @@
+%div(class="col-sm-#{size}")
+  .row
+    - catalogs.each do |element|
+      .media.media-shadow
+        .col-md-2
+          %a.pull-left(href="#{element.asset.url}")
+            .div(class="#{file_type(element.asset.file.file)}")
+        .media-body
+          %h3
+            = link_to(element.name, element.asset.url)

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 module ActiveAdmin::FooHelper
   class ActiveAdmin::Views::Pages::Show
+    include LabelStatusHelper
     def column_creator(attributes, action_flag = nil)
       logger.debug "Person attributes #{attributes}"
 
@@ -90,6 +91,14 @@ module ActiveAdmin::FooHelper
           when :percent
             row t(:percent) do
               obj.send(attr)
+            end
+
+          when :user_type
+            
+            row t(:user_type) do
+              div class: user_label(obj.send(attr)) do
+                t obj.send(attr)
+              end
             end
 
           when :type
