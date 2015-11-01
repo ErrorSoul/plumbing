@@ -205,6 +205,11 @@ ru:
             other: "Coвет"
             many: "Coвет"
             few: "Совет"
+        user:
+            one: 'Пользователь'
+            other: 'Пользователь'
+            many:  'Пользователи'
+            few:   'Пользователей'
       attributes:
         user:
           first_name: "Nombres"

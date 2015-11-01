@@ -32,6 +32,11 @@ class User < ActiveRecord::Base
   after_create :send_mail_user_created
   #after_update :send_mail_password_changed
 
+  TYPES = %w(
+    user
+    montaj
+    distributor
+  )
   private
 
   def put_password

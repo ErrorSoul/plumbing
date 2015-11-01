@@ -109,3 +109,13 @@ ru:
 
   send_client_order: 'Заказ от магазина Rustepel.ru'
   send_shop_order:   'Поступил новый заказ'
+
+
+  # USERS
+
+  user: 'Пользователь'
+  montaj: 'Монтажник'
+  distributor: 'Продавец'
+  id: 'id'
+  orders_sum: 'Количество заказов'
+  user_type:  'Тип пользователя'
