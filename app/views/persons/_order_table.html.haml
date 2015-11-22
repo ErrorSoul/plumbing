@@ -1,4 +1,4 @@
-%table.table.table-bordered.table-cart(ng-hide="empty_table || order_flag")
+%table.table.table-bordered.table-cart
   %thead
     %tr
       %th= t(:asset)
@@ -6,7 +6,7 @@
       %th= t(:marking)
       %th= t(:quantity)
 
- 
+
 
 
   %tbody
@@ -20,7 +20,7 @@
           = line.product.marking
         %td
           = line.quantity
-        
+
 %h4
   Итоговая стоимость
   = order.calculator_rub

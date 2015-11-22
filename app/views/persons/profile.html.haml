@@ -9,5 +9,8 @@
         = render partial: 'main_pages/catalog',
           locals: {catalogs: Catalog.where(user_type: current_user.user_type), size: 12}
     - else
-      %h5(style='text-align: center') Ваш заказ
-      = render partial: 'order_table', locals: {order: current_user.orders.first}
+      - if current_user.orders.first
+        %h5(style='text-align: center') Ваш заказ
+        = render partial: 'order_table', locals: {order: current_user.orders.first}
+      - else
+        %h5(style='text-align: center') У вас пока нет заказов

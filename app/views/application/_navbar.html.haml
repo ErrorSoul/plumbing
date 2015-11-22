@@ -1,6 +1,6 @@
 .row
   .jumbotron.head-background(style='position: relative')
-    %h3.head-address 
+    %h3.head-address
       %b Москва, 41 км. МКАД, Строительный рынок(ярмарка) Мельница, Славянский мир пав. Г10/6
     .head-body
       %h2(style='text-align:center') Интернет-магазин отопительных систем
@@ -17,8 +17,8 @@
         %span.glyphicon.glyphicon-phone-alt.icon-size
           7-926-527-87-40
       %p c 9:00 до 20:00 без выходных
-    
-    
+
+
 
 %nav#nav.navbar.navbar-default.navbar-shadow(data-spy="affix" data-offset-top="300")
   .container(style='width: 100%')
@@ -71,7 +71,7 @@
         - if user_signed_in?
           %li.dropdown
             %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button", 'aria-labelledby'=>"dropdownMenu1"}
-              = t(:hello)
+              %span.glyphicon.glyphicon-user
               %span.caret
             %ul.dropdown-menu.dropdown-color{:role => "menu"}
               %li

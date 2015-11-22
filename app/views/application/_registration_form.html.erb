@@ -1,7 +1,7 @@
 <h2><%= t :sign_up %></h2>
 
 <%= form_for(User.new, url: user_registration_path, html: {id: 'sign_up_user', :'data-type' => 'json'}, remote: true) do |f| %>
- 
+
   <div class="form-group" id="form_name">
     <%= f.label :name, t(:name), class: "control-label" %><br />
     <%= f.text_field :name, class: "form-control", autofocus: true, placeholder: t(:name) %>
@@ -15,6 +15,7 @@
 
   <div class="form-group" id="form_password">
     <%= f.label :password, t(:password), class: "control-label" %>
+    <em> 8 minimum </em>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
@@ -29,8 +30,5 @@
   <div class="actions">
     <button class="btn btn-large btn-info col-sm-12" type="submit"><%= t :sign_up %></button>
   </div>
-  
+
 <% end %>
-
-
-
