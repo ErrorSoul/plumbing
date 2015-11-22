@@ -8,11 +8,12 @@
 @import "font-awesome";
 $main_color_old: #B5F0D4;
 $main_color_old1: #5BB33F;
-$main_color:  #B5B6F0; 
+$main_color:  #B5B6F0;
 
 @font-face {
   font-family: "MainFont";
-  src: asset-url('main/myfont.ttf') format("truetype");
+  src: asset-url('main/europa.ttf') format("truetype");
+
   }
 
 @font-face {
@@ -108,7 +109,7 @@ $breadcrumb_hover:  $main_color;
   font-family: 'Roboto',sans-serif;
   width: 50px;
   height: 50px;
-  
+
 }
 
 
@@ -161,7 +162,7 @@ $breadcrumb_hover:  $main_color;
   }
 a {
   color: $breadcrumb;
-  &:hover{color: $violet;} 
+  &:hover{color: $violet;}
 }
 
 .panel-heading {
@@ -395,7 +396,7 @@ a {
   margin-top: 45px;
   margin-bottom: 45px;
   padding: 10px 0px;
-  
+
 }
 
 .head-right {
@@ -436,3 +437,99 @@ nav#nav {
 #accordion {
   width: 183px;
   }
+.paginationa {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.paginationa > li {
+  display: inline;
+}
+.paginationa > li > a,
+.paginationa > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.paginationa > li:first-child > a,
+.paginationa > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.paginationa > li:last-child > a,
+.paginationa > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.paginationa > li > a:hover,
+.paginationa > li > span:hover,
+.paginationa > li > a:focus,
+.paginationa > li > span:focus {
+  z-index: 2;
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.paginationa > .active > a,
+.paginationa > .active > span,
+.paginationa > .active > a:hover,
+.paginationa > .active > span:hover,
+.paginationa > .active > a:focus,
+.paginationa > .active > span:focus {
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.paginationa > .disabled > span,
+.paginationa > .disabled > span:hover,
+.paginationa > .disabled > span:focus,
+.paginationa > .disabled > a,
+.paginationa > .disabled > a:hover,
+.paginationa > .disabled > a:focus {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.paginationa-lg > li > a,
+.paginationa-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+}
+.paginationa-lg > li:first-child > a,
+.paginationa-lg > li:first-child > span {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.paginationa-lg > li:last-child > a,
+.paginationa-lg > li:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.paginationa-sm > li > a,
+.paginationa-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.paginationa-sm > li:first-child > a,
+.paginationa-sm > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.paginationa-sm > li:last-child > a,
+.paginationa-sm > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
