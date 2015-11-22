@@ -1,0 +1,15 @@
+- breadcrumb @post
+
+.col-md-10
+  .row
+    .col-md-12
+      .col-md-12
+        %h4
+          = link_to @post.title, post_path(@post)
+          %span.pull-right= @post.created_at
+        %hr
+      .col-md-12
+        .col-md-12(style="margin-bottom: 45px")
+          = image_tag(@post.photo.url, class: 'img-responsive center-block')
+        .col-md-12
+          = @post.body.html_safe

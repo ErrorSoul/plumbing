@@ -28,7 +28,9 @@ module ApplicationHelper
            description: 'Описание',
            country: 'Страна',
            vendor: 'Фирма',
-           text: "Текст"
+           text: "Текст",
+           title: "Заголовок",
+           body: "Teкст"
           }
 
   DICT_ROD = {
@@ -73,6 +75,17 @@ module ApplicationHelper
           div class: 'thumb' do
             image_tag(obj.asset.url)
           end
+        end
+
+      when :photo
+        column t(:asset), :asset do |obj|
+          div class: 'thumb' do
+            image_tag(obj.photo.url)
+          end
+        end
+      when :body
+        column t(:body), :body do |obj|
+          obj.body.truncate(19).html_safe
         end
       when :valuta
         column t(:valuta), :valuta do |obj|

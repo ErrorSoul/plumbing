@@ -6,9 +6,20 @@ crumb :category do |category|
   link category.name, category_path(category)
   parent :root
 end
+
 crumb :catalogs do
   link t(:catalogs), root_path
   parent :root
+end
+
+crumb :posts do
+  link t(:blog), posts_path
+  parent :root
+end
+
+crumb :post do |post|
+  link post.title.mb_chars.truncate(28), posts_path
+  parent :posts
 end
 
 crumb :categories do

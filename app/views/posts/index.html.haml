@@ -1,0 +1,22 @@
+- breadcrumb :posts
+.col-md-10
+  = paginate @posts, theme: :bootstrap3
+.col-md-10
+  - @posts.each do |post|
+    .row(style="margin-bottom: 75px")
+      .col-md-12
+        .col-md-12
+          %h4
+            = link_to post.title, post_path(post)
+            %span.pull-right= post.created_at
+          %hr
+        .col-md-12
+          .col-md-4
+            = image_tag(post.photo.url, class: 'img-responsive')
+          .col-md-8
+            = post.body.truncate(345).html_safe
+            .col-md-12(style="margin-top: 30px")
+              = link_to(t(:read_more), post_path(post), class: "btn btn-default")
+
+  .col-md-10
+    = paginate @posts, theme: :bootstrap3

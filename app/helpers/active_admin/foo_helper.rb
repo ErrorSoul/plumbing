@@ -52,6 +52,14 @@ module ActiveAdmin::FooHelper
                 image_tag(obj.asset.url)
               end
             end
+
+           when :photo
+            row I18n.t(:photo) do
+              div class: 'thumb' do
+                image_tag(obj.photo.url)
+              end
+            end
+
           when :category, :subcategory, :model, :country, :vendor
             if obj.send(attr)
 
@@ -81,6 +89,16 @@ module ActiveAdmin::FooHelper
               obj.text.html_safe
             end
 
+          when :title
+            row t(:title) do
+              obj.title
+            end
+
+           when :body
+            row t(:text) do
+              obj.body.html_safe
+            end
+
           when :variants
             obj.variants.each do |opt|
               row opt.option_type.name do
@@ -94,7 +112,7 @@ module ActiveAdmin::FooHelper
             end
 
           when :user_type
-            
+
             row t(:user_type) do
               div class: user_label(obj.send(attr)) do
                 t obj.send(attr)

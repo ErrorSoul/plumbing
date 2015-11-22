@@ -88,6 +88,9 @@ ru:
         description: 'Описание'
         line_items:  'Товарная позиция'
         country:   "Страна"
+        title: 'Заголовок'
+        photo: 'Картинка'
+        body: 'Текст'
 
   activerecord:
       models:
@@ -152,6 +155,12 @@ ru:
             many: "Катологи"
             other: "Католог"
             few: "Катологи"
+        post:
+          one: 'Пост'
+          many: 'Постов'
+          other: 'Пост'
+          few:  'Постoв'
+
 
         prototype_option_type:
             one: "Свойство"

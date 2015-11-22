@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   resources :models
   resources :line_items, defaults: { format: 'json' }
   resources :orders, only: :create
+  resources :posts, only: [:index, :show]
   resource  :users
 
 
