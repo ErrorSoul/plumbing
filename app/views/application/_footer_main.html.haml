@@ -1,0 +1,43 @@
+%footer.footer-distributed
+  .footer-left
+    %h3
+
+      %span Rustepel
+    %p.footer-links
+      = link_to t(:home), main_pages_path
+      ·
+      %a{:href => "#"} Blog
+      ·
+      = link_to(t(:catalogs), price_path)
+      ·
+      = link_to t(:contacts), contact_path
+      ·
+      = link_to t(:shopping_cart), cart_path
+    %p.footer-company-name Rustepel © 2015
+  .footer-center
+    %div
+      %i.fa.fa-map-marker
+      %p
+        %span ярмарка «Мельница, Славянский мир»
+        Павильон Г10/6
+    %div
+      %i.fa.fa-phone
+      %p +7 967 2897799
+    %div
+      %i.fa.fa-envelope
+      %p
+        %a{:href => "mailto:info@rustepel.ru"} info@rustepel.ru
+  .footer-right
+    %p.footer-company-about
+      %span
+        = t(:about_company)
+      Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+    .footer-icons
+      %a{:href => "#"}
+        %i.fa.fa-facebook
+      %a{:href => "#"}
+        %i.fa.fa-twitter
+      %a{:href => "#"}
+        %i.fa.fa-linkedin
+      %a{:href => "#"}
+        %i.fa.fa-github

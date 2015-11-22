@@ -6,6 +6,7 @@ ru:
   not_found: 'Не найдено'
   buy:        'Купить'
   about_us:   'О нас'
+  about_company: 'О нашей компании'
   delivery:    'Оплата и доставка'
   you_are_here: 'Вы здесь'
   home:         'Главная'
@@ -62,8 +63,8 @@ ru:
   create_product: 'Cоздать продукт'
   create_model:   'Cоздать модель'
   create_subcategory: 'Создать подкатегорию'
-  
-  
+
+
   # navbar
   shop:       'Наш магазин'
   forum:      'Форум'

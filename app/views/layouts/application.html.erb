@@ -8,12 +8,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
   <%= render partial: "navbar"  %>
   <div class="container-fluid">
-     
+
      <div class="row">
-       
+
        <%= render partial: "sidebar" %>
        <div class="col-md-10">
 	 <%= breadcrumbs  separator: " &rsaquo; ", display_single_fragment: true, style: :bootstrap %>
@@ -33,6 +33,6 @@
      </div>
   </div>
 
-  <%= render partial: "footer" %>
+  <%= render partial: "footer_main" %>
 </body>
 </html>
