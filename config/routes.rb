@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
 
-  
+
+  mount RedactorRails::Engine => '/redactor_rails'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: {
@@ -35,8 +36,8 @@ Rails.application.routes.draw do
   resources :line_items, defaults: { format: 'json' }
   resources :orders, only: :create
   resource  :users
-  
-  
+
+
 
 
   get 'cart'    => 'main_pages#cart'
