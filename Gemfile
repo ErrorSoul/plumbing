@@ -61,6 +61,7 @@ group :development do
 end
 
 # XLSX
+gem 'nokogiri'
 #gem 'rubyXL', '=1.2.10'
 gem 'zip-zip'
 

@@ -362,6 +362,7 @@ DEPENDENCIES
   libnotify
   mini_magick
   mysql2
+  nokogiri
   pry-rails
   puma
   rails (= 4.1.6)
