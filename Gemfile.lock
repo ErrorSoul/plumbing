@@ -369,7 +369,7 @@ DEPENDENCIES
   ransack!
   redactor-rails
   rspec-rails
-  rubyXL
+  rubyXL (= 1.2.10)
   russian
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

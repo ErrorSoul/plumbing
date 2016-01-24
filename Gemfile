@@ -61,7 +61,7 @@ group :development do
 end
 
 # XLSX
-gem 'rubyXL'
+gem 'rubyXL', '=1.2.10'
 gem 'zip-zip'
 
 group :development, :test do
