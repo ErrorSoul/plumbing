@@ -62,6 +62,7 @@ end
 
 # XLSX
 gem 'rubyXL'
+gem 'zip-zip'
 
 group :development, :test do
   gem 'sqlite3'
@@ -78,7 +79,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'selenium-webdriver', '~> 2.35.1'
+  #gem 'selenium-webdriver', '~> 2.35.1'
   gem 'capybara', '>= 2.2.0'
 end
 group :production do
