@@ -21,8 +21,14 @@ Rails.application.routes.draw do
   resource  :users
 
   namespace :converter do
-    resource :dashboard, only: :show
+    resource :dashboard, only: :show do
+      member do
+        get :template
+      end
+    end
     resources :reports, only: :create
+    resources :tasks, only: :index
+    resources :links, only: [:new, :show]
   end
 
 

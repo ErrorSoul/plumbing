@@ -3,7 +3,10 @@ module LabelStatusHelper
     new:      "label_admin label-info",
     process:  "label_admin label-warning",
     pay_ok:   "label_admin label-success",
-    pay_error: "label_admin label-danger"
+    pay_error: "label_admin label-danger",
+
+    free:  "label label-info",
+    used:  "label label-success"
   }.freeze
 
 

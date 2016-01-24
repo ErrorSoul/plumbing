@@ -1,0 +1,18 @@
+ru:
+  dashboard: "Главная"
+  name: 'Имя'
+  status: 'Статус'
+  file: 'файл'
+  report: 'Загрузить файл'
+  save: 'Сохранить'
+  content: 'Содержание'
+  string_xls: 'Строки'
+  take: 'Перейти'
+  links: 'Получить ссылку'
+  template: 'Шаблон'
+  flash:
+    reports:
+      success:
+        created: 'Файл успешно загружен'
+      fail:
+        created: 'Возникла ошибка. Не удалось загрузить файл'

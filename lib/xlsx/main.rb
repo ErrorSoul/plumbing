@@ -7,18 +7,19 @@ module XLSX
 
     def create_tasks
       begin
-        @workbook = RubyXL::Parser.parse(@file)[0]
+        @workbook = RubyXL::Parser.parse(@filename)[0]
         Task.transaction do
 
           @workbook.each do |row|
             @report.tasks.create!(
-              content: row.cells[1].value
-          )
+              content: row[1].value
+            )
           end
-          report.update_attribute(:current_id, @report.tasks.last.id)
+          @report.update_attribute(:current_id, @report.tasks.first.id)
 
         end
       rescue => e
+        puts e
         nil
       end
 

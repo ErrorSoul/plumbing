@@ -1,0 +1,21 @@
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t(:id)
+      %th= t(:content)
+      %th= t(:status)
+
+  %tbody
+
+    - if @tasks.empty?
+      %tr
+        %td(colspan='10')=  t :not_found
+
+    - else
+      - @tasks.each do |task|
+        %tr
+          %td= task.id
+          %td= task.content.truncate(75)
+          %td
+            %span(class="#{status_label(task.status)}")= task.status

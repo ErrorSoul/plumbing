@@ -1,8 +1,10 @@
 %nav.navbar.navbar-inverse.navbar-fixed-top(style='margin-bottom: 60px')
   .container
     .navbar-header
-      = link_to t(:dashboard), admin_dashboard_url, class: 'navbar-brand'
+      = link_to t(:dashboard), converter_dashboard_url, class: 'navbar-brand'
 
     %ul.nav.navbar-nav
       %li
-        = link_to t(:strings_xls), admin_countries_url
+        = link_to t(:string_xls), converter_tasks_url
+      %li
+        = link_to t(:links), new_converter_link_url

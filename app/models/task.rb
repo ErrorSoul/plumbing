@@ -14,4 +14,10 @@
 class Task < ActiveRecord::Base
 
   belongs_to :report
+
+  state_machine :status, initial: :free do
+    event :used  do
+      transition free: :used
+    end
+  end
 end
