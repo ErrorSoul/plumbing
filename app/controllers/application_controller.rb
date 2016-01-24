@@ -4,9 +4,4 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include CurrentCart
   include SetModels
-  
-  #include CurrentCart
-  #include SetModels
-  #before_action :set_cart
-  #before_action :set_need_attr
 end

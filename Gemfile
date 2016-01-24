@@ -33,6 +33,7 @@ gem "gretel"
 # editor
 gem 'redactor-rails'
 
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -58,6 +59,9 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rbenv'
 end
+
+# XLSX
+gem 'rubyXL'
 
 group :development, :test do
   gem 'sqlite3'

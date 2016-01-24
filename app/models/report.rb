@@ -1,17 +1,23 @@
 # == Schema Information
 #
-# Table name: catalogs
+# Table name: reports
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
 #  asset      :string(255)
+#  current_id :integer
 #  created_at :datetime
 #  updated_at :datetime
-#  user_type  :string(255)
 #
 
-require 'rails_helper'
+class Report < ActiveRecord::Base
 
-RSpec.describe Catalog, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  has_many :tasks
+
+  mount_uploader :asset, AssetUploader
+
+  def filename
+    asset.file.path
+  end
+
 end

@@ -1,0 +1,19 @@
+.col-sm-8.center-block
+  .panel.panel-default
+    .panel-heading= t(:report)
+
+    .panel-body
+      = form_for @report, url: converter_reports_url, class: 'form-horizontal', html: { multipart: true } do |f|
+
+        .form-group.col-sm-10
+          = f.label :name, class: 'control-label col-sm-2'
+          .col-sm-8
+            = f.text_field :name, class: 'form-control'
+
+        .form-group.col-sm-10
+          = f.label :file, class: 'control-label col-sm-2'
+          .col-sm-8
+            = f.file_field :asset, class: 'form-control'
+
+        .form-group.col-sm-10
+          = f.submit (:save), class: "btn btn-large btn-success"

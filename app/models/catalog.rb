@@ -7,6 +7,7 @@
 #  asset      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  user_type  :string(255)
 #
 
 class Catalog < ActiveRecord::Base

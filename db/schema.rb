@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122181955) do
+ActiveRecord::Schema.define(version: 20160124164900) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -201,6 +201,14 @@ ActiveRecord::Schema.define(version: 20151122181955) do
   add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable"
   add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type"
 
+  create_table "reports", force: true do |t|
+    t.string   "name"
+    t.string   "asset"
+    t.integer  "current_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "subcategories", force: true do |t|
     t.string  "name"
     t.integer "category_id"
@@ -209,6 +217,15 @@ ActiveRecord::Schema.define(version: 20151122181955) do
   end
 
   add_index "subcategories", ["category_id"], name: "index_subcategories_on_category_id"
+
+  create_table "tasks", force: true do |t|
+    t.text     "content"
+    t.integer  "report_id"
+    t.string   "remember_token"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "types", force: true do |t|
     t.string "name"
