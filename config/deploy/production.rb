@@ -10,7 +10,7 @@
 set :stage, :production
 set :rails_env, :production
 
-server '5.101.107.241', user: 'deployer', port: 22, roles: %w{web app db}, primary: true
+server '46.101.137.112', user: 'deployer', port: 22, roles: %w{web app db}, primary: true
 # role-based syntax
 # ==================
 
